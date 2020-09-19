@@ -1,20 +1,20 @@
-//1. Realizar un programa que lea 2 números enteros desde teclado e informe en pantalla cuál de los dos números es el
-//menor. Si son iguales, se deberá informar en pantalla lo siguiente: “Los números leídos son iguales”
+//3. Realizar un programa que lea un número real X. Luego, deberá leer números reales hasta que se ingrese uno cuyo valor
+//sea exactamente el doble de X (el primer número leído).
 
 program untitled;
 
 var
-	numero_1: integer;
-	numero_2: integer;
+	NumeroReal: real;
+	DobleReal: real;
 begin
-	write('Ingrese N1 ');
-	read(numero_1);
-	write('Ingrese N2 ');
-	read(numero_2);
-	if (numero_1<numero_2) then
-		write('El numero menor es: ',numero_1);
-	if (numero_1>numero_2) then
-		write('El numero menor es: ',numero_2);
-	else
-		write('Los numeros leidos son iguales ');
+	NumeroReal:=0;
+	DobleReal:=0;
+	write('Ingrese un numero real: ');
+	read(NumeroReal);
+	while ((DobleReal/2)<>NumeroReal) do
+		begin
+			read(DobleReal);
+			writeln('Su numero es ',DobleReal:2:1);
+		end;
+	write('El numero que es el doble del real es: ', DobleReal:2:1);
 end.
