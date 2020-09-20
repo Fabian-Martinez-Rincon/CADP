@@ -7,15 +7,18 @@ type
 
 	dias=0..31;
 var
-
+    mayor_ventas:Integer;
 	i:dias;
 	monto:Integer;
 	cant_dia:Integer;
 	cant_mes:Integer;
+    dia:integer;
 begin
 	cant_mes:=0;
 	cant_dia:=0;
 	monto:=0;
+    dia:=0;
+    mayor_ventas:=0;
 	for i:=0 to 3 do
 	  begin
 	  	writeln('Dia: ',i);
@@ -27,10 +30,15 @@ begin
 		  	cant_dia:=cant_dia+1;
 			Writeln('ingrese el monto: ');
 			read(monto);
+            dia:=cant_dia;
 		  end;
+        if(dia>mayor_ventas) then
+          begin
+            mayor_ventas:=dia;
+          end;
 		Writeln('La cantidad de ventas del dia: ', i ,' es de: ',cant_dia);
 		cant_mes:=cant_mes+cant_dia;
 	  end;
-	
-	Write('La cantidad del mes es: ', cant_mes);
+	Writeln('El dia con mayor cantidad de ventas ', mayor_ventas);
+	Writeln('La cantidad del mes es: ', cant_mes);
 end.
