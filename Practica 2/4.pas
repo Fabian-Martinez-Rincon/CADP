@@ -19,5 +19,5 @@ begin
     read(x); { leo la variable x }
 for i:= 1 to 5 do
     suma(i,x);
-write(x); { imprimo las variable x }
+write('Hola mundo'); { imprimo las variable x }
 end.
