@@ -16,12 +16,45 @@ begin
 end;
 
 //_________________________________________________________________________________________
-procedure Inscripcion_Chico(numero_inscripcion2:integer;Numero_Mas_Bajo2:integer;Numero_Segundo_MasBajo2:integer;nombre2:string);
+procedure Inscripcion_Chico(numero_inscripcion2:integer;var Numero_Mas_Bajo2:integer;var Numero_Segundo_MasBajo2:integer;nombre2:string;var Nombre_Mas_Bajo2:string;var Nombre_SegundoMas_Bajo2:string);
 begin
-  
-end;
-    
+  if (numero_inscripcion2<Numero_Mas_Bajo2)then
+				begin
+					Numero_Segundo_MasBajo2:=Numero_Mas_Bajo2;   
+					Numero_Mas_Bajo2:=numero_inscripcion2;
+                    Nombre_SegundoMas_Bajo2:=Nombre_Mas_Bajo2;
+                    Nombre_Mas_Bajo2:=nombre2;
 
+				end
+			else
+				begin 
+					if(numero_inscripcion2<Numero_Segundo_MasBajo2) then
+						begin
+							Numero_Segundo_MasBajo2:=numero_inscripcion2;
+							Nombre_SegundoMas_Bajo2:=nombre2;
+						end
+				end;
+end;
+//_________________________________________________________________________________________
+procedure Inscripcion_MasGrande(numero_inscripcion2:integer;var Numero_Mas_Bajo2:integer;var Numero_Segundo_MasBajo2:integer;nombre2:string;var Nombre_Mas_Bajo2:string;var Nombre_SegundoMas_Bajo2:string);
+begin
+  if (numero_inscripcion2>Numero_Mas_Bajo2)then
+				begin
+					Numero_Segundo_MasBajo2:=Numero_Mas_Bajo2;   
+					Numero_Mas_Bajo2:=numero_inscripcion2;
+                    Nombre_SegundoMas_Bajo2:=Nombre_Mas_Bajo2;
+                    Nombre_Mas_Bajo2:=nombre2;
+
+				end
+			else
+				begin 
+					if(numero_inscripcion2>Numero_Segundo_MasBajo2) then
+						begin
+							Numero_Segundo_MasBajo2:=numero_inscripcion2;
+							Nombre_SegundoMas_Bajo2:=nombre2;
+						end
+				end;
+end;
 //_________________________________________________________________________________________
 var 
     numero_inscripcion:LongInt;
@@ -32,12 +65,20 @@ var
     porcentaje:Real;
     Numero_Mas_Bajo:integer;
     Numero_Segundo_MasBajo:integer;
-    
+    Nombre_Mas_Bajo:string;
+    Nombre_SegundoMas_Bajo:string;
+    Numero_Mas_Alto:integer;
+    Numero_Segundo_MasAlto:integer;
+    Nombre_Mas_Alto:string;
+    Nombre_SegundoMas_Alto:string;
 begin   
+    Cantidad_Alumnos:=0;
     Numeros_Pares:=0;
     porcentaje:=0;
-    Numero_Mas_Bajo:=0;
-    Numero_Segundo_MasBajo:=0;;
+    Numero_Mas_Bajo:=9999;
+    Numero_Segundo_MasBajo:=9999;
+    Numero_Mas_Alto:=-1;
+    Numero_Segundo_MasAlto:=-1;
 
     repeat
     begin
@@ -45,7 +86,10 @@ begin
         readln(numero_inscripcion);
         readln(nombre);
         //readln(apellido);
-        Inscripcion_Chico(numero_inscripcion,Numero_Mas_Bajo,Numero_Segundo_MasBajo,nombre);
+        Inscripcion_Chico(numero_inscripcion,Numero_Mas_Bajo,Numero_Segundo_MasBajo,nombre,Nombre_Mas_Bajo,Nombre_SegundoMas_Bajo);
+
+        Inscripcion_MasGrande(numero_inscripcion,Numero_Mas_Alto,Numero_Segundo_MasAlto,nombre,Nombre_Mas_Alto,Nombre_SegundoMas_Alto);
+
         Inscripcion_Par(numero_inscripcion,Numeros_Pares);
     end;
     until (numero_inscripcion = 1200);
@@ -53,6 +97,10 @@ begin
     writeln('La cantidad de alumnos es: ', Cantidad_Alumnos);
     writeln('La cantidad de alumnos pares es: ', Numeros_Pares);
     writeln('El porcentaje de los alumnos pares es: ', porcentaje:2:2);
+    writeln('El nombre con nro de inscripccion mas bajo es: ', Nombre_Mas_Bajo);
+    writeln('El segundo nombre con nro de inscripccion mas bajo es: ', Nombre_SegundoMas_Bajo);
+    writeln('Nombre del alumno con nro de inscripcion mas alto es: ', Nombre_Mas_Alto);
+    writeln('El segundo nombre con nro de inscripccion mas alto es: ', Nombre_SegundoMas_Alto);
     
 end.
 //______________________________________________________________________________________________
