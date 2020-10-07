@@ -1,1 +1,1 @@
-digito:integer;
+//  writeln('ingrese una vocal: ');
