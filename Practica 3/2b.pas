@@ -19,8 +19,17 @@ type
         mes:rango_mes;
         anio:integer;
 end;
-
-
+procedure leer(var fecha_casamiento:fecha);
 begin
-    writeln('Hola mundo');
+    writeln('Ingrese el dia');
+    ReadLn(fecha_casamiento.dia);
+    writeln('Ingrese el mes');
+    ReadLn(fecha_casamiento.mes);
+    writeln('Ingrese el anio');
+    ReadLn(fecha_casamiento.anio);
+end;
+var
+    a:fecha;
+begin
+    leer(a);
 end.
