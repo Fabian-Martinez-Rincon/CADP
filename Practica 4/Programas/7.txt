@@ -1,0 +1,7 @@
+mientrasNumero ingresado <> 0 y contador<100
+comenzar
+	leerNumero
+	numero_maximo
+	numero_minumo
+fin
+Intercambiar_maximo_minimo(numero_maximo,numero_minimo);

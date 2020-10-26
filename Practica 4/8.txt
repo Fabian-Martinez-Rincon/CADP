@@ -1,0 +1,17 @@
+proyecto
+  codigo_unico
+  titulo
+  docente_cordinador:persona
+  cantidad_alumnos
+  nombre_escuela
+  localidad
+
+
+persona
+  dni
+  nombre
+  apellido
+  mail
+
+mientras proyecto.nombre_escuela = proyecto.nombre_escuela
+  leer
