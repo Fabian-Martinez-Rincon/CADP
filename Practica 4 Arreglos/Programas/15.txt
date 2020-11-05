@@ -1,0 +1,8 @@
+dimL=100
+tiempo 50 años
+
+array [1..dimF] 
+
+for i:=1 to 365 do  
+  ingreseLugar();
+  IngreseTemp();

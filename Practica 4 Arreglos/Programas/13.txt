@@ -1,0 +1,17 @@
+dimF:53
+
+tipe
+  estados:1..4
+  galaxia record
+    nombre
+    tipo:estados;
+    masa:integer;
+    distancia:integer;
+
+leerDatos;
+cantidadDeGalaxiasPortipo();
+Masa_total_galaxias(la Vía Láctea, Andrómeda y Triángulo);
+porcentaje();
+Galax_menosmil();
+GalaxiasMayormasa();
+GalaxiasMenormasa();
