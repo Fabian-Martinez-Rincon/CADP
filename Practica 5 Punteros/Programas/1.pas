@@ -1,31 +1,17 @@
-program probandoPunteros;
-Type 
-    TipoString = string[20];
-    Datos = record
-    Nombre: TipoString;
-    Apellido: TipoString;
-    Edad: integer;
-	Altura: real
-    end; 	
-    PtrDatos = ^datos;
-    PtrReal = ^real;
-    PtrString = ^TipoString;
-
-Var 
-    p     : PtrDatos;
-    peso  : PtrReal;
-    frase : PtrString;
+//1) Indicar los valores que imprime el siguiente programa en Pascal.
+program punteros;
+type
+ cadena = string[50];
+ puntero_cadena = ^cadena;
+var
+ pc: puntero_cadena;
 begin
-  New(p); New(peso); New(frase);
-  ReadLn(P^.Nombre);
-  WriteLn(p^.Nombre);
-  ReadLn(p^.Apellido);
-  WriteLn(p^.Apellido);
-  p^.Edad:=30;
-  p^.Altura:=3;
-  peso^:=3;
-  frase^:='La casa de Maria';
-  WriteLn(p^.Altura:2:2);
-  WriteLn(frase^);
-  
+ writeln(sizeof(pc), ' bytes');  //4
+ new(pc);
+ writeln(sizeof(pc), ' bytes'); //4
+ pc^:= 'un nuevo nombre';
+ writeln(sizeof(pc), ' bytes');  //4
+ writeln(sizeof(pc^), ' bytes');  //51   es la cantidad que tiene el string + 1
+ pc^:= 'otro nuevo nombre distinto al anterior';
+ writeln(sizeof(pc^), ' bytes');  //51
 end.

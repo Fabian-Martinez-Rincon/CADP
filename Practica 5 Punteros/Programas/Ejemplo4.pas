@@ -1,24 +1,31 @@
-program punterosC;
+program punteros;
 type
-  cadena = string[50];
-  puntero_cadena = ^cadena;
+  cad10 = string[10];
+  producto= record
+  nombre: cad10;
+  precio: real;
+  end;
+  ptrproducto = ^ producto;
 
-procedure cambiar(var pun1: puntero_cadena;  
-                  pun2: puntero_cadena);
+
+
+procedure leerproducto (var p:producto);
 begin
-  pun1:= pun2;
+  readln (p.nombre);
+ if p.nombre <> 'ZZZ' then readln (p.precio);
 end;
-
 var
-  p1, p2: puntero_cadena;
+  pprod: ptrproducto;  total : integer;
 begin
-  new(p1);
-  p1^:= 'Hoy es lunes';
-  writeln('El contenido de p1^: ', p1^);
-  cambiar(p2, p1);//P2 obtiene el valor de p1
-  writeln('El contenido de p1^: ', p1^);
-  writeln('El contenido de p2^: ', p2^);
+  total:=0;
+  new (pprod);
+  leerproducto (pprod^);
+  while ( pprod^.nombre <> 'ZZZ') do begin
+    if (pprod^.precio >=25) and (pprod^.precio <=50) then begin
+      writeln ('producto: ', pprod^.nombre);
+      total:= total + 1
+   end;
+   leerproducto (pprod^)
+ end;
+  write ('Total:', total);
 end.
-
-
-
