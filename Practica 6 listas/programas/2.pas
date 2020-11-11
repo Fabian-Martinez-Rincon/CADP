@@ -1,59 +1,60 @@
-{a. Indicar qué hace el programa. Ingresa un nombre adelante
-b. Indicar cómo queda conformada la lista si se lee la siguiente secuencia de números: 10 21 13 48 0.
-48 13 21 10
-c. Implementar un módulo que imprima los números enteros guardados en la lista generada.
-d. Implementar un módulo que reciba la lista y un valor, e incremente con ese valor cada dato de la lista.}
-program JugamosConListas;
+{2. Dado el siguiente código, identificar los 9 errores.}
+program ejercicio2;
 type
-    lista = ^nodo;
-    nodo = record
-    num : integer;
-    sig : lista;
-end;
-//________________________________________________________________________________________________________
-procedure armarNodo(var L: lista; v: integer);
-var
-    aux : lista;
-begin
-    new(aux);
-    aux^.num := v;
-    aux^.sig := L;
-    L := aux;
+lista = ^nodo;
+persona = record
+    dni: integer;
+    nombre: string;
+    apellido: string;
 end;
 
-//________________________________________________________________________________________________________
-procedure imprimirNodo(ListaF:lista);
-begin
-  while (ListaF <> NIL) do begin
-        writeln (ListaF^.num) ;
-        ListaF:= ListaF^.sig
+nodo = record
+    dato: persona;
+    sig: lista;
+end;
+procedure leerPersona(p: persona);
+    begin
+    read(p.dni); //Error 1 no podemos leer el espacio de memoria, falta el ^
+    if (p.dni <> 0)then 
+    begin
+        read(p.nombre);
+        read(p.apellido);
     end;
 end;
-//________________________________________________________________________________________________________
-procedure imprimirSuma(ListaF:lista;valorF:integer);
-begin
-  while (ListaF <> NIL) do begin
-        writeln (ListaF^.num+valorF) ;
-        ListaF:= ListaF^.sig
-    end;
-end;
-//________________________________________________________________________________________________________
+{Agrega un nodo a la lista}
+{Carga la lista hasta que llega el dni 0}
+procedure generarLista(var l:lista);
 var
-    pri : lista;
-    valor : integer;
+    p:nodo;
 begin
-    pri := nil;
-    writeln('Ingrese un numero');
-    read(valor);
-    while (valor <> 0) do
-       begin
-        armarNodo(pri, valor);
-        writeln('Ingrese un numero');
-        read(valor);
+    leerPersona(p);
+    while (p.dni <> 0) do
+    begin //error 2 Falta un incremento de posicion ya que se queda en un bucle infinito
+        agregarAdelante(l,p);
     end;
-    //c
-    imprimirNodo(pri);
-    //d
-    ReadLn(valor);
-    imprimirSuma(pri,valor);
+end;
+
+procedure imprimirInformacion(var l: lista);
+    begin
+    while (l <> nil) do
+    begin
+        writeln('DNI: ', l^.dato.dni, 'Nombre:', l^.nombre, 'Apellido:', l^.apellido); //error 4 y 5 estan mal declaradas
+        l:= l^.sig;
+    end;
+end;
+
+procedure agregarAdelante(l:lista;p:persona);
+var
+    aux: lista;
+begin //Error 3 Falta el new para el aux
+    aux^.dato:= p;
+    aux^.sig:= l;
+    l:= aux;
+end;
+
+var
+    l:lista;
+begin
+    generarLista(l);
+    imprimirInformacion(l);
 end.
