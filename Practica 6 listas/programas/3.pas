@@ -10,14 +10,23 @@ type
 end;
 //________________________________________________________________________________________________________
 procedure armarNodo(var L: lista; v: integer);
-var
-    aux : lista;
-begin
-    new(aux);
-    aux^.num := v;
-    aux^.sig := L;
-    L := aux;
+var  
+    act, nue : lista;
+begin 
+ new (nue);
+ nue^.num:= v;
+ nue^.sig := NIL;
+ if L <> Nil then 
+ begin
+    act := L ;
+    while  (act^.sig <> NIL ) do 
+        act := act^.sig ;
+        act^.sig := nue ;
+    end
+    else
+        L:= nue;
 end;
+
 
 //________________________________________________________________________________________________________
 procedure imprimirNodo(ListaF:lista);
@@ -37,22 +46,22 @@ begin
 end;
 //________________________________________________________________________________________________________
 var
-    pri : lista;
+    L : lista;
     valor : integer;
 begin
-    pri := nil;
+    L := nil;
     writeln('Ingrese un numero');
     read(valor);
     while (valor <> 0) do
        begin
-        armarNodo(pri, valor);
+        armarNodo(L, valor);
         writeln('Ingrese un numero');
         read(valor);
     end;
     //c
-    imprimirNodo(pri);
+    imprimirNodo(L);
     //d
     ReadLn(valor);
-    imprimirSuma(pri,valor);
+    imprimirSuma(L,valor);
 end.
 
