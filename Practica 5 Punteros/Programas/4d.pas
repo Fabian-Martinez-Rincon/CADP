@@ -12,8 +12,8 @@ var
 begin
     new(pc);
     pc^:= 'Un texto';
-    writeln(pc^);
+    writeln(pc^); //Un texto
     cambiarTexto(pc);
-    writeln(pc^);
+    writeln(pc^);  //Un texto
 end.
 
