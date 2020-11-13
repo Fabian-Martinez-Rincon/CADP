@@ -1,173 +1,72 @@
-{5. Realizar un programa que lea y almacene la información de productos de un supermercado. De cada producto se
-lee: código, descripción, stock actual, stock mínimo y precio. La lectura finaliza cuando se ingresa el código -1, que no
-debe procesarse. Una vez leída y almacenada toda la información, calcular e informar:
-a. Porcentaje de productos con stock actual por debajo de su stock mínimo.
-b. Descripción de aquellos productos con código compuesto por al menos tres dígitos pares.
-c. Código de los dos productos más económicos.
+{6. La Agencia Espacial Europea (ESA) está realizando un relevamiento de todas las sondas espaciales lanzadas al
+espacio en la última década. De cada sonda se conoce su nombre, duración estimada de la misión (cantidad de
+meses que permanecerá activa), el costo de construcción, el costo de mantenimiento mensual y rango del espectro
+electromagnético sobre el que realizará estudios. Dicho rango se divide en 7 categorías:
+1. radio; 2. microondas; 3.infrarrojo; 4. luz visible; 5. ultravioleta; 6. rayos X; 7. rayos gamma
+Realizar un programa que lea y almacene la información de todas las sondas espaciales. La lectura finaliza al ingresar la sonda llamada “GAIA”, que debe procesarse.
+Una vez finalizada la lectura, informar:
+a. El nombre de la sonda más costosa (considerando su costo de construcción y de mantenimiento).
+b. La cantidad de sondas que realizarán estudios en cada rango del espectro electromagnético.
+c. La cantidad de sondas cuya duración estimada supera la duración promedio de todas las sondas.
+d. El nombre de las sondas cuyo costo de construcción supera el costo promedio entre todas las sondas.
+Nota: para resolver los incisos a), b), c) y d), la lista debe recorrerse una única vez.
 }
 program JugamosConListas;
 type
+    rango=1..7;
     str20=string[20];
-    producto = record
-        codigo:integer;
-        descripcion:str20;
-        stock_actual:integer;
-        stock_minimo:integer;
-        precio:real;
+    DatosSonda = record
+        nombre:str20;
+        duracion:integer;
+        cost_construccion:real;
+        cost_mensual:Real;
+        rango_espector:rango;
     end;
+
     lista = ^nodo;
     nodo = record
-    num : producto;
-    sig : lista;
-end;
+        Sonda : DatosSonda;
+        sig : lista;
+    end;
 //________________________________________________________________________________________________________
-procedure armarNodo(var L: lista; v: producto);
+procedure armarNodo(var L: lista; v: DatosSonda);
 var
     aux : lista;
 begin
     new(aux);
-    aux^.num := v;
+    aux^.Sonda := v;
     aux^.sig := L;
     L := aux;
 end;
 
 //________________________________________________________________________________________________________
-procedure LeerProducto(var productoF:producto);
+procedure LeerSonda(var productoF:DatosSonda);
 begin
     with productoF do
     begin
-        WriteLn('Codigo:'); ReadLn(codigo);
-        if (codigo <> -1) then
-        begin
-        WriteLn('Descripcion:'); ReadLn(descripcion);
-        WriteLn('stock actual:'); ReadLn(stock_actual);
-        WriteLn('stock minimo:'); ReadLn(stock_minimo);  
-        WriteLn('Precio:'); ReadLn(precio);
-        end;  
+        WriteLn('Nombre:'); ReadLn(nombre);
+        WriteLn('Duracion en meses:'); ReadLn(duracion);
+        WriteLn('Costo de construccion:'); ReadLn(cost_construccion);  
+        WriteLn('Costo de mantenimiento mensual:'); ReadLn(cost_mensual);
+        WriteLn('Rango del espectro electromacnetico:'); ReadLn(rango_espector);  
     end;
-end;
-//________________________________________________________________________________________________________
-procedure minimos(ListaF:lista;var porcentajeF:Real);
-var
-    contMinimo:integer;
-    cantElementos:integer;
-begin
-    contMinimo:=0;
-    cantElementos:=0;
-    while (ListaF <> Nil) do
-    begin
-        if((ListaF^.num.stock_actual)<(ListaF^.num.stock_minimo))then
-        begin
-            contMinimo:=contMinimo+1;
-        end;
-        cantElementos:=cantElementos+1;
-        ListaF:=ListaF^.sig;
-    end;
-    porcentajeF := (contMinimo/cantElementos)*100;
-end;
-//________________________________________________________________________________________________________
-procedure imprimirNodo(ListaF:lista);
-begin
-  while (ListaF <> NIL) do begin
-        writeln (ListaF^.num.codigo) ;
-        writeln (ListaF^.num.descripcion);
-        writeln (ListaF^.num.stock_actual);
-        writeln (ListaF^.num.stock_minimo);
-        writeln (ListaF^.num.precio:2:2) ;
-        ListaF:= ListaF^.sig
-    end;
-end;
-//________________________________________________________________________________________________________
-procedure digPares(ListaF:lista);
-var
- dig: integer;
- par:integer;
- codigo:integer;
-begin
-    codigo:=ListaF^.num.codigo;
-    par:=0;
-    while (codigo <> 0) do begin
-        dig:= codigo mod 10;
-        if((dig mod 2)= 0) then
-            begin
-                par:=par+1;
-                codigo := codigo DIV 10;
-            end 
-            else
-                codigo := codigo DIV 10;
-    end;
-    if (par>=3)then
-    begin
-        WriteLn('La descripcion del codigo: ',ListaF^.num.codigo,' Es: ',ListaF^.num.descripcion);
-        par:=0;
-    end
-    else 
-    begin
-        par:=0;
-    end;
-       
-    
-    
-end;
-
-//________________________________________________________________________________________________________
-procedure Productos_economicos(ListaF:lista;var cod_menor1:Real;var cod_menor2:Real);
-begin
-    while ListaF <> Nil do
-    begin
-    if(ListaF^.num.precio<cod_menor1) then
-				begin
-					cod_menor2:=cod_menor1;
-					cod_menor1:=ListaF^.num.precio;
-				end
-			else
-				begin
-					if(ListaF^.num.precio<cod_menor2) then
-						begin
-							cod_menor2:=ListaF^.num.precio;
-						end
-				end;
-        ListaF:= ListaF^.sig;            
-    end;
-end;
-//________________________________________________________________________________________________________
-procedure todo(ListaF:lista);
-begin
-    while ListaF <> NIL do
-    begin
-        digPares(ListaF);
-        ListaF:= ListaF^.sig;
-    end;
-    
 end;
 //________________________________________________________________________________________________________
 var
     ListaP : lista;
-    prod:producto;
-    porcentaje:real;
-    codigo_economico1:Real;
-    codigo_economico2:Real;
+    Sonda:DatosSonda;
 begin
-    codigo_economico1:=9999;
-    codigo_economico2:=9999;
-    porcentaje:=0;
+    
     ListaP := nil;
     writeln('Ingrese un producto');
-    LeerProducto(prod);
-    while (prod.codigo <> -1) do
+    LeerSonda(Sonda);
+    while (Sonda.nombre <> 'GAIA') do
        begin
-        armarNodo(ListaP, prod);
+        armarNodo(ListaP, Sonda);
         writeln('Ingrese un producto');
-        LeerProducto(prod);
+        LeerSonda(Sonda);
+        
     end;
-    //imprimirNodo(ListaP);
-    minimos(ListaP,porcentaje);//A
-    WriteLn(porcentaje:2:2);
-    //B
-    todo(ListaP);
-    //C
-    Productos_economicos(ListaP,codigo_economico1,codigo_economico2);
-    WriteLn('El codigo mas economico es: ', codigo_economico1:4:3);
-    WriteLn('El segundo codigo mas economico es: ', codigo_economico2:4:3);
+    
     
 end.
