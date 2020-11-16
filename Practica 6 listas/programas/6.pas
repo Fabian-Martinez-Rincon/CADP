@@ -18,7 +18,7 @@ type
         duracion:integer;
         cost_construccion:real;
         cost_mensual:Real;
-        rango_espector:rango;
+        rango_espectro:rango;
     end;
 
     lista = ^nodo;
@@ -26,7 +26,8 @@ type
         Sonda : DatosSonda;
         sig : lista;
     end;
-//________________________________________________________________________________________________________
+    vector_contador = Array [1..7] of integer;
+//_____________________________________________________
 procedure armarNodo(var L: lista; v: DatosSonda);
 var
     aux : lista;
@@ -37,34 +38,114 @@ begin
     L := aux;
 end;
 
-//________________________________________________________________________________________________________
+//_____________________________________________________
 procedure LeerSonda(var productoF:DatosSonda);
 begin
     with productoF do
     begin
         WriteLn('Nombre:'); ReadLn(nombre);
-        WriteLn('Duracion en meses:'); ReadLn(duracion);
-        WriteLn('Costo de construccion:'); ReadLn(cost_construccion);  
-        WriteLn('Costo de mantenimiento mensual:'); ReadLn(cost_mensual);
-        WriteLn('Rango del espectro electromacnetico:'); ReadLn(rango_espector);  
+        if (productoF.nombre <> 'GAIA') then
+        begin
+            WriteLn('Duracion en meses:'); ReadLn(duracion);
+            WriteLn('Costo de construccion:'); ReadLn(cost_construccion);  
+            WriteLn('Costo de mantenimiento mensual:'); ReadLn(cost_mensual);
+            WriteLn('Rango del espectro electromacnetico:'); ReadLn(rango_espectro);
+        end;  
     end;
 end;
-//________________________________________________________________________________________________________
-var
-    ListaP : lista;
-    Sonda:DatosSonda;
+//_____________________________________________________
+procedure CargarLista(var ListaPri:lista;var Sonda:DatosSonda );
 begin
-    
-    ListaP := nil;
+
     writeln('Ingrese un producto');
     LeerSonda(Sonda);
     while (Sonda.nombre <> 'GAIA') do
        begin
-        armarNodo(ListaP, Sonda);
+        armarNodo(ListaPri, Sonda);
         writeln('Ingrese un producto');
         LeerSonda(Sonda);
-        
     end;
+end;
+//_____________________________________________________
+procedure Sonda_Costosa(ListaPri:lista;var Nom_sond_Cost:str20;var num_maximo:real);
+begin
     
-    
+    if (ListaPri^.Sonda.cost_construccion  > num_maximo) then
+    begin
+        num_maximo:= ListaPri^.Sonda.cost_construccion;
+        Nom_sond_Cost:=ListaPri^.Sonda.nombre;
+    end;
+end;
+//_____________________________________________________
+procedure Inicializar_vector(var VC:vector_contador);
+var
+    i:integer;
+begin
+    for i:=1 to 4 do
+    begin
+        VC[i]:=0;
+    end
+end;
+//_____________________________________________________
+procedure imprimir_VectorContador(VC:vector_contador);
+var
+    i:integer;
+begin
+    for i:=1 to 7 do
+    begin
+        WriteLn('En la posicion ',i,' se contaron ',VC[i],' veces ');
+    end;
+end;
+//_____________________________________________________
+procedure Mayor_que_promedio(ListaPri:lista ; promedio:real; var superan_tiempo:integer);
+begin
+    while ListaPri <> Nil do
+        begin
+          if (ListaPri^.Sonda.duracion>promedio) then
+            begin
+                superan_tiempo:=superan_tiempo+1;
+            end;
+            ListaPri:=ListaPri^.sig;
+        end;
+end;
+//_____________________________________________________
+var
+    ListaPri : lista;
+    Sonda:DatosSonda;
+    Nom_sond_Cost:str20;
+    maximo:real;
+    Vcontador:vector_contador;
+    tipo:integer;
+    promedio:real;
+    sondas_totales:integer;
+    suma_sondas:real;
+    superan_tiempo:integer;
+    primero:lista;
+begin
+    superan_tiempo:=0;
+    suma_sondas:=0;
+    sondas_totales:=0;
+    promedio:=0;
+    ListaPri := nil;
+    maximo:=-1;
+    CargarLista( ListaPri, Sonda );
+    primero:=ListaPri;
+    //A, B, C y D
+    Inicializar_vector(Vcontador);
+    while (ListaPri <> Nil) do
+       begin
+            Sonda_Costosa(ListaPri,Nom_sond_Cost,maximo); //A
+            tipo:=ListaPri^.Sonda.rango_espectro; //B
+            Vcontador[tipo]:=Vcontador[tipo]+1; //B
+            sondas_totales:=sondas_totales+1; //C
+            suma_sondas:=suma_sondas+ListaPri^.Sonda.duracion;//C
+            ListaPri:=ListaPri^.sig;
+        end;
+    writeln('A ) ',Nom_sond_Cost);//A
+    WriteLn('B) ___________');
+    imprimir_VectorContador(Vcontador);//B
+    promedio:=suma_sondas/sondas_totales;//C
+    ListaPri:=primero;//Pongo al puntero en la primera posicion
+    Mayor_que_promedio(ListaPri,promedio,superan_tiempo); //D
+    WriteLn('La cantidad de Sondas que superan el tiempo promedio son: ', superan_tiempo);
 end.
