@@ -1,13 +1,20 @@
-{6. La Agencia Espacial Europea (ESA) está realizando un relevamiento de todas las sondas espaciales lanzadas al espacio en la última década. De cada sonda se conoce su nombre, duración estimada de la misión (cantidad de meses que permanecerá activa), el costo de construcción, el costo de mantenimiento mensual y rango del espectro
-electromagnético sobre el que realizará estudios. Dicho rango se divide en 7 categorías:
-1. radio; 2. microondas; 3.infrarrojo; 4. luz visible; 5. ultravioleta; 6. rayos X; 7. rayos gamma
-Realizar un programa que lea y almacene la información de todas las sondas espaciales. La lectura finaliza al ingresar la sonda llamada “GAIA”, que debe procesarse.
-Una vez finalizada la lectura, informar:
-a. El nombre de la sonda más costosa (considerando su costo de construcción y de mantenimiento).
-b. La cantidad de sondas que realizarán estudios en cada rango del espectro electromagnético.
-c. La cantidad de sondas cuya duración estimada supera la duración promedio de todas las sondas.
-d. El nombre de las sondas cuyo costo de construcción supera el costo promedio entre todas las sondas.
-Nota: para resolver los incisos a), b), c) y d), la lista debe recorrerse una única vez.
+{7. El Programa Horizonte 2020 (H2020) de la Unión Europea ha publicado los criterios para financiar proyectos de
+investigación avanzada. Para los proyectos de sondas espaciales vistos en el ejercicio anterior, se han determinado
+los siguientes criterios:
+- sólo se financiarán proyectos cuyo costo de mantenimiento no supere el costo de construcción.
+- no se financiarán proyectos espaciales que analicen ondas de radio, ya que esto puede realizarse desde la superficie
+terrestre con grandes antenas.
+A partir de la información disponible de las sondas espaciales (la lista generada en ejercicio 6), implementar un
+programa que:
+a. Invoque un módulo que reciba la información de una sonda espacial, y retorne si cumple o no con los nuevos
+criterios H2020.
+b. Utilizando el módulo desarrollado en a) implemente un módulo que procese la lista de sondas de la ESA y retorne
+dos listados, uno con los proyectos que cumplen con los nuevos criterios y otro con aquellos que no los cumplen.
+c. Invoque a un módulo que reciba una lista de proyectos de sondas espaciales e informe la cantidad y el costo total
+(construcción y mantenimiento) de los proyectos que no serán financiados por H2020. Para ello, utilice el módulo
+realizado en b. //No entendi la consiga "C"
+
+
 }
 program JugamosConListas;
 type
@@ -134,6 +141,39 @@ begin
         end;
 end;
 //_____________________________________________________
+function Retorna7(ListaF:lista): boolean;
+begin
+    if (ListaF^.Sonda.cost_mensual<ListaF^.Sonda.cost_construccion) and (ListaF^.Sonda.rango_espectro <> 1) then
+    begin
+        Retorna7:=True
+    end;
+end;
+//_____________________________________________________
+procedure B(ListaF:lista;var Lista_Cumple,Lista_NoCumple:lista2);
+var 
+    cumpleF:boolean;
+    nombre_cumple:str20;
+    nombre_Nocumple:str20;
+begin
+    cumpleF:=false;
+    while ListaF <> nil do
+    begin
+        cumpleF:=Retorna7(ListaF);
+        if(cumpleF = False)then
+        begin
+            nombre_Nocumple:=ListaF^.Sonda.nombre;
+            armarNodo2(Lista_NoCumple,nombre_Nocumple);
+        end
+        else
+        begin
+            nombre_cumple:=ListaF^.Sonda.nombre;
+            armarNodo2(Lista_Cumple,nombre_Nocumple);
+            cumpleF:=false;
+        end;
+        ListaF:=ListaF^.sig;
+    end;
+end;
+//_____________________________________________________
 var
     ListaPri : lista;
     Sonda:DatosSonda;
@@ -149,7 +189,14 @@ var
     Costo_promedio:real;
     Costo_Total:real;
     mucho_costo:lista2;
+    Lista_Cumple:lista2;
+    Lista_NoCumple:lista2;   
+    //______________________
+    Cumple:boolean;
 begin
+    Lista_Cumple:=nil;
+    Lista_NoCumple:=nil;
+    Cumple:=False;
     mucho_costo:=Nil;
     Costo_Total:=0;
     Costo_promedio:=0;
@@ -170,7 +217,7 @@ begin
             Vcontador[tipo]:=Vcontador[tipo]+1; //B
             sondas_totales:=sondas_totales+1; //C
             suma_sondas:=suma_sondas+ListaPri^.Sonda.duracion;//C
-            Costo_Total:=Costo_Total+ListaPri^.Sonda.cost_construccion;
+            Costo_Total:=Costo_Total+ListaPri^.Sonda.cost_construccion;//D
             ListaPri:=ListaPri^.sig;
         end;
     Costo_promedio:=Costo_Total/sondas_totales;
@@ -179,7 +226,7 @@ begin
     imprimir_VectorContador(Vcontador);//B
     promedio:=suma_sondas/sondas_totales;//C
     ListaPri:=primero;//Pongo al puntero en la primera posicion
-    WriteLn('COSA');
     Mayor_que_promedio_costo(ListaPri,promedio,superan_tiempo,Costo_promedio,mucho_costo); //D
     WriteLn('D) La cantidad de Sondas que superan el tiempo promedio son: ', superan_tiempo);
+    B(ListaPri,Lista_Cumple,Lista_NoCumple);
 end.
