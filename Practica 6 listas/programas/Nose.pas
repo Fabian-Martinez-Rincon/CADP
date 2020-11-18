@@ -85,7 +85,24 @@ begin
         ListaF:= ListaF^.sig
     end;
 end;
-
+//______________________________________________________________________
+Procedure BorrarElemento (var pri:listaEspera);
+var ant, act: listaEspera;
+begin 
+    act := pri;
+    if (act <> NIL) then 
+    begin
+        if (act = pri) then  
+            begin
+                pri := act^.sig;
+            end
+        else 
+            begin
+                ant^.sig:= act^.sig;
+            end;
+        dispose (act);
+    end;
+ end;
 
 //______________________________________________________________________
 procedure AtenderCliente(var L:listaEspera;var C:cliente);
@@ -93,26 +110,31 @@ begin
     C.dni:=L^.datos.dni;//Me guardo el dni de la primera persona de la lista
     c.numero:=L^.datos.numero;//Lo mismo con el numero
     BorrarElemento(L);//Lo borro el primer elemento de la lista
-    //Tengo problemas con el modulo borrar (me estoy volviendo loco)
 end;
 //______________________________________________________________________
-
+procedure RecorrerLista(var Lf,ultF:listaEspera);
+var 
+    C:cliente;
+begin
+    while Lf<>nil do
+    begin
+        AtenderCliente(Lf,C);  
+        imprimirL(Lf);
+        Lf:=Lf^.sig;
+        
+    end;
+end;
+//______________________________________________________________________
 var
     L : listaEspera;
     ult:listaEspera;
-    var C:cliente;
 begin
     L := nil;
     ult:=nil;
     CargarLista(L,ult);
     WriteLn('Imprimir Lista');
-    //imprimirL(L);
-    while L<>nil do
-    begin
-        AtenderCliente(L,C);  
-        imprimirL(L);
-        L:=L^.sig
-        
-    end;
+    imprimirL(L);
+    RecorrerLista(L,ult);
+    
     
 end.
