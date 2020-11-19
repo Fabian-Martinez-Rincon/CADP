@@ -40,34 +40,39 @@ end;
 //______________________________________________________________________
 function EstaOrdenada (pri:lista):boolean;
 var 
-    anterior:integer;
-    siguiente:integer;
-    cosa:lista;
+    
     ORDEN:Boolean;
+    mayor:integer;
 begin
-    ORDEN:=False;
-    cosa:=nil;
-    anterior:=pri^.num;
-    cosa:=pri^.sig;
-    siguiente:=cosa^.num;
-    while (pri <> nil) and (ORDEN=False)do
+    ORDEN:=True;
+    mayor:=-1; 
+    while (pri <> nil) and (ORDEN=True)do
     begin
-        if (anterior>siguiente)then
+        if (pri^.num>mayor)then
         begin
-            ORDEN:=true;
+            mayor:=pri^.num;
+            WriteLN('bien');
+        end
+        else
+        begin
+            ORDEN:=False;
+            WriteLN('NO ESTA ORDENADA');  
         end;
-        anterior:=pri^.num;
-        cosa:=pri^.sig;
-        siguiente:=cosa^.num;
         pri:=pri^.sig;  
     end;
     EstaOrdenada:=ORDEN;
+end;
+//______________________________________________________________________
+procedure Eliminar();
+begin
+    
 end;
 //______________________________________________________________________
 var
     pri : lista;
     valor : integer;
     ordenada:boolean;
+    ElementoEliminar:integer;
 begin
     ordenada:=false;
     pri := nil;
@@ -82,4 +87,6 @@ begin
     imprimirNodo(pri);
     ordenada:=EstaOrdenada(pri);
     WriteLn(ordenada);
+    read
+    Eliminar(ElementoEliminar);
 end.
