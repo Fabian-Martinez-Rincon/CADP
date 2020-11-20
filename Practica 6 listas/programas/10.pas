@@ -82,7 +82,7 @@ begin
   while (ListaF <> NIL) do begin
         writeln ('El dni: ',ListaF^.datos.dni) ;
         writeln ('El numero es : ',ListaF^.datos.numero) ;
-        ListaF:= ListaF^.sig
+        ListaF:= ListaF^.sig;
     end;
 end;
 
@@ -111,7 +111,7 @@ begin
     begin
         AtenderCliente(L,C);  
         imprimirL(L);
-        L:=L^.sig
+        L:=L^.sig;
         
     end;
     

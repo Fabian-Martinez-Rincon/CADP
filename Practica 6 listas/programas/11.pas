@@ -1,118 +1,22 @@
-{10. Una empresa de sistemas está desarrollando un software para organizar listas de espera de clientes. Su funcionamiento es muy sencillo: cuando un cliente ingresa al local, se registra su DNI y se le entrega un número (que es el siguiente al último número entregado). El cliente quedará esperando a ser llamado por su número, en cuyo caso sale de la lista de espera. Se pide:
-a. Definir una estructura de datos apropiada para representar la lista de espera de clientes.
-b. Implementar el módulo RecibirCliente, que recibe como parámetro el DNI del cliente y la lista de clientes en espera, asigna un número al cliente y retorna la lista de espera actualizada.
-c. Implementar el módulo AtenderCliente, que recibe como parámetro la lista de clientes en espera, y retorna el número y DNI del cliente a ser atendido y la lista actualizada. El cliente atendido debe eliminarse de la lista de espera.
-d. Implementar un programa que simule la atención de los clientes. En dicho programa, primero llegarán todos los clientes juntos, se les dará un número de espera a cada uno de ellos, y luego se los atenderá de a uno por vez. El ingreso de clientes se realiza hasta que se lee el DNI 0, que no debe procesarse
+{11. La Facultad de Informática debe seleccionar los 10 egresados con mejor promedio a los que la UNLP les entregará el premio Joaquín V. González. De cada egresado se conoce su número de alumno, apellido y el promedio obtenido durante toda su carrera.
+Implementar un programa que:
+a. Lea la información de los todos egresados, hasta ingresar el código 0, el cual no debe procesarse.
+b. Una vez ingresada la información de los egresados, informe el apellido y número de alumno de los egresados que recibirán el premio. La información debe imprimirse ordenada según el promedio del egresado (de mayor a menor).
 }
-program JugamosConListas;
+
+program Ejercico11;
 type
-    cliente=record
-        dni:integer;
-        numero:integer;
+    str20=string[20];    
+    egresado=record
+        num_alumno:integer;
+        apellido:str20;
+        promedio:real;
     end;
-    
-    listaEspera = ^nodo;
-    nodo = record
-        datos : cliente;
-        sig : listaEspera;
+    Lista=^nodo;
+    nodo=record
+        Datos:egresado;
+        sig:Lista; 
     end;
-//______________________________________________________________________
-procedure agregarAtras (CF: cliente;var LF, ult: listaEspera ); 
-var  nue : listaEspera;
-
-begin 
- new (nue);
- nue^.datos:= CF;
- nue^.sig := NIL;
- if LF <> Nil then 
-    begin
-        ult^.sig := nue;  
-    end
-    else
-    begin
-        LF := nue;  
-    end; 
-    ult := nue;
-end;
-
-//______________________________________________________________________
-procedure RecibirCliente (dni:integer; var L,ult:listaEspera);
-var
-    c:cliente;
 begin
-    c.dni:=dni;
-    if (L=Nil) then
-    begin
-        c.numero:=1;
-    end
-    else
-    begin
-        c.numero:=ult^.datos.numero+1;  
-    end;
-    agregarAtras(c,L,ult);
-
-end;
-//______________________________________________________________________
-procedure CargarLista(var L,ult:listaEspera);
-var 
-    dni:integer;
-begin
-    read(dni);
-    while (dni <> 0) do 
-        begin
-            RecibirCliente(dni,L,ult);
-            read(dni);
-        end;
-    
-end;
-//______________________________________________________________________
-procedure armarNodo(var L: listaEspera; v: cliente);
-var
-    aux : listaEspera;
-begin
-    new(aux);
-    aux^.datos := v;
-    aux^.sig := L;
-    L := aux;
-end;
-
-//______________________________________________________________________
-procedure imprimirL(ListaF:listaEspera);
-begin
-  while (ListaF <> NIL) do begin
-        writeln ('El dni: ',ListaF^.datos.dni) ;
-        writeln ('El numero es : ',ListaF^.datos.numero) ;
-        ListaF:= ListaF^.sig
-    end;
-end;
-
-
-//______________________________________________________________________
-procedure AtenderCliente(var L:listaEspera;var C:cliente);
-begin
-    C.dni:=L^.datos.dni;//Me guardo el dni de la primera persona de la lista
-    c.numero:=L^.datos.numero;//Lo mismo con el numero
-    BorrarElemento(L);//Lo borro el primer elemento de la lista
-    //Tengo problemas con el modulo borrar (me estoy volviendo loco)
-end;
-//______________________________________________________________________
-
-var
-    L : listaEspera;
-    ult:listaEspera;
-    var C:cliente;
-begin
-    L := nil;
-    ult:=nil;
-    CargarLista(L,ult);
-    WriteLn('Imprimir Lista');
-    //imprimirL(L);
-    while L<>nil do
-    begin
-        AtenderCliente(L,C);  
-        imprimirL(L);
-        L:=L^.sig
-        
-    end;
-    
+    writeln('Hola mundo');
 end.
