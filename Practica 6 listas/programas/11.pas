@@ -17,6 +17,109 @@ type
         Datos:egresado;
         sig:Lista; 
     end;
+    vector = array [1..10] of egresado;
+//____________________________________________________________
+procedure EgresadoDatos(var P:egresado);
 begin
-    writeln('Hola mundo');
+    with P do 
+    begin
+        writeln('Numero del alumno: ');  readln(num_alumno);
+        if P.num_alumno <> 0 then
+        begin
+            writeln('Apellido: ');ReadLn(apellido);
+            writeln('Promedio: ');ReadLn(promedio);  
+        end;
+          
+    end;
+end;
+//____________________________________________________________
+procedure ArmarPersona (var L:Lista;P:egresado);
+var
+    aux : lista;
+begin
+    new(aux);
+    aux^.Datos := P;
+    aux^.sig := L;
+    L := aux;
+end;
+
+//____________________________________________________________
+procedure LeerEgresados(var Lf:Lista);
+var
+    Persona:egresado;
+begin
+    EgresadoDatos(Persona);
+    while (Persona.num_alumno <> 0) do
+    begin
+        ArmarPersona(Lf,Persona);
+        EgresadoDatos(Persona);  
+    end;
+end;
+//____________________________________________________________
+procedure InicializoPromedio(var M:vector);
+var
+    i:integer;
+begin
+    for i:=0 to 10 do 
+    begin
+        M[i].promedio:=0;  
+    end;
+end;
+//____________________________________________________________
+procedure JuntarDiezMejores(L:Lista;var M:vector);
+var 
+    i:integer;
+    esta:boolean;
+begin
+    esta:=False;
+    i:=1;
+    while (i < 10) and (esta =false) do
+    begin
+        if L^.Datos.promedio > M[i].promedio then
+        begin
+            M[i]:=L^.Datos;
+            esta:=true;
+        end;
+        i:=i+1;
+    end;
+    esta:=false;
+end;
+//____________________________________________________________
+procedure Mejores_egresados(L:lista;var M:vector);
+begin
+    while (L <> Nil) do
+    begin
+        JuntarDiezMejores(L,M); 
+        L:=L^.sig;
+    end;
+end;
+//____________________________________________________________
+procedure ImprimirEgresado(E:egresado);
+begin
+    WriteLn('El numero es: ', E.num_alumno);
+    WriteLn('El apellido es: ', E.apellido);
+    WriteLn('El promedio es: ', E.promedio);
+end;
+//____________________________________________________________
+procedure ImprimirOrdenados (M:vector);
+var
+    i:integer;
+begin
+    for i:=1 to 10 do
+    begin
+        ImprimirEgresado(M[i]);
+    end;
+end;
+//____________________________________________________________
+var
+    L:Lista;
+    Mejor:vector;
+    i:integer;
+begin
+    L:=nil;
+    LeerEgresados(L);
+    InicializoPromedio(Mejor);
+    Mejores_egresados(L,Mejor);
+    ImprimirOrdenados(Mejor);
+    
 end.
