@@ -98,17 +98,35 @@ procedure ImprimirEgresado(E:egresado);
 begin
     WriteLn('El numero es: ', E.num_alumno);
     WriteLn('El apellido es: ', E.apellido);
-    WriteLn('El promedio es: ', E.promedio);
+    WriteLn('El promedio es: ', E.promedio :2:2);
 end;
+
 //____________________________________________________________
 procedure ImprimirOrdenados (M:vector);
-var
+var 
     i:integer;
+    mayor:vector;
+    j:integer;
+    cumple:boolean;
 begin
+    j:=1;
+    cumple:=false;
+    InicializoPromedio(mayor);
     for i:=1 to 10 do
     begin
+        while (j < 10) and (cumple=false) do
+        begin
+            if (M[i].promedio > mayor[j].promedio)  then
+            begin
+                mayor[i]:=M[i];
+                cumple:=true;
+            end;
+            j:=j+1;
+        end;
         ImprimirEgresado(M[i]);
     end;
+    
+
 end;
 //____________________________________________________________
 var
