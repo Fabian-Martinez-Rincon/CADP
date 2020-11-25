@@ -1,65 +1,84 @@
-{12. Una empresa desarrolladora de juegos para teléfonos celulares con Android dispone de información de todos los dispositivos que poseen sus juegos instalados. De cada dispositivo se conoce la versión de Android instalada, el tamaño de la pantalla (en pulgadas) y la cantidad de memoria RAM que posee (medida en GB). La información disponible se encuentra ordenada por versión de Android. Realizar un programa que procese la información disponible de todos los dispositivos e informe:
-a. La cantidad de dispositivos para cada versión de Android.
-b. La cantidad de dispositivos con más de 3 GB de memoria y pantallas de a lo sumo a 5 pulgadas.
-c. El tamaño promedio de las pantallas de todos los dispositivos.
-
+{13. El Portal de Revistas de la UNLP está estudiando el uso de sus sistemas de edición electrónica por parte de los usuarios. Para ello, se dispone de información sobre los 3600 usuarios que utilizan el portal. De cada usuario se conoce su email, su rol (1: Editor; 2. Autor; 3. Revisor; 4. Lector), revista en la que participa y cantidad de días desde el último acceso.
+a. Imprimir el nombre de usuario y la cantidad de días desde el último acceso de todos los usuarios de la revista Económica. El listado debe ordenarse a partir de la cantidad de días desde el último acceso (orden ascendente).
+b. Informar la cantidad de usuarios por cada rol para todas las revistas del portal.
+c. Informar los emails de los dos usuarios que hace más tiempo que no ingresan al portal
 }
 
 program Ejercico11;
 type
+    rol_num=1..4;
     str20=string[20];    
-    dispositivo=record
-        version:integer;
-        Tamanio:integer;
-        memoria:integer;
+    usuario=record
+        mail:str20;
+        rol:rol_num;
+        revistaPart:str20;
+        cant_dias:integer;
     end;
     Lista=^nodo;
     nodo=record
-        Datos:dispositivo;
+        Datos:usuario;
         sig:Lista; 
     end;
+    vector=array [1..3600] of usuario; 
+    vector_contador= array [1..4] of integer;
 //____________________________________________________
-procedure ABYC(L:Lista);
-var
-    dispVersion:integer;
-    CantMas3M5P:integer;
-    cant_dispositivos:integer;
-    Tamanio_total:integer;
-    aux:integer;
-    promedio:real;
+Procedure InsertarElemento ( var pri: lista; per: usuario);
+var ant, nue, act: lista;
 begin
-    promedio:=0;
-    cant_dispositivos:=0;
-    CantMas3M5P:=0;
-    Tamanio_total:=0;
-    aux:=0;
-    while L<>nil do
+  new (nue);
+  nue^.Datos := per;
+  act := pri;
+  ant := pri;
+{Recorro mientras no se termine la lista y no encuentro la posición correcta}
+  while (act<>NIL) and (act^.datos.cant_dias < per.cant_dias) do begin
+      ant := act;
+      act := act^.sig ;
+  end;
+  if (ant = act)  then pri := nue   {el dato va al principio}
+                  else  ant^.sig  := nue; {va entre otros dos o al final}
+  nue^.sig := act ;
+end;
+
+//____________________________________________________
+procedure InicializarVC (var vc:vector_contador);
+var
+    i:integer;
+begin
+    for i:=1 to 4 do
     begin
-        aux:=L^.Datos.version;
-        dispVersion:=0;
-        while (L <> nil) and (aux=L^.Datos.version) do //Me fijo si se mantiene en la misma version
+        vc[i]:=0;
+    end
+end;
+//____________________________________________________
+procedure actualizarDosMaximos (max1;max2;mmax1;mmax2;mailUsuario;)
+//____________________________________________________
+procedure recorrer( var L:Lista; VUsuarios:vector;var vContador:vector_contador);
+var
+    i:integer;
+    rolF:integer;
+begin
+    for i:=1 to 3600 do
+    begin
+        if (VUsuarios[i].revistaPart='economica')then
         begin
-            cant_dispositivos:=cant_dispositivos+1;
-            dispVersion:=dispVersion+1;
-            if (L^.Datos.memoria > 3) and (L^.Datos.Tamanio>=5) then //B
-            begin
-                CantMas3M5P:=CantMas3M5P+1;
-            end;
-            Tamanio_total:=Tamanio_total+L^.datos.Tamanio;//Calculo el tamaño total para despues calcular el promedio
+            InsertarElemento(L,VUsuarios[i]);
         end;
-        WriteLn('La cantidad de dispositivos para esta version son: ', dispVersion);
+        rolF:=VUsuarios[i].rol;
+        vContador[rolF]:=vContador[rolF]+1;
+        actualizarDosMaximos(max1,max2,mailmax1,mailmax2,VUsuarios[i].mail,VUsuarios[i].cant_dias);
     end;
-    WriteLn('La cantidad de dispositivos con más de 3 GB de memoria y pantallas de a lo sumo a 5 pulgadas son: ',CantMas3M5P);
-    promedio:=Tamanio_total/cant_dispositivos;
-    WriteLn('El promedio es',promedio);
+    Informar(L,vContador,mailmax1,mailmax2);
+  
 end;
 //____________________________________________________
 var
     L:Lista;
-    
+    V:vector;
+    vContador:vector_contador;
 begin
     L:=nil;
-    CargarInfo(L); //Se dispone
-    ABYC(L);
+    //CargarLista(L); //Se dispone
+    InicializarVC(vContador);
+    recorrer(L,V,vContador);
     
 end.

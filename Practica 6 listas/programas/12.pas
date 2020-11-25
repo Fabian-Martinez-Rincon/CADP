@@ -46,12 +46,17 @@ begin
                 CantMas3M5P:=CantMas3M5P+1;
             end;
             Tamanio_total:=Tamanio_total+L^.datos.Tamanio;//Calculo el tamaño total para despues calcular el promedio
+            L:=L^.sig;
         end;
         WriteLn('La cantidad de dispositivos para esta version son: ', dispVersion);
+        L:=L^.sig;
     end;
     WriteLn('La cantidad de dispositivos con más de 3 GB de memoria y pantallas de a lo sumo a 5 pulgadas son: ',CantMas3M5P);
-    promedio:=Tamanio_total/cant_dispositivos;
-    WriteLn('El promedio es',promedio);
+    if cant_dispositivos <> 0 then
+    begin
+        promedio:=Tamanio_total/cant_dispositivos;
+        WriteLn('El promedio es',promedio);
+    end;
 end;
 //____________________________________________________
 var
