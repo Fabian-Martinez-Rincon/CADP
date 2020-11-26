@@ -1,6 +1,5 @@
 {4. Se dispone de un vector con 100 números enteros. Implementar los siguientes módulos:
-a) posicion: dado un número X y el vector de números, retorna la posición del número X en dicho vector, o el
-valor -1 en caso de no encontrarse.
+a) posicion: dado un número X y el vector de números, retorna la posición del número X en dicho vector, o el valor -1 en caso de no encontrarse.
 b) intercambio: recibe dos valores x e y (entre 1 y 100) y el vector de números, y retorna el mismo vector donde
 se intercambiaron los valores de las posiciones x e y.
 c) sumaVector: retorna la suma de todos los elementos del vector.

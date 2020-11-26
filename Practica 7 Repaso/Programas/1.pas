@@ -18,18 +18,80 @@ type
 
     end;
     
-    listaEspera = ^nodo;
+    lista = ^nodo;
     nodo = record
-        datos : cliente;
-        sig : listaEspera;
+        datos : persona;
+        sig : lista;
     end;
+//______________________________________________________________________
+procedure LeerPersona(var Pf:persona);
+begin
+    with Pf do
+    begin
+        writeln('DNI:'); ReadLn(dni);
+        writeln('APELLIDO:'); ReadLn(apellido);
+        writeln('NOMBRE:'); ReadLn(nombre);
+        writeln('EDAD:'); ReadLn(edad);
+        writeln('CODIGO:'); ReadLn(codigo);
+    end;
+    
+end;
+//______________________________________________________________________
+procedure DniPares (dni:Integer;var ContPares:integer);
+var 
+    par:integer;
+    impar:integer;
+    dig:integer;
+begin
+    par:=0;
+    impar:=0;
+    while (dni <> 0) do
+    begin
+        dig:= DNI mod 10;
+        if((dig mod 2)= 0) then
+            begin
+                par:=par+1;
+            end
+        else
+            begin
+                impar:= impar +1;
+            end;
+        dni := dni DIV 10;
+    end;
+    if (impar<par)then
+        begin
+            ContPares:=ContPares+1;
+        end
+end;
+//______________________________________________________________________
+procedure CargarLista (var Lf:lista);
+var
+    P:persona;
+begin
+    LeerPersona(P);
+    repeat
+        LeerPersona(P);
+    until   (P.dni <> 3);//33555444 No me deja leer numeros de este tamaño un integer
+end;
+//______________________________________________________________________
+procedure RecorrerLista (L:lista);
+var 
+    ContPares:integer;
+begin
+    ContPares:=0;
+    while L <> Nil do
+    begin
+        DniPares(L^.datos.dni,ContPares);
+        L:=L^.sig;
+    end;
+end;
 //______________________________________________________________________
 
 var
-    
+    L:lista;
 begin
     L := nil;
-    
-   
+    CargarLista(L);
+    RecorrerLista(L);
     
 end.

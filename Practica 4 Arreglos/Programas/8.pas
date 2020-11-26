@@ -44,11 +44,11 @@ var
  impar:integer;
 begin
     impar:=0;
-    while (alumno1.DNI <> 0) do begin
-    dig:= alumno1.DNI mod 10;
-    if((dig mod 2)= 0) then
-    
-    else
+    while (alumno1.DNI <> 0) do
+    begin
+        dig:= alumno1.DNI mod 10;
+        if((dig mod 2)= 0) then
+        else
         impar:= impar +1;
         alumno1.DNI := alumno1.DNI DIV 10;
     end;
