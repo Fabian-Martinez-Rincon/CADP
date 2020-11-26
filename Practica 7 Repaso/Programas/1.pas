@@ -23,6 +23,7 @@ type
         datos : persona;
         sig : lista;
     end;
+    vector_contador = array [genero] of integer;
 //______________________________________________________________________
 procedure LeerPersona(var Pf:persona);
 begin
@@ -64,34 +65,124 @@ begin
         end
 end;
 //______________________________________________________________________
+procedure armarNodo(var L: lista; v: persona);
+var
+    aux : lista;
+begin
+    new(aux);
+    aux^.datos := v;
+    aux^.sig := L;
+    L := aux;
+end;
+//______________________________________________________________________
 procedure CargarLista (var Lf:lista);
 var
     P:persona;
 begin
     LeerPersona(P);
     repeat
+        armarNodo(Lf,P);
         LeerPersona(P);
     until   (P.dni <> 3);//33555444 No me deja leer numeros de este tamaño un integer
 end;
 //______________________________________________________________________
+procedure inicializarVector (var VC:vector_contador);
+var 
+    i:integer;
+begin
+    for i:=1 to 5 do
+    begin
+        VC[i]:=0;
+    end;
+end;
+//______________________________________________________________________
+procedure DosMax(Vc:vector_contador;var codmax1,codmax2:genero;var Vmax1,Vmax2:integer);
+var
+    i:integer;
+begin
+    for i:=1 to 5 do
+    begin
+        if Vc[i]>Vmax1 then
+            begin
+                Vmax2:=Vmax1;
+                codmax2:=codmax1;
+                Vmax1:=Vc[i];
+                codmax1:=i;
+            end
+        else
+            begin
+                if (Vc[i]>Vmax2)then
+                    begin
+                        Vmax2:=Vc[i];
+                        codmax2:=i;  
+                    end;
+                    
+            end;
+    end;
+end;
+//______________________________________________________________________
 procedure RecorrerLista (L:lista);
 var 
+    codmax1:genero;
+    codmax2:genero;
     ContPares:integer;
+    Vcontador:vector_contador;
+    tipo:genero;
+    valorMax1:integer;
+    valorMax2:integer;
 begin
+    valorMax1:=-1;
+    valorMax2:=-1;
+    inicializarVector(Vcontador);
     ContPares:=0;
     while L <> Nil do
     begin
+        tipo:=L^.datos.codigo;
         DniPares(L^.datos.dni,ContPares);
+        Vcontador[tipo]:=Vcontador[tipo]+1;
         L:=L^.sig;
+        DosMax(Vcontador,codmax1,codmax2,valorMax1,valorMax2);
+    end;
+    WriteLn('La cantidad de personas cuyo DNI contiene mas digitos pares que impares: ', ContPares);
+    WriteLn('El codigo mas elegido es: ', codmax1);
+    WriteLn('El segundo codigo mas elegido es: ', codmax2);
+end;
+//______________________________________________________________________
+procedure BorrarElemento (var L:lista;dni:integer;var exito:Boolean);
+var 
+    ant, act:lista;
+begin
+    exito:=False;
+    act:=L;
+    while (act <> Nil) and (act^.datos.dni<>dni) do
+    begin
+        ant:=act;
+        act:=act^.sig;
+    end;
+    if (act <> nil) then
+    begin
+        exito:=true;
+        if (act=L)then
+        begin
+            L:=act^.sig;
+        end
+        else
+        begin
+            ant^.sig:=act^.sig; 
+        end;
+        Dispose(act);
     end;
 end;
 //______________________________________________________________________
 
 var
     L:lista;
+    exito:Boolean;
+    dni:integer;
 begin
     L := nil;
     CargarLista(L);
     RecorrerLista(L);
-    
+    readln(dni);
+    BorrarElemento(L,dni,exito);
 end.

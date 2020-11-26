@@ -96,7 +96,7 @@ procedure Inicializar_vector(var VC:vector_contador);
 var
     i:integer;
 begin
-    for i:=1 to 4 do
+    for i:=1 to 7 do
     begin
         VC[i]:=0;
     end
