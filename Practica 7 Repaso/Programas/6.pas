@@ -1,149 +1,163 @@
-{5. Una empresa de transporte de cargas dispone de la información de su flota compuesta por 100 camiones. De cada camión se tiene: patente, año de fabricación y capacidad (peso máximo en toneladas que puede transportar).
-Realizar un programa que lea y almacene la información de los viajes realizados por la empresa.
-De cada viaje se lee: código de viaje, código del camión que lo realizó (1..100), distancia en
-kilómetros recorrida, ciudad de destino, año en que se realizó el viaje y DNI del chofer. La lectura
-finaliza cuando se lee el código de viaje -1.
-Una vez leída y almacenada la información, se pide:
-1. Informar la patente del camión que más kilómetros recorridos posee y la patente del camión que menos kilómetros recorridos posee.
-2. Informar la cantidad de viajes que se han realizado en camiones con capacidad mayor a 30,5 toneladas y que posean una antigüedad mayor a 5 años al momento de realizar el viaje (año en que se realizó el viaje).
-3. Informar los códigos de los viajes realizados por choferes cuyo DNI tenga sólo dígitos impares.
-Nota: Los códigos de viaje no se repiten.
-
+{6. El Observatorio Astronómico de La Plata ha realizado un relevamiento sobre los distintos objetos astronómicos observados durante el año 2015. Los objetos se clasifican en 7 categorías: 1: estrellas, 2: planetas, 3: satélites, 4: galaxias, 5: asteroides, 6: cometas y 7: nebulosas.
+Al observar un objeto, se registran los siguientes datos: código del objeto, categoría del objeto
+(1..7), nombre del objeto, distancia a la Tierra (medida en años luz), nombre del descubridor y
+año de su descubrimiento.
+A. Desarrolle un programa que lea y almacene la información de los objetos que han sido
+observados. Dicha información se lee hasta encontrar un objeto con código -1 (el cual no
+debe procesarse). La estructura generada debe mantener el orden en que fueron leídos
+los datos.
+B. Una vez leída y almacenada toda la información, se pide calcular e informar:
+I. Los códigos de los dos objetos más lejanos de la tierra que se hayan observado.
+II. La cantidad de planetas descubiertos por "Galileo Galilei" antes del año 1600.
+III. La cantidad de objetos observados por cada categoría.
+IV. Los nombres de las estrellas cuyos códigos de objeto poseen más dígitos pares que impares.
 }
 program JugamosConListas;
 type
-    anio=1900..2021;
-    codigocamion=1..100;
+    clasificacion=1..7;
     str20=string[20];
-    camion=record
-        patente:integer;
-        anio_frafric:anio;
-        capacidad:integer;
-    end;
-    viaje=record
-        cod_viaje:integer;
-        cod_camion:codigocamion;
-        distancia:integer;
-        ciudad_des:str20;
-        anio_viaje:anio;
-        dni_chofer:integer;
+    objeto=record
+        cod_objeto:integer;
+        categoria:clasificacion;
+        nombre:str20;
+        dist_tierra:integer;
+        descubridor:str20;
+        anio_desc:1..2021;
     end;
     lista = ^nodo;
     nodo = record
-        datos : viaje;
+        datos : objeto;
         sig : lista;
     end;
-    vector_camiones = array [1..100] of camion;
-
+    vectorCategoria= array [1..7] of integer;
 //___________________________________________________________
-procedure LeerViaje(var V:viaje);
+procedure LeerObjeto(var O:objeto);
 begin
-    readln(V.cod_viaje);
-    readln(V.cod_camion);
-    readln(V.distancia);
-    readln(V.ciudad_des);
-    readln(V.ciudad_des);
-    readln(V.anio_viaje);
-    readln(V.dni_chofer);
+    writeln('Codigo Objeto: ');ReadLn(O.cod_objeto);
+    if (O.cod_objeto <> -1)then
+    begin
+        writeln('Categoria: '); ReadLn(O.categoria);
+        writeln('Nombre: ');ReadLn(O.nombre);
+        writeln('Distancia de la tierra: ');ReadLn(O.dist_tierra);
+        writeln('Descubridor: ');ReadLn(O.descubridor);
+        writeln('Anio de su descubrimiento: ');ReadLn(O.anio_desc);
+    end;
 end;
 //___________________________________________________________
-procedure OrdenarLista(var L:lista;V:viaje);
+procedure OrdenarLista(var L:lista;O:objeto);
 var 
     nue:lista;
 begin
     new(nue);
-    nue^.datos:=V;
+    nue^.datos:=O;
     nue^.sig:=L;
     L:=nue;
 end;
 //___________________________________________________________
 procedure CargarLista(var L:lista);
 var 
-    V:viaje;
+    O:objeto;
 begin
-    LeerViaje(V);
-    while V.cod_viaje <> -1 do
-    begin
-        OrdenarLista(L,V);
-        LeerViaje(V);
-    end;
-end;
-//___________________________________________________________
-procedure InformarA(V:viaje;var maxPatente,minPatente:integer;var maxKilometro,minKilometro:integer);
-begin
-    if V.distancia>maxKilometro then
-    begin
-        maxKilometro:=V.distancia;
-        maxPatente:=V.cod_camion;
-    end;
-    if V.distancia<minKilometro then
-    begin
-        minKilometro:=V.distancia;
-        minPatente:=V.cod_camion;
-    end
-end;
-//___________________________________________________________
-procedure InformarB (V:vector_camiones;var Cont:integer);
-var i:integer;
-begin
-    for i:=1 to 100 do
-    begin
-        if V[i]<30.5 then
+    LeerObjeto(O);
+    while (O.cod_objeto <> -1) do
         begin
-            Cont:=Cont+1;
+            OrdenarLista(L,O);
+            LeerObjeto(O);
         end;
+end;
+//___________________________________________________________
+procedure DosMaximos(Obj:objeto;var codmax1,codmax2:integer;var distmax1,distmax2:integer);
+begin
+    if (Obj.dist_tierra<distmax1) then
+    begin
+        distmax2:=distmax1;
+        codmax2:=codmax1;
+        distmax1:=Obj.dist_tierra;
+        codmax1:=Obj.cod_objeto;
+    end
+    else
+        begin
+            if(Obj.dist_tierra<distmax2)then
+            begin
+                distmax2:=Obj.dist_tierra;
+                codmax2:=Obj.cod_objeto;
+            end; 
+        end;
+end;
+//___________________________________________________________
+procedure inicializarVector(var V:vectorCategoria);
+var
+    i:integer;
+begin
+    for i:=1 to 7 do
+    begin
+        V[i]:=0;    
     end;
 end;
 //___________________________________________________________
-procedure InformarC (dni:integer;codigo:integer);
+procedure masPares(obs:objeto);
 var
     dig:integer;
-    cumple:boolean;
+    par:integer;
+    impares:integer;
 begin
-    cumple:=false;
-    while (dni<>0) and (cumple=true) do
+    par:=0;
+    impar:=0;
+    while (obs.cod_objeto <> 0) do
     begin
-        dig:=dni mod 10;
-        if ((dig mod 2) = 0)then
+        dig:=obs.cod_objeto mod 10;
+        if(dig mod 2)then
         begin
-            cumple:=false;
+            par:=par+1;
+        end
+        else
+        begin
+            impar:=impar+1;  
         end;
-        dni:=dni div 10;
     end;
-    if (cumple=true)then
+    if(par>impar)then
     begin
-        WriteLn(codigo);
+        WriteLn(L^.datos.nombre);
     end;
 end;
 //___________________________________________________________
-procedure RecorrerLista(L:lista;VC:vector_camiones);
+procedure RecorrerLista(L:lista);
 var
-    maxPatente:integer;
-    maxKilometro:integer;
-    minPatente:integer;
-    minKilometro:integer;
-    CapMayor:integer;
+    codmax1:integer;
+    codmax2:integer;
+    distmax1:integer;
+    distmax2:integer;
+    Cont_Gali:integer;
+    Vc:vectorCategoria;
+    cate:integer;
 begin
-    CapMayor:=0;
-    maxPatente:=-1;
-    maxKilometro:=-1;
-    minPatente:=9999;
-    minKilometro:=9999;
-    while L<>nil do
+    inicializarVector(Vc);
+    Cont_Gali:=0;
+    codmax1:=-1;
+    codmax2:=-1;
+    distmax1:=-1;
+    distmax1:=-1;
+    while L <> nil do
     begin
-        InformarA(L.datos,maxPatente,minPatente,maxKilometro,minKilometro);
-        InformarB(VC,CapMayor);
-        InformarC(L^.datos.dni_chofer,L^.datos.cod_viaje);
+        DosMaximos(L^.datos,codmax1,codmax2,distmax1,distmax2);
+        if (L^.datos.descubridor = 'Galileo Galilei') and (L^.datos.anio_desc<1600)then
+        begin
+            Cont_Gali:=Cont_Gali+1;
+        end;
+        cate:=L^.datos.categoria;
+        Vc[cate]:=Vc[cate]+1;
         L:=L^.sig;
+        masPares(L.datos);
     end;
+    WriteLn('El codigo mas lejano es: ',codmax1);
+    WriteLn('El segundo codigo mas lejano: ', codmax2);
+    WriteLn('planetas descubiertos por "Galileo Galilei" antes del año 1600:',Cont_Gali);
 end;
 //___________________________________________________________
 var
     L:lista;
-    VC:vector_camiones;
 begin
     L := nil;
-    //CargarCamiones(VC); //Se dispone
     CargarLista(L);
-    RecorrerLista(L,VC);
+    RecorrerLista(L);
 end.
