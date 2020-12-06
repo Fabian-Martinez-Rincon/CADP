@@ -15,20 +15,74 @@ type
         nroSocio:integer;
         dia_Prestamo:dia;
     end;
+    cadISBN =record   
+        CantPrestado:integer;
+        ISBN:integer;
+    end;
     lista=^nodo;
     nodo=record
         datos:prestamo;
         sig:lista;
     end;
+    listaNueva=^nodoN;
+    nodoN=record
+        datosN:cadISBN;
+        sigN:listaNueva;
+    end;
+    
 //___________________________________________________
 procedure LeerP(var P:prestamo);
 begin
-    readln(P.ISBN);
+    writeln('ISBN:');readln(P.ISBN);
     if P.ISBN <> -1 then
     begin
-        readln(P.nroPrestamo);
-        readln(P.nroSocio);
-        readln(P.dia_Prestamo);
+        writeln('Nro Prestamo');readln(P.nroPrestamo);
+        writeln('Nro Socio');readln(P.nroSocio);
+        writeln('Dia Prestado');readln(P.dia_Prestamo);
+    end;
+end;
+//___________________________________________________
+procedure agregarAtraz(ISBN:integer;cantidad:integer;var LN:listaNueva);
+var
+    act,nue:listaNueva;
+begin
+    new(nue);
+    nue^.datosN.ISBN:=ISBN;
+    nue^.datosN.CantPrestado:=cantidad;
+    nue^.sigN:=nil;
+    if (LN <> nil) then
+    begin
+        act:=LN;
+        while act^.sigN <> nil do
+        begin
+            act:=act^.sigN;
+        end;
+        act^.sigN:=nue;
+    end
+    else
+        begin
+            LN:=nue;
+        end;
+end;
+//___________________________________________________
+procedure imprimirListaNueva(LN:listaNueva);
+begin
+    while LN<>nil do
+    begin
+        writeln('ISBN ',LN^.datosN.ISBN);
+        writeln('Cantidad de veces prestado ',LN^.datosN.CantPrestado);  
+        LN:=LN^.sigN;
+    end;
+end;
+//___________________________________________________
+procedure imprimirLista(L:lista);
+begin
+    while L<>nil do
+    begin
+        writeln('nro prestamo ',L^.datos.nroPrestamo);
+        writeln('ISBN ',L^.datos.ISBN);
+        writeln('nro Socio ',L^.datos.nroSocio);
+        writeln('dia ',L^.datos.dia_Prestamo);
     end;
 end;
 //___________________________________________________
@@ -37,17 +91,29 @@ var
     actual:integer;
     P:prestamo;
     cant:integer;
-begin    
-    cant:=0;
+    Lnueva:listaNueva;
+begin
+    Lnueva:=nil;
     LeerP(P);
-    while P.ISBN  <> -1 do
+    while (P.ISBN  <> -1) do
     begin
-        actual:=L^.datos.ISBN;
-        while (P.ISBN <> -1) and (actual=L^.datos.ISBN) do
+        writeln('probando1');
+        actual:=P.ISBN;
+        cant:=0;
+        while (P.ISBN <> -1) and (actual=P.ISBN) do
         begin
+            writeln('probando1');
             cant:=cant+1;
+            LeerP(P);
+        end;
+        if (P.ISBN <> -1) then
+        begin
+            agregarAtraz(P.ISBN,cant,Lnueva);
         end;
     end;
+    imprimirListaNueva(Lnueva);
+    writeln('Funca');
+    imprimirLista(L);
 end;
 //___________________________________________________
 var

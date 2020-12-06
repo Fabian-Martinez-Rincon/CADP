@@ -11,30 +11,49 @@ type
     pelicula =record   
         codPeli:integer;
         titulo:integer;
-        genero:1..8;
-        puntuaje:real;
+        Codigo:-1..8;
+        puntuajeProm:real;
     end;
     critica= record
         DNI:integer;
         apellido:cadena15;
         nombre:cadena15;
-        generoC:1..8;
+        CodigoC:-1..8;
         puntuajeC:real;
     end;
     Lista=^nodo;
     Nodo= record
-        Datos:transeferencia;
+        Datos:critica;
         sig:Lista;
     end; 
     vector_contador = array [1..7] of integer;
 
+//___________________________________________________
+procedure LeerCritica(var C:critica);
+begin
+    writeln('DNI');readln(C.DNI);
+    writeln('Apellidp');readln(C.apellido);
+    writeln('Nombre');readln(C.nombre);
+    writeln('Codigo');readln(C.CodigoC);
+    writeln('Puntuaje');readln(C.puntuajeC);
+end;
+//___________________________________________________
+procedure CargarCritica(L:lista);
+var
+    C:critica;
+begin
+    LeerCritica(C);
+    while C.CodigoC <> -1 do
+    begin
+        LeerCritica(C);  
+    end; 
+end;
 //___________________________________________________
 var
     L:lista;
     
 begin
     L := nil;
-    //CargarLista(L); // Se dispone
-    RecorrerLista(L);
+    CargarCritica(L);
     
 end.
