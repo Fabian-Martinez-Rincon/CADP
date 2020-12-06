@@ -1,189 +1,146 @@
-{7. La Facultad de Informática desea procesar la información de los alumnos que finalizaron la carrera de Analista Programador Universitario. Para ello se deberá leer la información de cada alumno, a saber: número de alumno, apellido, nombres, dirección de correo electrónico, año de ingreso, año de egreso y las notas obtenidas en cada una de las 24 materias que aprobó (los aplazos no se registran).
-1. Realizar un módulo que lea y almacene la información de los alumnos hasta que se ingrese el alumno con número de alumno -1, el cual no debe procesarse. Las 24 notas correspondientes a cada alumno deben quedar ordenadas de forma descendente.
-2. Una vez leída y almacenada la información del inciso 1, se solicita calcular e informar:
-a. El promedio de notas obtenido por cada alumno.
-b. La cantidad de alumnos ingresantes 2012 cuyo número de alumno está compuesto únicamente por dígitos impares.
-c. El apellido, nombres y dirección de correo electrónico de los dos alumnos que más rápido se recibieron (o sea, que tardaron menos años)
-3. Realizar un módulo que, dado un número de alumno leído desde teclado, lo busque y elimine de la estructura generada en el inciso 1. El alumno puede no existir.
+{8. Una entidad bancaria de la ciudad de La Plata solicita realizar un programa destinado a la administración de transferencias de dinero entre cuentas bancarias, efectuadas entre los meses de Enero y Noviembre del año 2018.
+El banco dispone de una lista de transferencias realizadas entre Enero y Noviembre del 2018. De cada transferencia se conoce: número de cuenta origen, DNI de titular de cuenta origen, número de cuenta destino, DNI de titular de cuenta destino, fecha, hora, monto y el código del motivo de la transferencia (1: alquiler, 2: expensas, 3: facturas, 4: préstamo, 5: seguro, 6: honorarios y 7:
+varios). Esta estructura no posee orden alguno.
+Se pide:
+a) Generar una nueva estructura que contenga sólo las transferencias a terceros (son aquellas en las que las cuentas origen y destino no pertenecen al mismo titular). Esta nueva estructura debe estar ordenada por número de cuenta origen.
+Una vez generada la estructura del inciso a), utilizar dicha estructura para:
+b) Calcular e informar para cada cuenta de origen el monto total transferido a terceros.
+c) Calcular e informar cuál es el código de motivo que más transferencias a terceros tuvo.
+d) Calcular e informar la cantidad de transferencias a terceros realizadas en el mes de Junio en
+las cuales el número de cuenta destino posea menos dígitos pares que impares.
+
 }
 program JugamosConListas;
 type
     cadena15=string[15];
     cadena40=string[40];
     rangoAnio=1900..2021;
-    rangoNotas=1..24;
-    Notas=array [rangoNotas] of integer;
-    alumno=record   
-        NroAlu:integer;
-        Ape:cadena15;
-        Nom:cadena15;
-        Mail:cadena40;
-        Al:rangoAnio;
-        AE:rangoAnio;
-        DetNotas:Notas;
+    F=record
+        dia:1..31;
+        mes:1..11;
+    end;
+    transeferencia =record   
+        numOrigen:integer;
+        dniOrigen:integer;
+        numDestino:integer;
+        dniDestino:integer;
+        fecha:F;
+        hora:integer;
+        monto:real;
+        codMotivo:1..7;
     end;
     Lista=^nodo;
     Nodo= record
-        Datos:alumno;
+        Datos:transeferencia;
         sig:Lista;
     end; 
-    Rmin=record
-        Ape:cadena15;
-        Nom:cadena15;
-        Mail:cadena40;
-    end;
+    vector_contador = array [1..7] of integer;
 //___________________________________________________
-procedure InsertarOrdenado (var N:Notas;valor:integer);
+procedure ordenarTerceros(var terceros:lista;T:transeferencia);
 var
-    dimF:integer;
-begin
-    
-    
-end;
-//___________________________________________________
-procedure LeerNotas(V:Notas);
-var
-    i:integer;
-    valor:integer;
-begin
-    for i:=1 to 24 do
-    begin
-        ReadLn(valor);
-        InsertarOrdenado(V,valor);
-    end;
-end;
-//___________________________________________________
-procedure LeerAlumno(Alum:alumno);
-begin
-    ReadLn(Alum.NroAlu);
-    ReadLn(Alum.Ape);
-    ReadLn(Alum.Nom);
-    ReadLn(Alum.Mail);
-    ReadLn(Alum.Al);
-    ReadLn(Alum.AE);
-    LeerNotas(Alum.DetNotas);
-end;
-//___________________________________________________
-procedure AgregarAdelante(var L:lista;Alu:alumno);
-var
-    nue:Lista;
+    ant,nue,act:Lista;
 begin
     new(nue);
-    nue^.Datos:=Alu;
-    nue^.sig:=L;
-end;
-//___________________________________________________
-procedure CargarLista(var L:Lista);
-var
-    Alum:alumno;
-begin
-    LeerAlumno(Alum);
-    while L^.Datos.NroAlu <> -1 do
-    begin
-        AgregarAdelante(L,Alum);
-        LeerAlumno(Alum);
-    end;
-end;
-//___________________________________________________
-function CalcularPromedio (V:Notas):real;
-var
-    suma:real;
-    i:integer;
-begin
-    for i:=1 to 24 do
-    begin
-        suma:=suma+V[i];
-    end;
-    CalcularPromedio:=suma/24;
-end;
-//___________________________________________________
-function contarimpar (numero:integer): Boolean;
-var 
-    cumple:Boolean;
-    dig:integer;
-begin
-    cumple:=True;
-    while (numero <> 0) and (cumple=true) do
-    begin
-        dig:=numero mod 10;
-        if ((dig mod 2) = 0)then
-        begin
-            cumple:=false;
-        end;
-    end;
-    contarimpar:=cumple;
-end;
-//___________________________________________________
-procedure CalcularDosMinimos(var min1,min2:integer;Al:rangoAnio;AE:rangoAnio;var Rmin1,Rmin2:Rmin);
-begin
-
-end;
-procedure mostrarMinimos(R1,R2:Rmin);
-begin
-  
-end;
-//___________________________________________________
-procedure RecorrerLista(L:Lista);
-
-var
-    prom:real;
-    OK:Boolean;
-    CI2012:integer;
-    min1:integer;
-    min2:integer;
-    Rmin1,Rmin2:Rmin;
-begin
-    CI2012:=0;
-    min1:=20;
-    min2:=20;
-    while L<>Nil do
-    begin
-        prom:=CalcularPromedio(L^.Datos.DetNotas); //A
-        WriteLn(L^.Datos.NroAlu,prom);
-        if (L^.Datos.AE = 2012 )then    //B
-        begin
-            OK:=contarimpar(L^.Datos.NroAlu);
-            if (OK)then
-            begin
-                CI2012:=CI2012+1;  
-            end;
-        end;
-        CalcularDosMinimos(min1,min2,L^.Datos.Al,L^.Datos.AE,Rmin1,Rmin2);
-        L:=L^.sig;  
-    end;
-    WriteLn('La cantidad de alumnos de 2012 con Nro alumno con digitos impares es: ', CI2012);
-    mostrarMinimos();
-end;
-//___________________________________________________
-procedure EliminarElemento(var L:Lista;E:integer;var ok:Boolean);
-var 
-    ant,act:Lista;
-begin
-    ok:=false;
-    act:=L;
-    while (act <> nil) and (act^.Datos.NroAlu <> E) do
+    nue^.Datos:=T;
+    act:=terceros;
+    ant:=terceros;
+    while (act <> nil) and (act^.Datos.numOrigen < T.numOrigen) do
     begin
         ant:=act;
         act:=act^.sig;  
     end;
-    if (act <> Nil) then
+    if (ant = act)then
     begin
-        ok:=true;
-        if(act=L)then L:=L^.sig;
-        else    ant^.sig:=act^.sig;
-        dispose(act);
+        L:=nue;
+    end
+    else
+    begin
+        ant^.sig:=nue;  
     end;
+    nue^.sig:=act;
+end;
+//___________________________________________________
+procedure InformarMasAlto(VC:vector_contador;var alto:integer);
+var
+    i:integer;
+begin
+    for i:=1 to 7 do
+    begin
+        if VC[i]>alto then
+        begin
+            alto:=VC[i];
+        end;
+    end;
+end;
+//___________________________________________________
+function LeerDigitos(numero:integer): Boolean;
+var
+    dig:integer;
+    par:integer;
+    impar:integer;
+begin
+    par:=0;
+    impar:=0;
+    while numero <> 0  do
+    begin
+        dig:=numero mod 10;
+        if ((dig mod 2)= 0) then
+        begin
+            par:=par+1;
+        end
+        else
+            begin
+                impar:=impar+1;
+            end;
+    end;
+    if par>impar then
+    begin
+        LeerDigitos:=true;  
+    end;
+end;
+//___________________________________________________
+procedure RecorrerLista(L:Lista);
+var
+    terceros:Lista;
+    MontoTransT:Real;
+    VC:vector_contador;
+    tipo:integer;
+    alto:integer;
+    cumple:Boolean;
+    cantC:integer;
+begin
+    cantC:=0;
+    alto:=-1;
+    terceros:=nil;
+    while L <> nil do
+    begin
+        MontoTransT:=0;
+        if (L^.Datos.dniOrigen<>L^.Datos.dniDestino) then
+        begin
+            ordenarTerceros(terceros,L^.Datos);
+            MontoTransT:=MontoTransT+L^.Datos.monto;
+        end;
+        tipo:=L^.Datos.codMotivo;
+        VC[tipo]:=VC[tipo]+1;
+        if (L^.Datos.fecha.mes = 7) then
+        begin
+            cumple:=LeerDigitos(L^.Datos.numOrigen);
+            if (cumple) then
+            begin
+                cantC:=cantC+1;
+            end;
+        end;
+        L:=L^.sig;  
+    end;
+    InformarMasAlto(VC,alto);
 end;
 //___________________________________________________
 var
     L:lista;
-    elemento:integer;
-    ok:boolean;
+    
 begin
     L := nil;
-    CargarLista(L);//1
-    RecorrerLista(L);//2
-    ReadLn(elemento);
-    EliminarElemento(L,elemento,ok);//3
-    if (ok) then WriteLn('Se pudo eliminar');
+    //CargarLista(L); // Se dispone
+    RecorrerLista(L);
+    
 end.
