@@ -12,21 +12,35 @@ type
         codPeli:integer;
         titulo:integer;
         Codigo:-1..8;
-        puntuajeProm:real;
+        puntuajeProm:real; 
     end;
     critica= record
         DNI:integer;
         apellido:cadena15;
         nombre:cadena15;
-        CodigoC:-1..8;
+        CodigoC:integer;
         puntuajeC:real;
     end;
     Lista=^nodo;
-    Nodo= record
+    nodo= record
         Datos:critica;
         sig:Lista;
+    end;
+    ListaPel=^nodoP;
+    nodoP=record
+        DatosP:pelicula;
+        sigP:ListaPel;
     end; 
-    vector_contador = array [1..7] of integer;
+    promedios = record
+        prom:real;
+        codPeli:integer;
+    end;
+    ListaProm=^nodoProm;
+    nodoProm=record
+        DatosProm:promedios;
+        sigProm:ListaProm;
+    end; 
+    vector_contador = array [1..8] of Real;
 
 //___________________________________________________
 procedure LeerCritica(var C:critica);
@@ -38,22 +52,106 @@ begin
     writeln('Puntuaje');readln(C.puntuajeC);
 end;
 //___________________________________________________
-procedure CargarCritica(L:lista);
+procedure InsertarOrdenado(var L:Lista;C:critica);
+var
+    ant,nue,act:Lista;
+begin
+    new(nue);
+    nue^.Datos:=C;
+    act:=L;
+    ant:=L;
+    while (act <> nil) and (act^.Datos.CodigoC<C.CodigoC) do
+    begin
+        ant:=act;
+        act:=act^.sig;  
+    end;
+    if (ant= act)then
+    begin
+      L:=nue;
+    end
+    else
+        begin
+            ant^.sig:=nue;
+        end;
+    nue^.sig:=act;
+end;
+//___________________________________________________
+procedure InicializarVector(var vc:vector_contador);
+var
+    i:integer;
+begin
+    for i:=1 to 8 do
+    begin
+        vc[i]:=0;
+    end;
+end;
+//___________________________________________________
+procedure CargarCritica(var L:lista;var P:real);
 var
     C:critica;
+    Total:real;
+    cantCriticas:integer;
+    VC:vector_contador;
+    actual:integer;
+    LN:ListaProm;
 begin
+    LN:ListaProm;
+    InicializarVector(VC);
+    total:=0;
+    cantCriticas:=0;
     LeerCritica(C);
+    cantCriticas:=cantCriticas+1;
+    Total:=Total+C.puntuajeC;
     while C.CodigoC <> -1 do
     begin
-        LeerCritica(C);  
-    end; 
+        P:=0;
+        actual:=C.CodigoC;
+        InsertarOrdenado(L,C);
+        while (C.CodigoC <> -1) and (actual=C.CodigoC) do
+        begin
+            LeerCritica(C);
+            cantCriticas:=cantCriticas+1;
+            Total:=Total+C.puntuajeC;  
+        end;
+        P:=Total/cantCriticas;
+    end; // Saco el promedio y meto en una lista nueva un insertar ordenado
+    
+    
+end;
+//___________________________________________________
+{procedure actualizar(P:real;var LP:ListaPel);
+begin
+    while LP <> nil do
+    begin
+        LP^.DatosP.puntuajeProm:=P;
+        LP:=LP^.sig;
+    end;
+end;}
+//___________________________________________________
+procedure ImprimirCriticas(L:Lista);
+begin
+    while L <> nil do
+    begin
+        WriteLn('DNI: ',L^.Datos.DNI :2);
+        WriteLn('Apellido: ',L^.Datos.apellido :2);
+        WriteLn('Nombre: ',L^.Datos.nombre :2);
+        WriteLn('Codigo Pelicula: ',L^.Datos.CodigoC :2);
+        WriteLn('Puntuaje de critico: ',L^.Datos.puntuajeC :2);
+        L:=L^.sig;  
+    end;
 end;
 //___________________________________________________
 var
     L:lista;
-    
+    //LP:ListaPel;
+    P:real;
 begin
+    P:=0;
+    //LP:=Nil;
+    //CargarPeliculas(LP);//Se dispone
     L := nil;
-    CargarCritica(L);
-    
+    CargarCritica(L,P);
+    WriteLn('El promedio de las criticas es: ',P:2:2);
+    //ImprimirCriticas(L);
+    //Actualizar(P,LP);
 end.
