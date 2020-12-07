@@ -1,0 +1,1 @@
+prestamo: nroPrestamo,ISBN,nroSocio,diaPrestamo(1..31)

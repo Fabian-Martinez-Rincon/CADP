@@ -1,0 +1,11 @@
+tematica= array [1..35] of cadena 20;
+
+libro: titulo, nombreEditorial,cantPaginas, añoEdicion,canvendidos,codTematica:1..35
+A: nombreEditorial,añoantiguo,cantLibros,totalLibros
+
+LeerLibroSS L
+	LeerLibro
+	repeat 
+		ordenar
+		LeerLibro()
+	until Liv<> Relato de un náufrago
