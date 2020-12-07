@@ -87,7 +87,6 @@ begin
                else
                  LN:= nue;
 end;
-//_________________________________________________
 
 //_________________________________________________
 procedure ImprimirListaNueva(LN:ListaNueva);
@@ -108,8 +107,22 @@ var
     actual:integer;
     contPrestado:integer;
 begin
+    contPrestado:=0;
     LN:=nil;
     LeerPrestamo(P);
+    actual:=P.ISBN;
+    //
+    while  (P.ISBN <> -1) and (actual=P.ISBN)do
+        begin
+            contPrestado:=contPrestado+1;
+            LeerPrestamo(P);
+        end;
+    if (P.ISBN <> -1) or (contPrestado>1) then
+        begin
+            WriteLn('Lo que le sumo es: ', contPrestado);
+            agregarAtras(LN,contPrestado,P.ISBN);  
+        end;
+    //Puse todo ese quilombo porque no me leia el primer numero ingresado
     while P.ISBN <> -1 do
     begin
         Insertar(L,P);
