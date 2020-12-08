@@ -18,7 +18,40 @@ B) Invoque a un módulo que reciba la estructura generada en A) e imprima el nom
 de la editorial y el título de cada libro con más de 250 ventas
 }
 program AmazonBooks;
-
+type
+    cadena20=string[40];
+    tematicas = array [1..35] of cadena20;
+    libro=record
+        titulo:cadena20;
+        editorial:cadena20;
+        cantPaginas:integer;
+        anioEdic:1..2021;
+        cantVendido:integer;
+        codTematica:1..35;
+    end;{
+//_______________________________________________________
+procedure LeerLibro(var L:libro);
 begin
-  
+    writeln('Titulo: ');        ReadLn(L.titulo);
+    writeln('Editorial: ');     ReadLn(L.editorial);
+    writeln('Paginas: ');       ReadLn(L.cantPaginas);
+    writeln('Anio Edicion: ');  ReadLn(L.anioEdic);
+    writeln('Cant Ventas: ');   ReadLn(L.cantVendido);
+    writeln('Cod Tematica: ');  ReadLn(L.codTematica);
 end;
+//_______________________________________________________
+procedure InformacionLibros(var L:libro);
+begin
+    LeerLibro(L);
+    repeat
+        LeerLibro(L);
+
+    until ((L.titulo)<>'Relato de un náufrago')
+end;
+//_______________________________________________________
+var 
+    L:libro;}
+begin
+    WriteLn('Hola mundo');
+    //InformacionLibros(L);
+end.
