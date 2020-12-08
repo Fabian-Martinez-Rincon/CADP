@@ -1,21 +1,13 @@
-{La plataforma YouTube está analizando algunos de sus principales canales de video. Para
-ello, YouTube cuenta con una tabla con el nombre de las 60 categorías que utilizan para
-clasificar los videos (Música, Educación y Ciencia, Hogar, Deportes, etc.).
-De cada video se conoce su título, nombre del canal donde fue publicado, duración en
-segundos, año de publicación, cantidad de visualizaciones y código de categoría a la que
-pertenece el video (1..60).
+{La plataforma YouTube está analizando algunos de sus principales canales de video. Para ello, YouTube cuenta con una tabla con el nombre de las 60 categorías que utilizan para clasificar los videos (Música, Educación y Ciencia, Hogar, Deportes, etc.).
+De cada video se conoce su título, nombre del canal donde fue publicado, duración en segundos, año de publicación, cantidad de visualizaciones y código de categoría a la que pertenece el video (1..60).
 Realizar un programa que:
-A. Invoque a un módulo que lea la información de los videos hasta ingresar un video de
-duración -1 ( que no debe procesarse) y devuelva en una estructura de datos adecuada,
-para el canal “Paulina Cocina”, la siguiente información:
+A. Invoque a un módulo que lea la información de los videos hasta ingresar un video de duración -1 ( que no debe procesarse) y devuelva en una estructura de datos adecuada, para el canal “Paulina Cocina”, la siguiente información:
 - Nombre del canal
 - Año de publicación del video más reciente
 - Cantidad de videos publicados
 - Cantidad total de visualizaciones entre todos los videos.
-- Detalle con Título, nombre de la categoría y duración de todos los videos con más de
-1.000 visualizaciones
-B. Invoque a un módulo que reciba la estructura generada en A) e imprima Nombre del
-canal y el título de cada video con más de 1000 visualizaciones.}
+- Detalle con Título, nombre de la categoría y duración de todos los videos con más de 1.000 visualizaciones
+B. Invoque a un módulo que reciba la estructura generada en A) e imprima Nombre del canal y el título de cada video con más de 1000 visualizaciones.}
 
 program YouTube;
 type
@@ -68,6 +60,18 @@ begin
     
 end;
 //______________________________________
+procedure AgregarAdelante(var LP:listaN;titulo:cadena20;categoria:cadena20;duracion: integer);
+var
+    nue:listaN;
+begin
+    new(nue);
+    nue^.datos2.Titulo:=titulo;
+    nue^.datos2.nombreCat:=categoria;
+    nue^.datos2.duracion:=duracion;
+    nue^.sig2:=LP;
+    LP:=nue;
+end;
+//______________________________________
 procedure LeerPaula(V:video;var P:Paula);
 var
     VC:categorias;
@@ -78,9 +82,17 @@ begin
     P.cantViews:=P.cantViews+V.cantViews;
     if V.duracion > 1000 then
     begin
-        (P.ListaViews)^.datos2.Titulo:=V.Titulo;
-        (P.ListaViews)^.datos2.nombreCat:=VC[V.codCat];
-        (P.ListaViews)^.datos2.duracion:=V.duracion;
+        AgregarAdelante((P.ListaViews),V.titulo,VC[V.codCat],V.duracion);
+    end;
+end;
+//______________________________________
+procedure ImprimirPaula(P:Paula);//B
+begin
+    WriteLn('Nombre del canal: ',P.nombre);
+    while (P.ListaViews) <> Nil do
+    begin
+        WriteLn('Titulo: ',(P.ListaViews)^.datos2.Titulo);
+        (P.ListaViews):=(P.ListaViews)^.sig2;
     end;
 end;
 //______________________________________
@@ -99,6 +111,7 @@ begin
         end;
         LeerVideo(V); 
     end;
+    ImprimirPaula(P);//B
 end;
 //______________________________________
 var
