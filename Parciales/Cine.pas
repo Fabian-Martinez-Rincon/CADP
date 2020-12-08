@@ -148,12 +148,10 @@ begin
     cont90:=0;
     while L<>nil do
     begin
-        //____________________________________________
         if (VP[L^.datos.codPeli].duracion <= 90) then //B.1
         begin
             cont90:=cont90+1;
         end;
-        //___________________________________________
         VC[VP[L^.datos.codPeli].categoria]:=VC[VP[L^.datos.codPeli].categoria]+1; //B.2
         //___________________________________________B.3
         dniPar:=esPar(L^.datos.dni);
