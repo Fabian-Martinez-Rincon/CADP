@@ -67,7 +67,6 @@ begin
             contador:=contador+1;
             L:=L^.sig;
         end;
-        
         WriteLn('El numero:: ',actual,'Nro: ',contador );
     end;
 end;
