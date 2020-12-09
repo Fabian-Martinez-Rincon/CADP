@@ -1,0 +1,4 @@
+program amazon;
+begin
+  
+end.
