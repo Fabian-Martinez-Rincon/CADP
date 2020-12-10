@@ -113,7 +113,6 @@ end;
 var
     datos:canal;
     cat:categorias;
-    L:lista;
 begin
     inicializarCategorias (cat);//Se dispone
     armarCanal('Paulina Cosina',datos,cat);
