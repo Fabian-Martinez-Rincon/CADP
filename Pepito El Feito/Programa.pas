@@ -1,7 +1,7 @@
 program cosa;
 const
     dimFPostre = 3;
-    dimFPedidos = 20;
+    dimFPedidos = 2;
 type
     cadena = string [40];
     rangoPostre = 1..dimFPostre;
@@ -20,13 +20,13 @@ type
     end;
 
     postre = record
-        nomPastelero:cadena;
+        nomPostre:cadena;
         ingredientes:listaPostre;
     end;
     Vpostre = array [rangoPostre] of postre;
 
     pedido = record
-        codigo:integer;
+        codigo:rangoPostre;
         cliente:cadena;
         direccion:integer;
     end;
@@ -46,7 +46,7 @@ end;
 procedure DatosIngrediente(var i:datosIng);
 begin
     
-    writeln('Nombre Producto: ');   readln(i.nombre);
+    writeln('Nombre Ingrediente: ');   readln(i.nombre);
     writeln('Cantidad');            readln(i.cantidad);
 end;
 //_____________________________________________________
@@ -70,7 +70,7 @@ begin
     writeln('Cambia al ingresar Cantidad = -1');
     for i:=1 to dimFPostre do
     begin
-        writeln(i,': Pastelero: '); readln(VecPostres[i].nomPastelero);
+        writeln(i,': Postre: '); readln(VecPostres[i].nomPostre);
         LeerIngredientes(VecPostres[i].ingredientes);
         
     end;
@@ -81,21 +81,34 @@ begin
    
     while I <> nil do
     begin
-        writeln('Nombre: ',I^.datos.nombre);
+        writeln('Ingrediente: ',I^.datos.nombre);
         writeln('Cantidad: ',I^.datos.cantidad);
         I:=I^.sig;
     end;
 end;
 //_____________________________________________________
-procedure ImprimirMenu(VecPostres:Vpostre);
+procedure LeerPedidos(var Ped:Vpedidos);
 var
-    i:rangoPostre;
+    i:rangoPedidos;
 begin
-    for i:=1 to dimFPostre do
+    for i:=1 to dimFPedidos do
+    begin
+        writeln('Pedido : ',i);
+        writeln('Codigo: ');readln(Ped[i].codigo);
+        writeln('Cliente: ');readln(Ped[i].cliente);
+        writeln('Direccion: ');readln(Ped[i].direccion);
+    end;
+end;
+//_____________________________________________________
+procedure ImprimirMenu(VecPostres:Vpostre;VecPedidos:Vpedidos);
+var
+    i:rangoPedidos;
+begin
+    for i:=1 to dimFPedidos do
     begin
         writeln('__________________');
-        writeln(i,': Pastelero: ',VecPostres[i].nomPastelero); 
-        ImprimirIngredientes(VecPostres[i].ingredientes);
+        writeln(i,': Postre: ',VecPostres[VecPedidos[i].codigo].nomPostre); 
+        ImprimirIngredientes(VecPostres[VecPedidos[i].codigo].ingredientes);
     end;
 end;
 //_____________________________________________________
@@ -112,27 +125,31 @@ begin
     end;
 end;
 //_____________________________________________________
-procedure MasUsadoPorPostre(VecPostres:Vpostre);
+procedure MasUsadoPorPostre(VecPostres:Vpostre;VecPedidos:Vpedidos);
 var
-    i:rangoPostre;
+    i:rangoPedidos;
     MasUsado:cadena;
     cantMax:integer;
 begin
-    for i:=1 to dimFPostre do
+    for i:=1 to dimFPedidos do
     begin
         cantMax:=-1;
         writeln('__________________');
-        Maximo(VecPostres[i].ingredientes,MasUsado,cantMax); 
-        writeln('El ingrediente que mas usa en el postre ',i,' Es : ',MasUsado);
+        Maximo(VecPostres[VecPedidos[i].codigo].ingredientes,MasUsado,cantMax); 
+        writeln('El ingrediente que mas usa en el postre ',VecPostres[VecPedidos[i].codigo].nomPostre,' Es : ',MasUsado);
         writeln('Y su cantidad es: ',cantMax);
     end;
 end;
 //_____________________________________________________
 var
     VecPostres:Vpostre;
+    VecPedidos:Vpedidos;
 begin
-    CargarPostres(VecPostres);
-    ImprimirMenu(VecPostres);
-    //Hasta aca funciona todo bien (No rompas nada Fabian)
-    MasUsadoPorPostre(VecPostres);
+    CargarPostres(VecPostres);//Se dispone pero lo hice para probarlo :/
+    LeerPedidos(VecPedidos);
+    ImprimirMenu(VecPostres,VecPedidos);
+    MasUsadoPorPostre(VecPostres,VecPedidos);
+    //Funca
+
+     
 end.
