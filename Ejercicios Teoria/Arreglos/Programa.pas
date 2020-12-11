@@ -77,6 +77,27 @@ begin
     end;
 end;
 //____________________________________________________________
+procedure MostrarClientesB(cli:clientes;dimL:rango_clientes;p:integer);
+var 
+    i:rango_clientes;
+begin
+    for i:=1 to dimL do
+    begin
+        if(cli[i].edad > p)then
+        begin
+            writeln('Nombre y Apellido del cliente: ',cli[i].nom,' ',cli[i].ape);
+        end;
+    end;
+end;
+//____________________________________________________________
+procedure AsignarDatosClic(codigo:integer;var c:cliente);
+begin
+    c.codigo:=codigo+1;
+    c.dni:=1111;
+    c.ape:='Garcia';
+    c.nom:='Juan';
+end;
+//____________________________________________________________
 var
     vec_pre:precios;
     cli:clientes;
@@ -90,7 +111,7 @@ begin
     cargarPrecios(vec_pre);
     cargar_clientesA(cli ,diml,suma);//A
     
-    if (diml > 0) then //B 
+    if (diml > 0) then //B Necesito preguntar porque sino tengo no puedo sacar el promedio
     begin
         pro:=suma div diml;
         MostrarClientesB(cli,diml,pro);
