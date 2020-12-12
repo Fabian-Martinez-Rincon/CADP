@@ -30,8 +30,13 @@ type
         cliente:cadena;
         direccion:integer;
     end;
-
+    orden = record
+        nombreOrd:cadena;
+        direccion:integer;
+    end;
     Vpedidos = array [rangoPedidos] of pedido;
+    Vpedidos_Ordenado = array [rangoPedidos] of orden;
+    vecesPedido = array [rangoPostre] of integer;
 //_____________________________________________________
 procedure agregarAdelante(var LisIngre:listaPostre;i:datosIng);
 var
@@ -141,15 +146,42 @@ begin
     end;
 end;
 //_____________________________________________________
+procedure OrdenarPedidos(var VecOrdenado:Vpedidos_Ordenado;VecPedidos:Vpedidos;VecPostres:Vpostre);
+var
+    i:rangoPedidos;
+begin
+    for i:=1 to dimFPedidos do
+    begin
+        VecOrdenado[i].nombreOrd:=VecPostres[VecPedidos[i].codigo].nomPostre;
+        VecOrdenado[i].direccion:=VecPedidos[i].direccion;
+        //Trate de hacerlo en un programa separado pero no me funciono
+    end;
+end;
+//_____________________________________________________
+procedure ImprimirOrden(VecOrdenado:Vpedidos_Ordenado);
+var
+    i:rangoPedidos;
+begin
+    for i:=1 to dimFPedidos do
+    begin
+        writeln('Nombre: ',VecOrdenado[i].nombreOrd);
+        writeln('Direccion: ',VecOrdenado[i].direccion);
+    end;
+end;
+//_____________________________________________________
 var
     VecPostres:Vpostre;
     VecPedidos:Vpedidos;
+    VecOrdenado:Vpedidos_Ordenado;
 begin
     CargarPostres(VecPostres);//Se dispone pero lo hice para probarlo :/
     LeerPedidos(VecPedidos);
     ImprimirMenu(VecPostres,VecPedidos);
     MasUsadoPorPostre(VecPostres,VecPedidos);
     //Funca
+    OrdenarPedidos(VecOrdenado,VecPedidos,VecPostres);
+    ImprimirOrden(VecOrdenado);//No pude hacer que se imprimar ordenado
+    //Parte2
 
      
 end.
