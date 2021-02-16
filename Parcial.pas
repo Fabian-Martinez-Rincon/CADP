@@ -113,7 +113,7 @@ begin
             promedio:=SumaNotas/totalNotas;
             dosMejores(L^.datos.apellido,promedio,alumno1,alumno2,promedio1,promedio2);
         end;
-        L:=L^.sig
+        L:=L^.sig;
     end;
 end;
 //__________________________________________________

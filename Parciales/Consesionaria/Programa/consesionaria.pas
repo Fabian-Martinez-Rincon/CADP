@@ -190,5 +190,5 @@ var
 begin
     L:=niL;
     cargarLista(L);
-    //imprimirLista(L);
+    imprimirLista(L);
 end.
