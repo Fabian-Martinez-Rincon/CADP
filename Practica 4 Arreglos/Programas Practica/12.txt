@@ -1,0 +1,18 @@
+constante
+  dias:1.31;
+dimensionFisica:200
+viajes_marzo
+  dia:dias
+  monto_dinero:real;
+  distancia_recorridaKM:real;
+  
+vector: array[1..dimF] de viajes_marzo
+
+leer_viajes()
+  mientras (contador < dimF y viajes_marzo.distancia_recorridaKM<>0)
+  leer_datos()
+  
+
+
+leer_datos (algo:vector)
+ya

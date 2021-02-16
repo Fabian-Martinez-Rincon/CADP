@@ -1,0 +1,2 @@
+Cuando no sabemos la cantidad de datos que vienen, usamos lista
+nodo: registro fusionado con puntero

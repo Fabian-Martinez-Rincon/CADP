@@ -1,0 +1,22 @@
+ListaPeliculas Tipo: Peliculas
+Peliculas: codigo,codGenero,puntPromedio
+ListaCriticas Tipo: Criticas
+Critica: DNI,apellido,nombre,codigo,puntuaje
+vectorCodigo= array 1..8 tipo: Real;
+
+ProcesarCriticas {
+	LeerCriticas(C);
+	mientras C.codigo <> -1{
+		InsertarOrdenado(L,C)
+		LeerCritica(C);
+	}
+		
+
+}
+RecorrerLista(L){
+	mientras L<> nil{
+		VC[L^.datos.codGenero]:=VC[L^.datos.codGenero]+L^.datos.puntuaje
+	}
+
+
+}

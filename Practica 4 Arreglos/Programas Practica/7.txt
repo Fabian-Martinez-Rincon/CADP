@@ -1,0 +1,6 @@
+mientras contador < 500 o arreglo <> 'ZZZ'
+ leer_alumno
+
+SustituirPrimerNombre
+SustituirCuartoNombre
+AgregarNombre
