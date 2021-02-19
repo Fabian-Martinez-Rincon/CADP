@@ -5,11 +5,13 @@ var
 procedure calcular(var b, a:integer);
 begin
     b:=10;
+    WriteLn('c: ',c);
     while (b>0) do
     begin
-        a := a+b;
+        a := a+b;//80 + 10, 90 + 8, 98 + 6, 104 + 4, 108 +2 = 110
         b:=b-2;
         c:=c-b;
+        WriteLn('c: ',c);
     end;
     WriteLn('a=', a, ' b=', b, ' c=', c);
 end;
