@@ -71,9 +71,6 @@ begin
     end;
     calcularMinimo(preTotal,menorPrecio);
 end;
-
-
-
 //____________________________________________________
 var
     p:precios;
