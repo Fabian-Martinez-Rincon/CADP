@@ -1,0 +1,2 @@
+Primero, al proceso, recibe por parametros, el puntero al ultimo elemento de la lista, la lista en la que queremos que se inserte el elemento y el elemento.
+Luego creamos una lista nueva que es la que va a contener el elemento que queremos ingresar. Verificamos que la lista no este en el ultimo elemento, en el caso de que no este en el ultimo, a la posicion siguiente de este mismo, agregamos el elemento deseado y en caso contrario lo agregamos al primer elemento. Por ultimo, solo nos queda actualizar el ultimo elemento de la lista.
