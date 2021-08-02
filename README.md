@@ -53,7 +53,7 @@ end.
 La tabla del inicio puede variar dependiendo la pc o los profesores que te toquen ya que en este caso es teorico.
 
 
-### - Memoria Fisica.
+### 💾🧍‍♂️ Memoria Estatica.
 Es la suma de las variables declaradas en el `Var` del programa principal.
 En este ejemplo seria: 
 ```Pascal
@@ -94,7 +94,7 @@ end:
 
 ```Dimension Fisica``` = ```2064 bytes``` 
 
-### - Memoria Dinamica.
+### 💾🏃 Memoria Dinamica.
 La memoria dinamica se empieza a calcular a partir del primer ```new();```, en caso de no encontrarse en el programa no tendriamos que hacer ninguna operación. Y asi como se suma memoria dinamica con el ```new();``` se restaria (Libera) con el ```Dispose();```
 
 ```Pascal
@@ -124,4 +124,4 @@ Concluimos que el ```new(aux); es 54 bytes``` y al estar dentro de un for que va
 
 ```Memoria Dinamica``` = ```540 bytes``` 
 
-### - Tiempo de Ejecución.
+### ⌚ Tiempo de Ejecución.
