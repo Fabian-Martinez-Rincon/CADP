@@ -4,3 +4,10 @@
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/FabianMartinez1234567/CADP)](https://github.com/FabianMartinez1234567/CADP)
 # Pascal
 Aca esta la carpeta de cadp, con todos los ejercicios de todas las practicas :p
+
+```Pascal
+for i:=1 to 100 do 
+begin
+  readln();
+en;
+```
