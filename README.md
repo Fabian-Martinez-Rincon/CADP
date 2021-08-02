@@ -144,16 +144,28 @@ Concluimos que el ```new(aux); es 54 bytes``` y al estar dentro de un for que va
 Ya sabiendo lo anterior, solo nos quedaria hacer las operaciones
 ```Pascal
 begin
-  l:=nil;
-  for i:=1 to 10 to 
+  l:=nil;  1ut
+  for i:=1 to 10 to   (3*10+2) 
   begin
-    read(emp.dirCorreo, emp.edad, emp.sueldo);
-    if (emp.edad < 40) and (emp.sueldo < 40000) then
-      exp.sueldo:= exp.sueldo + 7000;
-    new(aux); 
-    aux^.dato := emp;
-    aux^.sig: := l;
-    l := aux;    
+    read(emp.dirCorreo, emp.edad, emp.sueldo);   0
+    if (emp.edad < 40) and (emp.sueldo < 40000) then   (1ut + 1ut + 1ut) 
+      exp.sueldo:= exp.sueldo + 7000;   2ut
+    new(aux); 1ut
+    aux^.dato := emp; 1ut
+    aux^.sig: := l; 1ut
+    l := aux;    1ut
   end;
 end.
 ```
+Nos quedaria: 
+```Tiempo de ej``` = ```1ut + ((3*10+2) + ((1ut + 1ut + 1ut) + 2ut + 1ut + 1ut + 1ut + 1ut) * 10)``` 
+
+```Tiempo de ej``` = ```1ut + ((3*10+2) + ((3ut) + 6ut)*10)``` 
+
+```Tiempo de ej``` = ```1ut + ((32ut) + (9ut)*10)``` 
+
+```Tiempo de ej``` = ```1ut + ((32ut) + 90ut)``` 
+
+```Tiempo de ej``` = ```1ut + (122ut)``` 
+
+```Tiempo de ej``` = ```123ut``` 
