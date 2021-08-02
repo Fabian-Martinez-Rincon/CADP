@@ -56,11 +56,11 @@ La tabla del inicio puede variar dependiendo la pc o los profesores que te toque
  ```Dimension Fisica``` = Es la suma de las variables declaradas en el `Var` del programa principal.
 En este ejemplo seria: 
 ```Pascal
-  var
-    v:vector;
-    l,aux:lista;
-    emp:empleado;
-    i:integer;
+var
+  v:vector;
+  l,aux:lista;
+  emp:empleado;
+  i:integer;
 ```
 ``` 
 v:vector; 500 * 4b (Al ser un puntero, siempre vale lo que nos marca en la tabla, aunque apunte a otras variables)
@@ -79,4 +79,5 @@ end:
  Nos quedaria: 
  ```emp:empleado;  (35 + 1b) + 6b + 8b = 50 bytes ```
   
-  ```Dimension Fisica``` = ```2000b + 8b + 50b``` = ```2058 bytes```
+ ```Dimension Fisica``` = ```v + l,aux + emp```
+ ```Dimension Fisica``` = ```2000b + 8b + 50b``` = ```2058 bytes```
