@@ -57,10 +57,10 @@ La tabla del inicio puede variar dependiendo la pc o los profesores que te toque
 En este ejemplo seria: 
 ```Pascal
   var
-  v:vector;
-  l,aux:lista;
-  emp:empleado;
-  i:integer;
+    v:vector;
+    l,aux:lista;
+    emp:empleado;
+    i:integer;
 ```
 
 ### 
