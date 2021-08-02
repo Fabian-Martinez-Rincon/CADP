@@ -95,7 +95,7 @@ end:
 ```Dimension Fisica``` = ```2064 bytes``` 
 
 ### - Memoria Dinamica
-La memoria dinamica se empieza a calcular a partir del primer ```new();```, en caso de no encontrarse en el programa no seria necesario hacer ninguna operación. Y asi como se suma memoria dinamica con el ```new();``` se restaria (Libera) con el ```Dispose();```
+La memoria dinamica se empieza a calcular a partir del primer ```new();```, en caso de no encontrarse en el programa no tendriamos que hacer ninguna operación. Y asi como se suma memoria dinamica con el ```new();``` se restaria (Libera) con el ```Dispose();```
 
 ```Pascal
 for i:=1 to 10 to 
