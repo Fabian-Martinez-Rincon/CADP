@@ -62,7 +62,8 @@ En este ejemplo seria:
     emp:empleado;
     i:integer;
 ```
-``` v:vector; 500 * 4b (Al ser un puntero, siempre vale lo que nos marca en la tabla, aunque apunte a otras variables)
+``` 
+    v:vector; 500 * 4b (Al ser un puntero, siempre vale lo que nos marca en la tabla, aunque apunte a otras variables)
     200bytes
     l,aux:lista; 4b + 4b = 8bytes
     emp:empleado; 
@@ -75,7 +76,7 @@ Recordemos que:
     sueldo:real;    8b
   end:
   ```
- Nos quedaria
+ Nos quedaria: 
    ```emp:empleado;  (35 + 1b) + 6b + 8b = 50bytes ```
   
 ### 
