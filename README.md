@@ -80,8 +80,9 @@ end:
  ```
  Nos quedaria: 
  
- ```emp:empleado;  (35 + 1b) + 6b + 8b = 50 bytes 
-    i:integer; 6b
+ ```
+ emp:empleado;  (35 + 1b) + 6b + 8b = 50 bytes 
+ i:integer; 6b
  ```
   
  ```Dimension Fisica``` = ```v + l,aux + emp + i```
