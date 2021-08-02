@@ -30,11 +30,18 @@ var
   i:integer;
 begin
   l:=nil;
-  for i:=1 to 10 to begin
+  
+  for i:=1 to 10 to 
+  begin
     read(emp.dirCorreo, emp.edad, emp.sueldo);
     if (emp.edad < 40) and () and () then
-      
+      exp.sueldo:= exp.sueldo + 7000;
+    new(aux); 
+    aux^.dato := emp;
+    aux^.sig: := l;
+    l := aux;    
   end;
+  
 end.
   
 ```
