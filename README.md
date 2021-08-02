@@ -91,10 +91,11 @@ end:
  
  ```Dimension Fisica``` = ```2000b + 8b + 50b + 6b```
 
-```Dimension Fisica``` = ```2064b``` 
+```Dimension Fisica``` = ```2064 bytes``` 
 
 ### - Memoria Dinamica
-La memoria dinamica se empieza a calcular a partir del primer ```new();```
+La memoria dinamica se empieza a calcular a partir del primer ```new();```, en caso de no encontrarse en el programa no es necesario.  
+Y asi como se suma memoria dinamica con el ```new();``` se restaria (Libera) con el ```Dispose();```
 
 ```Pascal
 for i:=1 to 10 to 
@@ -102,7 +103,7 @@ for i:=1 to 10 to
     read(emp.dirCorreo, emp.edad, emp.sueldo);
     if (emp.edad < 40) and () and () then
       exp.sueldo:= exp.sueldo + 7000;
-    new(aux); 
+    new(aux); <-------------------------- 
     aux^.dato := emp;
     aux^.sig: := l;
     l := aux;    
