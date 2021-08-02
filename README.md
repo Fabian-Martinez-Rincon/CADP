@@ -53,7 +53,7 @@ end.
 La tabla del inicio puede variar dependiendo la pc o los profesores que te toquen ya que en este caso es teorico.
 
 
-### - Dimension Fisica.
+### - Memoria Fisica.
 Es la suma de las variables declaradas en el `Var` del programa principal.
 En este ejemplo seria: 
 ```Pascal
@@ -85,3 +85,5 @@ end:
  ```Dimension Fisica``` = ```v + l,aux + emp```
  
  ```Dimension Fisica``` = ```2000b + 8b + 50b``` = ```2058 bytes```
+
+### - Memoria Dinamica
