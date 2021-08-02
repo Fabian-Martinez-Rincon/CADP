@@ -30,7 +30,6 @@ var
   i:integer;
 begin
   l:=nil;
-  
   for i:=1 to 10 to 
   begin
     read(emp.dirCorreo, emp.edad, emp.sueldo);
@@ -41,7 +40,6 @@ begin
     aux^.sig: := l;
     l := aux;    
   end;
-  
 end.
   
 ```
