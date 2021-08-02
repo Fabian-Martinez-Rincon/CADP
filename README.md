@@ -52,9 +52,9 @@ end.
 ## Resolución
 La tabla del inicio puede variar dependiendo la pc o los profesores que te toquen ya que en este caso es teorico.
 
- ```
-Dimension Fisica = Se calcula cuando las variables son declaradas en el "Var" del programa principal.
-```
+
+ ```Dimension Fisica``` = Se calcula cuando las variables son declaradas en el `Var` del programa principal.
+
 
     
 
