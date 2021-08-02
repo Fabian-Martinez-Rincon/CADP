@@ -133,6 +133,6 @@ Concluimos que el ```new(aux); es 54 bytes``` y al estar dentro de un for que va
 | readln();   | 0ut  |
 | writeln();  | 0ut  |
 | new();  | 1ut  |
-| if () then  | 1ut por operacion elemental  |
+| if () then  | 1ut por operacion elemental (<,>,<>,=,or,and,not) |
 | else  | 0ut  |
 | l:=nil;  | 1ut  |
