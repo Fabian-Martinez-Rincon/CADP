@@ -69,6 +69,7 @@ v:vector; 500 * 4b (Al ser un puntero, siempre vale lo que nos marca en la tabla
 2000 bytes
 l,aux:lista; 4b + 4b = 8 bytes
 emp:empleado; 
+i:integer;
 ```
 Recordemos que:
 ```Pascal
