@@ -114,7 +114,12 @@ Acordemonos que:
 ```Pascal
 lista = ^nodo;
   nodo = record
-    dato: empleado;
-    sig: lista;
-  end;
+    dato: empleado; 50 bytes (Ya lo calculamos arriba)
+    sig: lista; 4 bytes (Puntero)
+  end;  50b + 4b = 54 bytes
 ```
+Concluimos que el ```new(aux); es 54 bytes``` y al estar dentro de un for que va hasta 10, lo que tenemos que hacer es: 
+
+```Memoria Dinamica``` = ```54b * 10``` 
+
+```Memoria Dinamica``` = ```540 bytes``` 
