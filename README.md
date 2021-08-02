@@ -64,8 +64,8 @@ En este ejemplo seria:
 ```
 ``` 
 v:vector; 500 * 4b (Al ser un puntero, siempre vale lo que nos marca en la tabla, aunque apunte a otras variables)
-200bytes
-l,aux:lista; 4b + 4b = 8bytes
+2000 bytes
+l,aux:lista; 4b + 4b = 8 bytes
 emp:empleado; 
 ```
 Recordemos que:
@@ -77,6 +77,6 @@ empleado = record
 end:
  ```
  Nos quedaria: 
- ```emp:empleado;  (35 + 1b) + 6b + 8b = 50bytes ```
+ ```emp:empleado;  (35 + 1b) + 6b + 8b = 50 bytes ```
   
-### 
+  ```Dimension Fisica``` = ```2000b + 8b + 50b``` = ```2058 bytes```
