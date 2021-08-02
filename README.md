@@ -79,6 +79,7 @@ empleado = record
 end:
  ```
  Nos quedaria: 
+ 
  ```emp:empleado;  (35 + 1b) + 6b + 8b = 50 bytes ```
   
  ```Dimension Fisica``` = ```v + l,aux + emp```
