@@ -136,8 +136,8 @@ Concluimos que el ```new(aux); es 54 bytes``` y al estar dentro de un for que va
 | l:=nil;  | 1ut  |
 | x := y (+,-,*,/,mod,div) x;  | 2ut  |
 | if () then  | (1ut por op.elem) + contenido (<,>,<>,=,or,and,not) |
-| for i:=1 to n  | ((3*n+2)ut) + (n*contenido)  |
-| while() do  | (n + 1ut por op.elem) + (n*contenido)  |repeat until
+| for i:=1 to n  | ((3*n+2)ut) + (n * contenido)  |
+| while() do  | (n + 1ut por op.elem) + (n * contenido)  |repeat until
 | repeat until() | Ni idea  |
 | case ():  | Ni idea :D (HELP!)  |
 
