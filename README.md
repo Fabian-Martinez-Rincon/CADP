@@ -81,6 +81,8 @@ end:
  Nos quedaria: 
  
  ```
+ v:vector; 2000b
+ l,aux:lista; 8 bytes
  emp:empleado;  (35 + 1b) + 6b + 8b = 50 bytes 
  i:integer; 6b
  ```
