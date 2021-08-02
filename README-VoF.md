@@ -9,11 +9,11 @@
 
 ## 📚VERDADERO FALSO.
 
-#### 1) Suponga que un programa declara un tipo cadena que es un string[1] y una variable ST:cadena. La variable ST puede ser utilizada como variable de decision en un case.
+#### 1) Suponga que un programa declara un tipo cadena que es un ```string[1]``` y una variable ```ST:cadena```. La variable ST puede ser utilizada como variable de decision en un case.
 - ***VERDADERO*** - funciona como un char
 
 
-#### 2) Siendo 'meses' un tipo de subrango de enteros de 1 a 12, un modulo funcion puede retornar un valor de tipo 'meses'. 
+#### 2) Siendo ```meses``` un tipo de subrango de enteros de 1 a 12, un modulo funcion puede retornar un valor de tipo ```meses```. 
 - ***VERDADERO*** - un subrango de enteros es un tipo de dato simple
 
 
