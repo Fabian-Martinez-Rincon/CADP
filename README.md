@@ -80,4 +80,5 @@ end:
  ```emp:empleado;  (35 + 1b) + 6b + 8b = 50 bytes ```
   
  ```Dimension Fisica``` = ```v + l,aux + emp```
+ 
  ```Dimension Fisica``` = ```2000b + 8b + 50b``` = ```2058 bytes```
