@@ -53,8 +53,8 @@ end.
 La tabla del inicio puede variar dependiendo la pc o los profesores que te toquen ya que en este caso es teorico.
 
 
- ### Dimension Fisica.
- Es la suma de las variables declaradas en el `Var` del programa principal.
+### - Dimension Fisica.
+Es la suma de las variables declaradas en el `Var` del programa principal.
 En este ejemplo seria: 
 ```Pascal
 var
