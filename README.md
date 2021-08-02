@@ -115,7 +115,7 @@ for i:=1 to 10 to
     l := aux;    
   end;
 ```
-Acordemonos que:
+Recordemonos que:
 
 ```Pascal
 lista = ^nodo;
