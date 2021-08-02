@@ -204,5 +204,14 @@ type
  vector = array [rango] of ^real;
 var
  v:vector;
-  
+ dimL,i:integer;
+begin
+ dimL:=50;
+ for i:=1 to dimL do
+ begin
+  new(v[i]);
+  read(v[i]^);
+ end;
+ for i:=1
+end;
 ```
