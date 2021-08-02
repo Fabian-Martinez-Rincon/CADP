@@ -158,6 +158,7 @@ begin
 end.
 ```
 Nos quedaria: 
+
 ```Tiempo de ej``` = ```1ut + ((3*10+2) + ((1ut + 1ut + 1ut) + 2ut + 1ut + 1ut + 1ut + 1ut) * 10)``` 
 
 ```Tiempo de ej``` = ```1ut + ((3*10+2) + ((3ut) + 6ut)*10)``` 
