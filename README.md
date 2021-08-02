@@ -8,6 +8,8 @@
 <br>
 
 ## Aca esta la carpeta de cadp, con todos los ejercicios de todas las practicas 
+
+- [Preguntas de verdadero o falso](README-VoF.md)
 ### Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica y el tiempo de ejecución.
 | Tipo de dato | Memoria |
 | ------------- | ------------- |
