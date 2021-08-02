@@ -153,7 +153,7 @@ begin
   l:=nil;  1ut
   for i:=1 to 10 to   (3*10+2) 
   begin
-    read(emp.dirCorreo, emp.edad, emp.sueldo);   0
+    read(emp.dirCorreo, emp.edad, emp.sueldo);   0ut
     if (emp.edad < 40) and (emp.sueldo < 40000) then   (1ut + 1ut + 1ut) 
       exp.sueldo:= exp.sueldo + 7000;   2ut
     new(aux); 1ut
@@ -165,9 +165,9 @@ end.
 ```
 Nos quedaria: 
 
-```Tiempo de ej``` = ```1ut + ((3*10+2) + ((1ut + 1ut + 1ut) + 2ut + 1ut + 1ut + 1ut + 1ut) * 10)``` 
+```Tiempo de ej``` = ```1ut + ((3*10+2) + (((1ut + 1ut + 1ut) + 2ut) + 1ut + 1ut + 1ut + 1ut) * 10)``` 
 
-```Tiempo de ej``` = ```1ut + ((3*10+2) + ((3ut) + 6ut)*10)``` 
+```Tiempo de ej``` = ```1ut + ((3*10+2) + (((3ut) + 2ut) + 4ut)*10)``` 
 
 ```Tiempo de ej``` = ```1ut + ((32ut) + (9ut)*10)``` 
 
