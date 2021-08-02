@@ -1,185 +1,41 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/FabianMartinez1234567/CADP)
 [![GitHub stars](https://img.shields.io/github/stars/FabianMartinez1234567/CADP)](https://github.com/FabianMartinez1234567/CADP/stargazers/)
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/FabianMartinez1234567/CADP)](https://github.com/FabianMartinez1234567/CADP)
-<h1 align="center"> 💻CADP </h1>
+<h1 align="center"> 💻Preguntas de V o F </h1>
 <div align="center">
 <img src="https://media.giphy.com/media/1C8bHHJturSx2/giphy.gif"/>
  </div>
 <br>
+VERDADERO FALSO
+1. Suponga que un programa declara un tipo cadena que es un string[1] y una variable ST:cadena. La variable ST puede ser utilizada como variable de decision en un case. (VERDADERO - funciona como un char)
 
-## Aca esta la carpeta de cadp, con todos los ejercicios de todas las practicas 
+2. Siendo 'meses' un tipo de subrango de enteros de 1 a 12, un modulo funcion puede retornar un valor de tipo 'meses'. (VERDADERO - un subrango de enteros es un tipo de dato simple)
 
-- [Preguntas de verdadero o falso](README-VoF.md)
-### Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica y el tiempo de ejecución.
-| Tipo de dato | Memoria |
-| ------------- | ------------- |
-| Char  | 1 byte  |
-| Integer  | 6 byte  |
-| Real  | 8 byte  |
-| Boolean  | 1 byte  |
-| String  | Longitud + 1 byte  |
-| Puntero  | 4 byte  |
+3. Una estructura de control FOR siempre se ejecuta al menos una vez. (VERDADERO - la asignacion inicial del indice siempre ocupa una unidad de tiempo, por lo tanto, siempre se ejecuta una vez / porque se trata de una estructura repetitiva)
 
+4. Un arreglo de a lo sumo 4 elementos de tipo caracter ocupa la misma cantidad de memoria estatica que una lista de caracteres sin elementos, es decir una lista vacía. (VERDADERO - puntero = 4 bytes / vector de 4 char = 4 bytes)
 
+5. Un modulo cuyo objetivo es modificar el contenido de todos los elementos de una lista de enteros siempre debe recibir el puntero inicial de la lista como parametro por referencia. (FALSO - Todos los nodos que contienen la informacion a modificar estan cargados en memoria dinamica; Sea pasado por referencia o por valor, se pueden cambiar todos los nodos usando una variable auxiliar local al programa. Es decir, al cambiar la informacion en la memoria dinamica, se cambia todo sobre las direcciones de memoria de la misma forma que lo hacen los parametros pasados por referencia) A RE CHEQUEAR LA JUSTIFICACION
 
+6. Un proceso que no utiliza paramentros no puede comunicarse con el programa principal. (FALSO - A pesar de que estar desaconsejado por la catedra, se pueden usar variables globales)
 
-```Pascal
-program Ejemplo;
-type
-  cadena35 = string[35];
-  empleado = record
-    dirCorreo: cadena35;
-    edad: integer;
-    sueldo:real;
-  end:
-  
-  punt = empleado^;
-  vector = array [1..500] of punt;
-  
-  lista = ^nodo;
-  nodo = record
-    dato: empleado;
-    sig: lista;
-  end;
-  
-var
-  v:vector;
-  l,aux:lista;
-  emp:empleado;
-  i:integer;
-begin
-  l:=nil;
-  for i:=1 to 10 to 
-  begin
-    read(emp.dirCorreo, emp.edad, emp.sueldo);
-    if (emp.edad < 40) and (emp.sueldo < 40000) then
-      exp.sueldo:= exp.sueldo + 7000;
-    new(aux); 
-    aux^.dato := emp;
-    aux^.sig: := l;
-    l := aux;    
-  end;
-end.
-  
-```
-## Resolución
-La tabla del inicio puede variar dependiendo la pc o los profesores que te toquen ya que en este caso es teorico.
+7. No estaba en el discord :c
 
+8.Todas las operaciones permitidas para variables de tipo entero tambien son permitidas para variables de tipo real (FALSO - MOD y DIV son operaciones reservadas solo para variables de tipo entero)
 
-### 💾🧍‍♂️ Memoria Estatica.
-Es la suma de las variables declaradas en el `Var` del programa principal.
-En este ejemplo seria: 
-```Pascal
-var
-  v:vector;
-  l,aux:lista;
-  emp:empleado;
-  i:integer;
-```
-Hacemos los calculos:
-``` 
-v:vector; 500 * 4b (Al ser un puntero, siempre vale lo que nos marca en la tabla, aunque apunte a otras variables)
-2000 bytes
-l,aux:lista; 4b + 4b = 8 bytes
-emp:empleado; 
-i:integer;
-```
-Recordemos que:
-```Pascal
-empleado = record
-  dirCorreo: cadena35;    (35 + 1b)
-  edad: integer;   6b
-  sueldo:real;    8b
-end:
- ```
- Nos quedaria: 
- 
- ```
- v:vector; 2000b
- l,aux:lista; 8 bytes
- emp:empleado;  (35 + 1b) + 6b + 8b = 50 bytes 
- i:integer; 6b
- ```
-  
- ```Dimension Fisica``` = ```v + l,aux + emp + i```
- 
- ```Dimension Fisica``` = ```2000b + 8b + 50b + 6b```
+9.Siempre es posible reemplazar un FOR por un WHILE y viceversa. (FALSO  - FOR -> WHILE se puede, pero WHILE -> FOR no, dado que no se sabe cuantas veces se va a ejecutar el bloque de instrucciones de un WHILE)
 
-```Dimension Fisica``` = ```2064 bytes``` 
+10.En la tecnica de correccion de DEBUGGING es necesario analizar los casos limites del problema. (CREO FALSO - A CHEQUEAR A TUJAVIE)
 
-### 💾🏃 Memoria Dinamica.
-La memoria dinamica se empieza a calcular a partir del primer ```new();```, en caso de no encontrarse en el programa no tendriamos que hacer ninguna operación. Y asi como se suma memoria dinamica con el ```new();``` se restaria (Libera) con el ```Dispose();```
+11.En un procedimiento una estructura de datos vector pasada como parametro siempre ocupa mas memoria que una estructura de tipo lista pasada como parametro (FALSO - si se pasa por referencia es lo mismo)
 
-```Pascal
-for i:=1 to 10 to 
-  begin
-    read(emp.dirCorreo, emp.edad, emp.sueldo);
-    if (emp.edad < 40) and () and () then
-      exp.sueldo:= exp.sueldo + 7000;
-    new(aux); <-------------------------- Aux fue decladaro como lista y lista es un puntero a nodo
-    aux^.dato := emp;
-    aux^.sig: := l;
-    l := aux;    
-  end;
-```
-Recordemonos que:
+12.Un modulo funcion puede retornar un tipo de dato puntero. (SERGIO DICE FALSO)
 
-```Pascal
-lista = ^nodo;
-  nodo = record
-    dato: empleado; 50 bytes (Ya lo calculamos arriba)
-    sig: lista; 4 bytes (Puntero)
-  end;  50b + 4b = 54 bytes
-```
-Concluimos que el ```new(aux); es 54 bytes``` y al estar dentro de un for que va hasta 10, lo que tenemos que hacer es: 
+13.Un modulo cuyo objetivo es buscar un elemento en un arreglo de números enteros ordenados de mayor a menor debe recorrer la estructura mientras el elemento a procesar sea distinto al buscado. (FALSO - Para buscar un elemento en un vector ordenado se debe utilizar una busqueda lineal optimizada o una dicotomica. Una busqueda lineal optimizada no usaria <>, una busqueda dicotomica no recorre el vector, y la unica busqueda que utiliza <> es la lineal. la lineal no se usa en vectores ordenados.)
+14.Un programa que utiliza solo variables globales no requiere modularizacion (Falso - La catedra recomienda el uso de modulos porque facilita la reutilizacion de codigo, aumenta la legibilidad, favorece el mantenimiento y facilita el crecimiento de los sistemas)
 
-```Memoria Dinamica``` = ```54b * 10``` 
+15.Una diferencia entre la operacion insertar un elemento en la posicion en un vector e insertar un elemento en una posicion en una lista es que no hay que validar la posicion correspondiente. (FALSO - siempre se debe verificar que existe la posicion en una lista)
 
-```Memoria Dinamica``` = ```540 bytes``` 
+16. Un programa que compila es correcto (FALSO - un programa puede ser ineficiente, no puede resolver los problemas que se le pide o puede tener errores logicos y aun asi compilar)
 
-### ⌚💀🔪 Tiempo de Ejecución.
-| Codigo | Tiempo (ut) |
-| ------------- | ------------- |
-| readln();   | 0ut  |
-| writeln();  | 0ut  |
-| else  | 0ut + contenido  |
-| x := 0;  | 1ut  |
-| x := y;  | 1ut  |
-| new();  | 1ut  |
-| l:=nil;  | 1ut  |
-| x := y (+,-,*,/,mod,div) x;  | 2ut  |
-| if () then  | (1ut por op.elem) + contenido (<,>,<>,=,or,and,not) |
-| for i:=1 to n  | ((3*n+2)ut) + (n * contenido)  |
-| while() do  | (n + 1ut por op.elem) + (n * contenido)  |repeat until
-| repeat until() | Ni idea  |
-| case ():  | Ni idea :D (HELP!)  |
-
-Ya sabiendo lo anterior, solo nos quedaria hacer las operaciones
-```Pascal
-begin
-  l:=nil;  1ut
-  for i:=1 to 10 to   (3*10+2) 
-  begin
-    read(emp.dirCorreo, emp.edad, emp.sueldo);   0ut
-    if (emp.edad < 40) and (emp.sueldo < 40000) then   (1ut + 1ut + 1ut) 
-      exp.sueldo:= exp.sueldo + 7000;   2ut
-    new(aux); 1ut
-    aux^.dato := emp; 1ut
-    aux^.sig: := l; 1ut
-    l := aux;    1ut
-  end;
-end.
-```
-Nos quedaria: 
-
-```Tiempo de ej``` = ```1ut + ((3*10+2) + (((1ut + 1ut + 1ut) + 2ut) + 1ut + 1ut + 1ut + 1ut) * 10)``` 
-
-```Tiempo de ej``` = ```1ut + ((3*10+2) + (((3ut) + 2ut) + 4ut)*10)``` 
-
-```Tiempo de ej``` = ```1ut + ((32ut) + (9ut)*10)``` 
-
-```Tiempo de ej``` = ```1ut + ((32ut) + 90ut)``` 
-
-```Tiempo de ej``` = ```1ut + (122ut)``` 
-
-```Tiempo de ej``` = ```123ut``` 
+17.El acceso a un dato de una estructura de datos lineal solo es posible a traves de un recorrido secuencial (FALSO - un vector, que es una estructura lineal, puede ser accedido de forma directa)
