@@ -53,7 +53,7 @@ end.
 La tabla del inicio puede variar dependiendo la pc o los profesores que te toquen ya que en este caso es teorico.
 
 
- ```Dimension Fisica``` = Se calcula cuando las variables son declaradas en el `Var` del programa principal.
+ ```Dimension Fisica``` = Es la suma de las variables declaradas en el `Var` del programa principal.
 En este ejemplo seria: 
 ```Pascal
   var
@@ -62,5 +62,5 @@ En este ejemplo seria:
     emp:empleado;
     i:integer;
 ```
-
+```v:vector; 500 * 4by(Al ser un puntero, siempre vale lo que nos marca en la tabla, aunque apunte a otras variables)```
 ### 
