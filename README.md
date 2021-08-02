@@ -29,7 +29,10 @@ var
   emp:empleado;
   i:integer;
 begin
-
+  l:=nil;
+  for i:=1 to 10 to begin
+    read(emp.dirCorreo, emp.edad, emp.sueldo);
+  end;
 end.
   
 ```
