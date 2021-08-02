@@ -103,9 +103,18 @@ for i:=1 to 10 to
     read(emp.dirCorreo, emp.edad, emp.sueldo);
     if (emp.edad < 40) and () and () then
       exp.sueldo:= exp.sueldo + 7000;
-    new(aux); <-------------------------- 
+    new(aux); <-------------------------- Aux fue decladaro como lista y lista es un puntero a nodo
     aux^.dato := emp;
     aux^.sig: := l;
     l := aux;    
+  end;
+```
+Acordemonos que:
+
+```Pascal
+lista = ^nodo;
+  nodo = record
+    dato: empleado;
+    sig: lista;
   end;
 ```
