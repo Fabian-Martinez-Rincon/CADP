@@ -54,8 +54,13 @@ La tabla del inicio puede variar dependiendo la pc o los profesores que te toque
 
 
  ```Dimension Fisica``` = Se calcula cuando las variables son declaradas en el `Var` del programa principal.
-
-
-    
+En este ejemplo seria: 
+```Pascal
+  var
+  v:vector;
+  l,aux:lista;
+  emp:empleado;
+  i:integer;
+```
 
 ### 
