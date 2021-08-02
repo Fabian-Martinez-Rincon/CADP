@@ -27,8 +27,8 @@
 6. Un proceso que no utiliza paramentros no puede comunicarse con el programa principal. 
    - ***FALSO*** - A pesar de que estar desaconsejado por la catedra, se pueden usar variables globales
 
-7. No estaba en el discord :c
-   - 
+7. No estaba en el discord :c.
+   - :D
 
 8. Todas las operaciones permitidas para variables de tipo entero tambien son permitidas para variables de tipo real. 
    - ***FALSO*** - MOD y DIV son operaciones reservadas solo para variables de tipo entero
