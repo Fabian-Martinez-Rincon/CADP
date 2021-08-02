@@ -140,3 +140,20 @@ Concluimos que el ```new(aux); es 54 bytes``` y al estar dentro de un for que va
 | while() do  | (n + 1ut por op.elem) + (n*contenido)  |repeat until
 | repeat until() | Ni idea  |
 | case ():  | Ni idea :D  |
+
+Ya sabiendo lo anterior, solo nos quedaria hacer las operaciones
+```Pascal
+begin
+  l:=nil;
+  for i:=1 to 10 to 
+  begin
+    read(emp.dirCorreo, emp.edad, emp.sueldo);
+    if (emp.edad < 40) and (emp.sueldo < 40000) then
+      exp.sueldo:= exp.sueldo + 7000;
+    new(aux); 
+    aux^.dato := emp;
+    aux^.sig: := l;
+    l := aux;    
+  end;
+end.
+```
