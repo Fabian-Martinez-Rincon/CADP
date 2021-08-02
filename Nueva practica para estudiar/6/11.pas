@@ -6,20 +6,11 @@ a. Lea la información de los todos egresados, hasta ingresar el código 0, el c
 b. Una vez ingresada la información de los egresados, informe el apellido y número de alumno de los egresados que
 recibirán el premio. La información debe imprimirse ordenada según el promedio del egresado (de mayor a menor).}
 
-program cosa;
+program cosa;    
 type
-    vector = array [1..4] of Char;
-    
-    lista=^puntero;
-    puntero = record
-        dato:String;
-        sig:lista;
-    end;
+	vector = array [1..10] of punt;
 var
-    v:vector;
-    l:lista;
+
 begin
-    l:=Nil;
-    writeln(sizeof(v), ' bytes');
-    writeln(sizeof(l), ' bytes');
+
 end.
