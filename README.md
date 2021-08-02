@@ -4,14 +4,10 @@
 # Pascal
 Aca esta la carpeta de cadp, con todos los ejercicios de todas las practicas 
 ### Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica y el tiempo de ejecución.
-| Tipo de tato     | Memoria |
-| ---      | ---       |
-| Char | 1 bytes         |
-| Integer |  6 bytes|        |
-| Real |  8 bytes|        |
-| Boolean | 1 bytes|        |
-| String | Longitud + 1 bytes|        |
-| Puntero |  4 bytes|        |
+| Tipo de tato     | Memoria | -|   -|-|   -|
+| ---      | ---       | --- |--- |--- |--- |
+| Char | 1 bytes         |Real| 8 bytes| String  |Longitud + 1 bytes|
+| Integer |  6 bytes|  Boolean| 1 bytes  |Puntero|4 bytes|
 
 
 ```Pascal
