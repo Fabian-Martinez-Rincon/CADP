@@ -139,7 +139,7 @@ Concluimos que el ```new(aux); es 54 bytes``` y al estar dentro de un for que va
 | for i:=1 to n  | ((3*n+2)ut) + (n*contenido)  |
 | while() do  | (n + 1ut por op.elem) + (n*contenido)  |repeat until
 | repeat until() | Ni idea  |
-| case ():  | Ni idea :D  |
+| case ():  | Ni idea :D (HELP!)  |
 
 Ya sabiendo lo anterior, solo nos quedaria hacer las operaciones
 ```Pascal
