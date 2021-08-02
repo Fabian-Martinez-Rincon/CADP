@@ -125,3 +125,11 @@ Concluimos que el ```new(aux); es 54 bytes``` y al estar dentro de un for que va
 ```Memoria Dinamica``` = ```540 bytes``` 
 
 ### ⌚💀🔪 Tiempo de Ejecución.
+| Codigo | Tiempo (ut) |
+| ------------- | ------------- |
+| x = 0  | 1ut  |
+| x = y  | 1ut  |
+| x = y  | 1ut  |
+| x = y  | 1ut  |
+| x = y  | 1ut  |
+| x = y  | 1ut  |
