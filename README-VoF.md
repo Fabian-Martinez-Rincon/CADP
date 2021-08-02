@@ -3,7 +3,7 @@
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/FabianMartinez1234567/CADP)](https://github.com/FabianMartinez1234567/CADP)
 <h1 align="center"> 💻Preguntas de V o F </h1>
 <div align="center">
-<img src="https://media.giphy.com/media/1C8bHHJturSx2/giphy.gif"/>
+<img src="https://media.giphy.com/media/cMVgEhDeKzPwI/giphy.gif"/>
  </div>
 <br>
 VERDADERO FALSO
