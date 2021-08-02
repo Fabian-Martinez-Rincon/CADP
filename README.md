@@ -80,11 +80,13 @@ end:
  ```
  Nos quedaria: 
  
- ```emp:empleado;  (35 + 1b) + 6b + 8b = 50 bytes ```
+ ```emp:empleado;  (35 + 1b) + 6b + 8b = 50 bytes 
+    i:integer; 6b
+ ```
   
- ```Dimension Fisica``` = ```v + l,aux + emp```
+ ```Dimension Fisica``` = ```v + l,aux + emp + i```
  
- ```Dimension Fisica``` = ```2000b + 8b + 50b``` = ```2058 bytes```
+ ```Dimension Fisica``` = ```2000b + 8b + 50b + 6b``` = ```2064 bytes```
 
 ### - Memoria Dinamica
 La memoria dinamica se empieza a calcular a partir del primer ```new();```
