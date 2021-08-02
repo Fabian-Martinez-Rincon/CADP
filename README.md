@@ -87,3 +87,4 @@ end:
  ```Dimension Fisica``` = ```2000b + 8b + 50b``` = ```2058 bytes```
 
 ### - Memoria Dinamica
+La memoria dinamica se empieza a calcular a partir del primer ```new();```
