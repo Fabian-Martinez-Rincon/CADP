@@ -185,7 +185,7 @@ Nos quedaria:
 
 ```Tiempo de ej``` = ```123ut``` 
 
-### Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica.
+### 2) Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica.
 | Tipo de dato | Memoria |
 | ------------- | ------------- |
 | Char  | 1 byte  |
@@ -196,41 +196,13 @@ Nos quedaria:
 | Puntero  | 4 byte  |
 
 ```Pascal
-program Ejemplo;
+program Ejercicio5;
+const 
+ dimF = 100;
 type
-  cadena35 = string[35];
-  empleado = record
-    dirCorreo: cadena35;
-    edad: integer;
-    sueldo:real;
-  end:
-  
-  punt = empleado^;
-  vector = array [1..500] of punt;
-  
-  lista = ^nodo;
-  nodo = record
-    dato: empleado;
-    sig: lista;
-  end;
-  
+ rango = 1..dimF;
+ vector = array [rango] of ^real;
 var
-  v:vector;
-  l,aux:lista;
-  emp:empleado;
-  i:integer;
-begin
-  l:=nil;
-  for i:=1 to 10 to 
-  begin
-    read(emp.dirCorreo, emp.edad, emp.sueldo);
-    if (emp.edad < 40) and (emp.sueldo < 40000) then
-      exp.sueldo:= exp.sueldo + 7000;
-    new(aux); 
-    aux^.dato := emp;
-    aux^.sig: := l;
-    l := aux;    
-  end;
-end.
+ v:vector;
   
 ```
