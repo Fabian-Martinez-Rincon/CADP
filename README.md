@@ -129,7 +129,7 @@ Concluimos que el ```new(aux); es 54 bytes``` y al estar dentro de un for que va
 | ------------- | ------------- |
 | x = 0  | 1ut  |
 | x = y  | 1ut  |
-| x = y  | 1ut  |
-| x = y  | 1ut  |
+| x = y (+,-,*,/,mod,div) x  | 2ut  |
+| x = y   | 2ut  |
 | x = y  | 1ut  |
 | x = y  | 1ut  |
