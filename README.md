@@ -127,9 +127,12 @@ Concluimos que el ```new(aux); es 54 bytes``` y al estar dentro de un for que va
 ### ⌚💀🔪 Tiempo de Ejecución.
 | Codigo | Tiempo (ut) |
 | ------------- | ------------- |
-| x = 0  | 1ut  |
-| x = y  | 1ut  |
-| x = y (+,-,*,/,mod,div) x  | 2ut  |
-| x = y   | 2ut  |
-| x = y  | 1ut  |
-| x = y  | 1ut  |
+| x := 0;  | 1ut  |
+| x := y;  | 1ut  |
+| x := y (+,-,*,/,mod,div) x;  | 2ut  |
+| readln();   | 0ut  |
+| writeln();  | 0ut  |
+| new();  | 1ut  |
+| if () then  | 1ut por operacion elemental  |
+| else  | 0ut  |
+| l:=nil;  | 1ut  |
