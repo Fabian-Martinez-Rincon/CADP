@@ -57,7 +57,7 @@ end.
 
 
 #### 10) En la tecnica de correccion de DEBUGGING es necesario analizar los casos limites del problema. 
-- ***FALSO*** La tecnica que se encarga de corregir los casos limite es el testing, el debuggin se encarga de añadir estructuras como el write(); para saber en que linea esta el error
+- ***FALSO*** La tecnica que se encarga de corregir los casos limite es el testing, el debuggin se encarga de añadir estructuras como el ```write();``` para saber en que linea esta el error
 
 
 #### 11) En un procedimiento una estructura de datos vector pasada como parametro siempre ocupa mas memoria que una estructura de tipo lista pasada como parametro 
