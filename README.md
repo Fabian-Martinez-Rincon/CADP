@@ -7,7 +7,7 @@
  </div>
 <br>
 
-## Aca esta la carpeta de cadp, con todos los ejercicios de todas las practicas 
+***Aca esta la carpeta de cadp, con todos los ejercicios de todas las practicas***
 
 - [Preguntas de verdadero o falso](README-VoF.md)
 
