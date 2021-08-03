@@ -199,23 +199,23 @@ Nos quedaria:
 ```Pascal
 program Ejercicio5;
 const 
- dimF = 100;
+  dimF = 100;
 type
- rango = 1..dimF;
- vector = array [rango] of ^real;
+  rango = 1..dimF;
+  vector = array [rango] of ^real;
 var
- v:vector;
- dimL,i:integer;
-begin
- dimL:=50;
- for i:=1 to dimL do
+  v:vector;
+  dimL,i:integer;
  begin
-  new(v[i]);
-  read(v[i]^);
- end;
- for i:=1 to 25 do 
-  v[i]:=nil;
- for i:=26 to 50 do
-  dispose(v[i]);
+  dimL:=50;
+  for i:=1 to dimL do
+  begin
+    new(v[i]);
+    read(v[i]^);
+  end;
+  for i:=1 to 25 do 
+    v[i]:=nil;
+  for i:=26 to 50 do
+    dispose(v[i]);
 end;
 ```
