@@ -186,7 +186,7 @@ Nos quedaria:
 
 ```Tiempo de ej``` = ```123ut``` 
 
-### 2) Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica.
+### 2) Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica y tel tiempo de ejecución.
 | Tipo de dato | Memoria |
 | ------------- | ------------- |
 | Char  | 1 byte  |
@@ -219,3 +219,13 @@ var
     dispose(v[i]);
 end;
 ```
+### 💾🧍‍♂️ Memoria Estatica.
+```Pascal
+var
+  v:vector;  100 * 4 = 400 Es un vector de punteros
+  dimL,i:integer; 6 + 6 = 12
+```
+
+```Memoria estatica``` = ```400 + 12```
+
+```Memoria estatica``` = ```412```
