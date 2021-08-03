@@ -292,10 +292,27 @@ Resultado = ``` 607ut ```
 
 ### 3) COSA.
 
-| Tipo de dato | Memoria |
-| ------------- | ------------- |
-| Char  | 1 byte  |
-| Integer  | 6 byte  |
+```Pas
+ program opcio_A;
+type
+    lista = ^nodo;
+    nodo = record
+        dato:integer;
+        sig:lista;
+    end;
+var
+    l,nue:lista;
+    i:integer;
+begin
+    l:=Nil;
+    for i:=l to 6 do begin
+        new(nue);
+        nue^.dato:=i;
+        nue^.sig:=l;
+        l:=nue;
+    end;
+end.  
+```
 
 <p align="center">
   <img alt="A" src="img/1.PNG" width="30%"/>
