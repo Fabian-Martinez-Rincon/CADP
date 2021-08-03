@@ -264,3 +264,24 @@ Memoria Total = ```412 + 900```
 Memoria Total = ```1312```
 
 ### ⌚💀🔪 Tiempo de Ejecución.
+
+```Pascal
+ begin
+  dimL:=50;  + 1ut
+  for i:=1 to dimL do  (3*100 + 2)
+  begin
+    new(v[i]);  + 1ut
+    read(v[i]^);
+  end; 
+  = (3*100 + 2) + (100 * 1ut) = 302ut + 100ut = 402ut
+  for i:=1 to 25 do  (3*25 + 2)
+    v[i]:=nil; + 1ut
+  = (3 * 25 + 2) + (25 * 1ut) = 102ut
+  for i:=26 to 50 do (3 * 25 + 2)
+    dispose(v[i]); + 1ut
+  = (3 * 25 + 2) + (25 * 1ut) = 102ut
+end.
+```
+Resultado = ```1ut + 402ut + 102ut + 102ut ```
+
+Resultado = ``` 607ut ```
