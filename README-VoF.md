@@ -79,7 +79,7 @@ end.
 
 #### 15) Una diferencia entre la operacion insertar un elemento en la posicion en un vector e insertar un elemento en una posicion en una lista es que no hay que validar la posicion correspondiente.
 -  ***FALSO*** - siempre se debe verificar que existe la posicion en una lista
-
+- La lista no es indexada
 
 #### 16) Un programa que compila es correcto.
 - ***FALSO*** - un programa puede ser ineficiente, no puede resolver los problemas que se le pide o puede tener errores logicos y aun asi compilar
