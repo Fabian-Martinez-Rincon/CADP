@@ -236,13 +236,25 @@ var
   dimL:=50;
   for i:=1 to dimL do
   begin
-    new(v[i]);
+    new(v[i]); (4(nodo) + 8(real)) * dimL
     read(v[i]^);
   end;
   for i:=1 to 25 do 
     v[i]:=nil;
   for i:=26 to 50 do
-    dispose(v[i]);
+    dispose(v[i]); -((4(nodo) + 8(real)) * 25)
 end.
 ```
+Resultado:
 
+```Memoria Dinamica``` = ```((4(nodo) + 8(real)) * dimL)``` + ``` -(((4(nodo) + 8(real)) * 25)```
+
+```Memoria Dinamica``` = ```((4(nodo) + 8(real)) * 100)``` + ``` -(((4(nodo) + 8(real)) * 25)```
+
+```Memoria Dinamica``` = ```(12 * 100)``` + ``` -(12 * 25)```
+
+```Memoria Dinamica``` = ```(1200)``` - ``` (300)```
+
+```Memoria Dinamica``` = ```900```
+
+Memoria Total = ```412 + 900```
