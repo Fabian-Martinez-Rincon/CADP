@@ -217,7 +217,7 @@ var
     v[i]:=nil;
   for i:=26 to 50 do
     dispose(v[i]);
-end;
+end.
 ```
 ### 💾🧍‍♂️ Memoria Estatica.
 ```Pascal
@@ -229,3 +229,20 @@ var
 ```Memoria estatica``` = ```400 + 12```
 
 ```Memoria estatica``` = ```412```
+
+### 💾🏃 Memoria Dinamica.
+```Pascal
+ begin
+  dimL:=50;
+  for i:=1 to dimL do
+  begin
+    new(v[i]);
+    read(v[i]^);
+  end;
+  for i:=1 to 25 do 
+    v[i]:=nil;
+  for i:=26 to 50 do
+    dispose(v[i]);
+end.
+```
+
