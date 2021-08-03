@@ -35,7 +35,7 @@
 
 
 #### 7) No estaba en el discord :c.
-- :D
+- ***FALSO*** - Solo se puede usar un tipo de dato ordinal en el indice de un case
 ```Pas
 var
     num:real;
