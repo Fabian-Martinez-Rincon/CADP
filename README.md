@@ -11,7 +11,7 @@
 
 - [Preguntas de verdadero o falso](README-VoF.md)
 
-### Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica y el tiempo de ejecución.
+### 1) Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica y el tiempo de ejecución.
 | Tipo de dato | Memoria |
 | ------------- | ------------- |
 | Char  | 1 byte  |
