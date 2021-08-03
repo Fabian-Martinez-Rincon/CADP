@@ -36,8 +36,18 @@
 
 #### 7) No estaba en el discord :c.
 - :D
-
-
+```Pas
+var
+    num:real;
+begin
+    read(num);
+    case num of 
+        1..20 = writeln('menor de 20');
+        21..50: writeln('entre 21 y 50');
+        else: writeln('mayor de 100');
+    end;
+end.
+```
 #### 8) Todas las operaciones permitidas para variables de tipo entero tambien son permitidas para variables de tipo real. 
 - ***FALSO*** - MOD y DIV son operaciones reservadas solo para variables de tipo entero
 
