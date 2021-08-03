@@ -65,7 +65,7 @@ end.
 
 
 #### 12) Un modulo funcion puede retornar un tipo de dato puntero. 
-- ***SERGIO DICE FALSO***
+- ***VERDADERO*** Ya que un puntero es un tipo de dato simple
 
 
 #### 13) Un modulo cuyo objetivo es buscar un elemento en un arreglo de números enteros ordenados de mayor a menor debe recorrer la estructura mientras el elemento a procesar sea distinto al buscado. 
