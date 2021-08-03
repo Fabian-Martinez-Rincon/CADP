@@ -70,6 +70,7 @@ end.
 
 #### 13) Un modulo cuyo objetivo es buscar un elemento en un arreglo de números enteros ordenados de mayor a menor debe recorrer la estructura mientras el elemento a procesar sea distinto al buscado. 
 - ***FALSO*** - Para buscar un elemento en un vector ordenado se debe utilizar una busqueda lineal optimizada o una dicotomica. Una busqueda lineal optimizada no usaria <>, una busqueda dicotomica no recorre el vector, y la unica busqueda que utiliza <> es la lineal. la lineal no se usa en vectores ordenados.
+- ***FALSO*** Tenes dos condiciones no una, ya que se puede ejecutar infinitamente, la primera es que mientras el numero sea MayorIgual se ejecuta y la otra condicion es mientras no se pase de la dimensión Logica
 
 
 #### 14) Un programa que utiliza solo variables globales no requiere modularizacion.
