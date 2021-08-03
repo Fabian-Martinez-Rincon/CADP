@@ -292,6 +292,11 @@ Resultado = ``` 607ut ```
 
 ### 3) COSA.
 
+| Tipo de dato | Memoria |
+| ------------- | ------------- |
+| Char  | 1 byte  |
+| Integer  | 6 byte  |
+
 <p align="center">
   <img alt="A" src="img/1.PNG" width="30%"/>
   <img alt="A" src="img/2.PNG" width="30%"/>
