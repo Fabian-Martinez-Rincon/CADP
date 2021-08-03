@@ -260,3 +260,5 @@ Resultado:
 Memoria Total = ```Memoria Estatica + Memoria Dinamica```
 
 Memoria Total = ```412 + 900```
+
+Memoria Total = ```1312```
