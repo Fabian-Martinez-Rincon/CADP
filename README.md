@@ -314,7 +314,3 @@ begin
 end.  
 ```
 
-<p align="center">
-  <img alt="A" src="img/1.PNG" width="30%"/>
-  <img alt="A" src="img/2.PNG" width="30%"/>
-</p>
