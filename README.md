@@ -213,6 +213,9 @@ begin
   new(v[i]);
   read(v[i]^);
  end;
- for i:=1
+ for i:=1 to 25 do 
+  v[i]:=nil;
+ for i:=26 to 50 do
+  dispose(v[i]);
 end;
 ```
