@@ -290,9 +290,9 @@ Resultado = ```1ut + 402ut + 102ut + 102ut ```
 
 Resultado = ``` 607ut ```
 
-### 3)
+### 3) COSA.
 
 <p align="center">
-  <img alt="A" src="img/1.PNG" width="49%"/>
-  <img alt="B" src="img/2.PNG" width="49%"/>
+  <img alt="A" src="img/1.PNG" width="30%"/>
+  <img alt="A" src="img/2.PNG" width="30%"/>
 </p>
