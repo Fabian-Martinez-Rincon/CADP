@@ -115,7 +115,7 @@ La memoria dinamica se empieza a calcular a partir del primer ```new();```, en c
 for i:=1 to 10 to 
   begin
     read(emp.dirCorreo, emp.edad, emp.sueldo);
-    if (emp.edad < 40) and () and () then
+    if (emp.edad < 40) and (emp.sueldo < 40000) then
       exp.sueldo:= exp.sueldo + 7000;
     new(aux); <-------------------------- Aux fue decladaro como lista y lista es un puntero a nodo
     aux^.dato := emp;
