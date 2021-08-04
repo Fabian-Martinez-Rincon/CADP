@@ -189,7 +189,7 @@ Nos quedaria:
 
 
 
-### 3) Cual de las dos opciones es más eficiente.
+### 2) Cual de las dos opciones es más eficiente.
 
 <table>
  <tr>
