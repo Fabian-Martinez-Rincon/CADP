@@ -7,6 +7,8 @@
 <img src="/Parciales/Sergio/1.jpg"/>
  </div>
 </br>
+
+
 <br>
 
 <h1 align="center"> 💻Pregunta 2 </h1>
