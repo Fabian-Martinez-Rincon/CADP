@@ -1,0 +1,346 @@
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/FabianMartinez1234567/CADP)
+[![GitHub stars](https://img.shields.io/github/stars/FabianMartinez1234567/CADP)](https://github.com/FabianMartinez1234567/CADP/stargazers/)
+[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/FabianMartinez1234567/CADP)](https://github.com/FabianMartinez1234567/CADP)
+<h1 align="center"> 💻CADP </h1>
+<div align="center">
+<img src="https://media.giphy.com/media/1C8bHHJturSx2/giphy.gif"/>
+ </div>
+<br>
+
+***Aca esta la carpeta de cadp, con todos los ejercicios de todas las practicas***
+
+- [Preguntas de verdadero o falso](README-VoF.md)
+
+### 1) Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica y el tiempo de ejecución.
+| Tipo de dato | Memoria |
+| ------------- | ------------- |
+| Char  | 1 byte  |
+| Integer  | 6 byte  |
+| Real  | 8 byte  |
+| Boolean  | 1 byte  |
+| String  | Longitud + 1 byte  |
+| Puntero  | 4 byte  |
+
+
+
+
+```Pascal
+program Ejemplo;
+type
+  cadena35 = string[35];
+  empleado = record
+    dirCorreo: cadena35;
+    edad: integer;
+    sueldo:real;
+  end:
+  
+  punt = empleado^;
+  vector = array [1..500] of punt;
+  
+  lista = ^nodo;
+  nodo = record
+    dato: empleado;
+    sig: lista;
+  end;
+  
+var
+  v:vector;
+  l,aux:lista;
+  emp:empleado;
+  i:integer;
+begin
+  l:=nil;
+  for i:=1 to 10 to 
+  begin
+    read(emp.dirCorreo, emp.edad, emp.sueldo);
+    if (emp.edad < 40) and (emp.sueldo < 40000) then
+      exp.sueldo:= exp.sueldo + 7000;
+    new(aux); 
+    aux^.dato := emp;
+    aux^.sig: := l;
+    l := aux;    
+  end;
+end.
+  
+```
+## Resolución
+La tabla del inicio puede variar dependiendo la pc o los profesores que te toquen ya que en este caso es teorico.
+
+
+### 💾🧍‍♂️ Memoria Estatica.
+Es la suma de las variables declaradas en el `Var` del programa principal.
+En este ejemplo seria: 
+```Pascal
+var
+  v:vector;
+  l,aux:lista;
+  emp:empleado;
+  i:integer;
+```
+Hacemos los calculos:
+``` 
+v:vector; 500 * 4b (Al ser un puntero, siempre vale lo que nos marca en la tabla, aunque apunte a otras variables)
+2000 bytes
+l,aux:lista; 4b + 4b = 8 bytes
+emp:empleado; 
+i:integer;
+```
+Recordemos que:
+```Pascal
+empleado = record
+  dirCorreo: cadena35;    (35 + 1b)
+  edad: integer;   6b
+  sueldo:real;    8b
+end:
+ ```
+ Nos quedaria: 
+ 
+ ```
+ v:vector; 2000b
+ l,aux:lista; 8 bytes
+ emp:empleado;  (35 + 1b) + 6b + 8b = 50 bytes 
+ i:integer; 6b
+ ```
+  
+ ```Dimension Fisica``` = ```v + l,aux + emp + i```
+ 
+ ```Dimension Fisica``` = ```2000b + 8b + 50b + 6b```
+
+```Dimension Fisica``` = ```2064 bytes``` 
+
+### 💾🏃 Memoria Dinamica.
+La memoria dinamica se empieza a calcular a partir del primer ```new();```, en caso de no encontrarse en el programa no tendriamos que hacer ninguna operación. Y asi como se suma memoria dinamica con el ```new();``` se restaria (Libera) con el ```Dispose();```
+
+```Pascal
+for i:=1 to 10 to 
+  begin
+    read(emp.dirCorreo, emp.edad, emp.sueldo);
+    if (emp.edad < 40) and (emp.sueldo < 40000) then
+      exp.sueldo:= exp.sueldo + 7000;
+    new(aux); <-------------------------- Aux fue decladaro como lista y lista es un puntero a nodo
+    aux^.dato := emp;
+    aux^.sig: := l;
+    l := aux;    
+  end;
+```
+Recordemonos que:
+
+```Pascal
+lista = ^nodo;
+  nodo = record
+    dato: empleado; 50 bytes (Ya lo calculamos arriba)
+    sig: lista; 4 bytes (Puntero)
+  end;  50b + 4b = 54 bytes
+```
+Concluimos que el ```new(aux); es 54 bytes``` y al estar dentro de un for que va hasta 10, lo que tenemos que hacer es: 
+
+```Memoria Dinamica``` = ```54b * 10``` 
+
+```Memoria Dinamica``` = ```540 bytes``` 
+
+### ⌚💀🔪 Tiempo de Ejecución.
+| Codigo | Tiempo (ut) |
+| ------------- | ------------- |
+| readln();   | 0ut  |
+| writeln();  | 0ut  |
+| else  | 0ut + contenido  |
+| x := 0;  | 1ut  |
+| x := y;  | 1ut  |
+| new();  | 0ut  |
+| Dispose();  | 0ut  |
+| l:=nil;  | 1ut  |
+| x := y (+,-,*,/,mod,div) x;  | 2ut  |
+| if () then  | (1ut por op.elem) + contenido (<,>,<>,=,or,and,not,/,*,+,-) |
+| for i:=1 to n  | ((3*n+2)ut) + (n * contenido)  |
+| while() do  | (n + 1ut por op.elem) + (n * contenido)  |repeat until
+| repeat until() | Ni idea  |
+| case ():  | Ni idea :D (HELP!)  |
+
+Ya sabiendo lo anterior, solo nos quedaria hacer las operaciones
+```Pascal
+begin
+  l:=nil;  1ut
+  for i:=1 to 10 to   (3*10+2) 
+  begin
+    read(emp.dirCorreo, emp.edad, emp.sueldo);   0ut
+    if (emp.edad < 40) and (emp.sueldo < 40000) then   (1ut + 1ut + 1ut) 
+      exp.sueldo:= exp.sueldo + 7000;   2ut
+    new(aux); 1ut
+    aux^.dato := emp; 1ut
+    aux^.sig: := l; 1ut
+    l := aux;    1ut
+  end;
+end.
+```
+Nos quedaria: 
+
+```Tiempo de ej``` = ```1ut + ((3*10+2) + (((1ut + 1ut + 1ut) + 2ut) + 1ut + 1ut + 1ut + 1ut) * 10)``` 
+
+```Tiempo de ej``` = ```1ut + ((3*10+2) + (((3ut) + 2ut) + 4ut)*10)``` 
+
+```Tiempo de ej``` = ```1ut + ((32ut) + (9ut)*10)``` 
+
+```Tiempo de ej``` = ```1ut + ((32ut) + 90ut)``` 
+
+```Tiempo de ej``` = ```1ut + (122ut)``` 
+
+```Tiempo de ej``` = ```123ut``` 
+
+### 2) Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica y tel tiempo de ejecución.
+| Tipo de dato | Memoria |
+| ------------- | ------------- |
+| Char  | 1 byte  |
+| Integer  | 6 byte  |
+| Real  | 8 byte  |
+| Boolean  | 1 byte  |
+| String  | Longitud + 1 byte  |
+| Puntero  | 4 byte  |
+
+```Pascal
+program Ejercicio5;
+const 
+  dimF = 100;
+type
+  rango = 1..dimF;
+  vector = array [rango] of ^real;
+var
+  v:vector;
+  dimL,i:integer;
+ begin
+  dimL:=50;
+  for i:=1 to dimL do
+  begin
+    new(v[i]);
+    read(v[i]^);
+  end;
+  for i:=1 to 25 do 
+    v[i]:=nil;
+  for i:=26 to 50 do
+    dispose(v[i]);
+end.
+```
+### 💾🧍‍♂️ Memoria Estatica.
+```Pascal
+var
+  v:vector;  100 * 4 = 400 Es un vector de punteros
+  dimL,i:integer; 6 + 6 = 12
+```
+
+```Memoria estatica``` = ```400 + 12```
+
+```Memoria estatica``` = ```412```
+
+### 💾🏃 Memoria Dinamica.
+```Pascal
+ begin
+  dimL:=50;
+  for i:=1 to dimL do
+  begin
+    new(v[i]); (4(nodo) + 8(real)) * dimL
+    read(v[i]^);
+  end;
+  for i:=1 to 25 do 
+    v[i]:=nil;
+  for i:=26 to 50 do
+    dispose(v[i]); -((4(nodo) + 8(real)) * 25)
+end.
+```
+Resultado:
+
+```Memoria Dinamica``` = ```((4(nodo) + 8(real)) * dimL)``` + ``` -(((4(nodo) + 8(real)) * 25)```
+
+```Memoria Dinamica``` = ```((4(nodo) + 8(real)) * 100)``` + ``` -(((4(nodo) + 8(real)) * 25)```
+
+```Memoria Dinamica``` = ```(12 * 100)``` + ``` -(12 * 25)```
+
+```Memoria Dinamica``` = ```(1200)``` - ``` (300)```
+
+```Memoria Dinamica``` = ```900```
+
+Memoria Total = ```Memoria Estatica + Memoria Dinamica```
+
+Memoria Total = ```412 + 900```
+
+Memoria Total = ```1312```
+
+### ⌚💀🔪 Tiempo de Ejecución.
+
+```Pascal
+ begin
+  dimL:=50;  + 1ut
+  for i:=1 to dimL do  (3*100 + 2)
+  begin
+    new(v[i]);  + 1ut
+    read(v[i]^);
+  end; 
+  = (3*100 + 2) + (100 * 1ut) 
+  = 302ut + 100ut 
+  = 402ut
+  for i:=1 to 25 do  (3*25 + 2)
+    v[i]:=nil; + 1ut
+  = (3 * 25 + 2) + (25 * 1ut) 
+  = 102ut
+  for i:=26 to 50 do (3 * 25 + 2)
+    dispose(v[i]); + 1ut
+  = (3 * 25 + 2) + (25 * 1ut) 
+  = 102ut
+end.
+```
+Resultado = ```1ut + 402ut + 102ut + 102ut ```
+
+Resultado = ``` 607ut ```
+
+### 3) Cual de las dos opciones es más eficiente.
+
+<table>
+ <tr>
+  <td> A </td> <td> B </td>
+  </tr>
+ <tr>
+ <td>
+  
+
+```Pas 
+program opcion_A;
+type
+    lista = ^nodo;
+    nodo = record
+        dato:integer;
+        sig:lista;
+    end;
+var
+    l,nue:lista;
+    i:integer;
+begin
+    l:=Nil;
+    for i:=l to 6 do begin
+        new(nue);
+        nue^.dato:=i;
+        nue^.sig:=l;
+        l:=nue;
+    end;
+end. 
+  ```  
+  </td>
+  
+<td>
+   
+```Pas
+   program opcion_B;
+type
+    vector = array [1..10] of integer;
+var
+    v:vector;
+    i,dimL:integer;
+begin
+    dimL:=0;
+    for i:=1 to 6 do begin
+        dimL:=dimL + 1;
+        v[i]:=i;
+    end;
+end.
+```  
+ 
+</td>
+</tr>
+</table>

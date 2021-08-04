@@ -1,4 +1,4 @@
-program opcio_B;
+program opcion_B;
 type
     vector = array [1..10] of integer;
 var
