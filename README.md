@@ -273,14 +273,31 @@ end.
 
 A)
 
-Memoria Estatica:
+<table>
+<tr>
+<td> Memorias </td> <td> Resultado </td>
+</tr>
+<tr>
+<td>
+ Memoria Estatica:
 
 ```Pas
 var
     l,nue:lista; 4b + 4b = 8bytes
     i:integer; 6bytes
 ``` 
+
+</td>
+<td>
+
 Memoria Estatica = ```14 bytes```
+
+</td>
+ 
+</tr>
+</table>
+
+
 
 Memoria Dinamica:
 
