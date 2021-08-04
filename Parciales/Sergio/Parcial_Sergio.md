@@ -5,5 +5,6 @@
 
 ### Pregunta 2.
 
-Suponga que usted debe elegir una estructura para representar la siguiente situación. Se desea almacenar en una estructura la información de los alumnos de CADP.
-De cada alumno se conoce apellido, nombre y su promedio. Se sabe que a lo sumo habrá 800 alumnos.
+Suponga que usted debe elegir una estructura para representar la siguiente situación:
+
+Se desea almacenar en una estructura la información de los alumnos de CADP. De cada alumno se conoce apellido, nombre y su promedio. Se sabe que a lo sumo habrá 800 alumnos.
