@@ -203,7 +203,7 @@ Nos quedaria:
 
 
 
-### 2) Cual de las dos opciones consume menos memoria total.
+### 2) Cual de las dos opciones consume menos memoria total (Memoria estatica +  Memoria dinamica).
 
 <table>
  <tr>
