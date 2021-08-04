@@ -203,7 +203,7 @@ Nos quedaria:
 
 
 
-### 2) Cual de las dos opciones es más eficiente.
+### 2) Cual de las dos opciones consume menos memoria total.
 
 <table>
  <tr>
