@@ -10,6 +10,7 @@
 ***Aca esta la carpeta de cadp, con todos los ejercicios de todas las practicas***
 
 - [Preguntas de verdadero o falso](README-VoF.md)
+- [Ejemplos de memorias y tiempo](Ejemplos-Memorias_Tiempos.md)
 
 ### 1) Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica y el tiempo de ejecución.
 | Tipo de dato | Memoria |
