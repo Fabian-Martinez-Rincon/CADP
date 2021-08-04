@@ -244,6 +244,8 @@ end.
 </tr>
 </table>
 
+A)
+
 Memoria Estatica:
 
 ```Pas
@@ -257,18 +259,42 @@ Memoria Dinamica:
 
 ```Pas
 begin
-    l:=Nil; + 1b
+    l:=Nil; 
     for i:=l to 6 do begin
         new(nue); 4bytes + (6bytes) = 10 bytes
-        nue^.dato:=i; + 1b
-        nue^.sig:=l; + 1b
-        l:=nue; + 1b
+        nue^.dato:=i; 
+        nue^.sig:=l; 
+        l:=nue; 
     end;
-    6 * 13b
+    6 * 10b
 end. 
 ```  
-Memoria Dinamica = ```1 + (6*13)```
+Memoria Dinamica = ```(6*10)```
 
-Memoria Dinamica = ```79 bytes```
+Memoria Dinamica = ```60 bytes```
 
-Memoria Total = ```79b + 14b``` = ```93 bytes```
+Memoria Total = ```60b + 14b``` = ```74 bytes```
+
+B)
+
+Memoria Estatica:
+
+```Pas
+var
+    v:vector; 10*6 = 60 b
+    i,dimL:integer; 6 + 6 + 6 = 18 b
+```
+Memoria Estatica = ```78 Bytes```
+
+Memoria Dinamica:
+
+```Pas
+begin
+    dimL:=0;
+    for i:=1 to 6 do begin
+        dimL:=dimL + 1;
+        v[i]:=i;
+    end;
+end.
+```
+Memoria Dinamica = No tiene :D
