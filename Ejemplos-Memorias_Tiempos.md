@@ -7,7 +7,7 @@
  </div>
 <br>
 
-### 2) Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica y tel tiempo de ejecución.
+### EJEMPLO 1) Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica y tel tiempo de ejecución.
 | Tipo de dato | Memoria |
 | ------------- | ------------- |
 | Char  | 1 byte  |
