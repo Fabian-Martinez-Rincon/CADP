@@ -242,7 +242,7 @@ end.
 </td>
 <td>
  
-| Tipo de dato | Memoria |
+| Dato | Memoria |
 | ------------- | ------------- |
 | Char  | 1 byte  |
 | Integer  | 6 byte  |
