@@ -156,6 +156,19 @@ end.
 #### 8) Todas las operaciones permitidas para variables de tipo entero tambien son permitidas para variables de tipo real. 
 - ***FALSO*** - MOD y DIV son operaciones reservadas solo para variables de tipo entero
 
+```Pas
+program ocho;
+var
+    num1:Real;
+	num2:Real;
+begin
+	num1:=10;
+	num2:=5;
+	Writeln(num1 div num2); // No se puede :D
+	Writeln(num1 mod num2); // No se puede :D
+end.
+
+```
 
 #### 9) Siempre es posible reemplazar un FOR por un WHILE y viceversa. 
 - ***FALSO***  - FOR -> WHILE se puede, pero WHILE -> FOR no, dado que no se sabe cuantas veces se va a ejecutar el bloque de instrucciones de un WHILE
