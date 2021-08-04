@@ -290,10 +290,18 @@ Resultado = ```1ut + 402ut + 102ut + 102ut ```
 
 Resultado = ``` 607ut ```
 
-### 3) COSA.
+### 3) Cual de las dos opciones es más eficiente.
 
-```Pas
- program opcio_A;
+<table>
+ <tr>
+  <td> A </td> <td> B </td>
+  </tr>
+ <tr>
+ <td>
+  
+
+```Pas 
+program opcion_A;
 type
     lista = ^nodo;
     nodo = record
@@ -311,14 +319,28 @@ begin
         nue^.sig:=l;
         l:=nue;
     end;
-end.  
-```
-
-<table>
- <tr>
-  <td> Status </td> <td> Cosa </td>
-  </tr>
- <tr>
- <td> Status </td> <td> Cosa </td>
-  </tr>
- </table>
+end. 
+  ```  
+  </td>
+  
+<td>
+   
+```Pas
+   program opcion_B;
+type
+    vector = array [1..10] of integer;
+var
+    v:vector;
+    i,dimL:integer;
+begin
+    dimL:=0;
+    for i:=1 to 6 do begin
+        dimL:=dimL + 1;
+        v[i]:=i;
+    end;
+end.
+```  
+ 
+</td>
+</tr>
+</table>
