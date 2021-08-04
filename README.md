@@ -13,18 +13,14 @@
 - [Ejemplos de memorias y tiempo](Ejemplos-Memorias_Tiempos.md)
 
 ### 1) Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica y el tiempo de ejecución.
-| Tipo de dato | Memoria |
-| ------------- | ------------- |
-| Char  | 1 byte  |
-| Integer  | 6 byte  |
-| Real  | 8 byte  |
-| Boolean  | 1 byte  |
-| String  | Longitud + 1 byte  |
-| Puntero  | 4 byte  |
 
-
-
-
+<table>
+ <tr>
+  <td> A </td> <td> Tabla </td>
+  </tr>
+ <tr>
+ <td>
+   
 ```Pascal
 program Ejemplo;
 type
@@ -63,7 +59,25 @@ begin
   end;
 end.
   
-```
+```  
+</td>
+<td>
+ 
+| Dato | Memoria |
+| ------------- | ------------- |
+| Char  | 1 byte  |
+| Integer  | 6 byte  |
+| Real  | 8 byte  |
+| Boolean  | 1 byte  |
+| String  | Long + 1 byte  |
+| Puntero  | 4 byte  |
+ 
+ 
+</td>
+
+</tr>
+</table>
+
 ## Resolución
 La tabla del inicio puede variar dependiendo la pc o los profesores que te toquen ya que en este caso es teorico.
 
