@@ -271,4 +271,4 @@ Memoria Dinamica = ```1 + (6*13)```
 
 Memoria Dinamica = ```79 bytes```
 
-Memoria Total = ```79b + 14b``` = ```93```
+Memoria Total = ```79b + 14b``` = ```93 bytes```
