@@ -297,7 +297,7 @@ var
     v:vector; 10*6 = 60 b
     i,dimL:integer; 6 + 6 + 6 = 18 b
 ```
-Memoria Estatica = ```78 Bytes```
+Memoria Estatica = ```78 bytes```
 
 Memoria Dinamica:
 
@@ -311,3 +311,6 @@ begin
 end.
 ```
 Memoria Dinamica = No tiene :D
+
+Justificación:
+- El ***A*** es el que ocupa menos memoria ya que en el B con tan solo la memoria estatica, este supera al A en memoria total
