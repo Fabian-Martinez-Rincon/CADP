@@ -322,7 +322,9 @@ Memoria Total = ```60b + 14b``` = ```74 bytes```
  </td>
 </tr>
 </table>
+
 B)
+
 <table>
 <tr>
 <td> Memorias </td> <td> Resultado </td>
@@ -362,14 +364,6 @@ Memoria Dinamica = No tiene :D
 </td>
  </tr>
 </table>
-
-
-
-
-
-
-
-
 
 
 
