@@ -253,24 +253,31 @@ end.
 | String  | Longitud + 1 byte  |
 | Puntero  | 4 byte  |
 
+Memoria Estatica:
+
 ```Pas
-program opcion_A;
-type
-    lista = ^nodo;
-    nodo = record
-        dato:integer;
-        sig:lista;
-    end;
 var
-    l,nue:lista;
-    i:integer;
+    l,nue:lista; 4b + 4b = 8bytes
+    i:integer; 6bytes
+``` 
+Memoria Estatica = ```14 bytes```
+
+Memoria Dinamica:
+
+```Pas
 begin
-    l:=Nil;
+    l:=Nil; + 1b
     for i:=l to 6 do begin
-        new(nue);
-        nue^.dato:=i;
-        nue^.sig:=l;
-        l:=nue;
+        new(nue); 4bytes + (6bytes) = 10 bytes
+        nue^.dato:=i; + 1b
+        nue^.sig:=l; + 1b
+        l:=nue; + 1b
     end;
+    6 * 13b
 end. 
 ```  
+Memoria Dinamica = ```1 + (6*13)```
+
+Memoria Dinamica = ```79 bytes```
+
+Memoria Total = ```79b + 14b``` = ```93```
