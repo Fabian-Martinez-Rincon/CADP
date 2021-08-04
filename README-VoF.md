@@ -140,16 +140,18 @@ end.
 #### 7) No estaba en el discord :c.
 - ***FALSO*** - Solo se puede usar un tipo de dato ordinal en el indice de un case
 ```Pas
+program Siete;
 var
-    num:real;
+    num:Real; //Solo entero
 begin
-    read(num);
-    case num of 
-        1..20 = writeln('menor de 20');
+    readln(num);
+    case (num) of 
+        1..20 : writeln('menor de 20');
         21..50: writeln('entre 21 y 50');
-        else: writeln('mayor de 100');
+        else writeln('mayor de 100');
     end;
 end.
+
 ```
 #### 8) Todas las operaciones permitidas para variables de tipo entero tambien son permitidas para variables de tipo real. 
 - ***FALSO*** - MOD y DIV son operaciones reservadas solo para variables de tipo entero
