@@ -1,20 +1,11 @@
-// 2. Modifique el programa anterior para que el mensaje de salida muestre la suma de ambos números:
-// a. Utilizando una variable adicional
-// b. Sin utilizar una variable adiciona
-
-program untitled;
-
+program ocho;
 var
-	numero_1: integer;
-	numero_2: integer;
-	resultado: integer;
-
+    num1:Real;
+	num2:Real;
 begin
-	read(numero_1);
-	read(numero_2);
-	resultado:= numero_1 + numero_2;
-	writeln('El resultado de la suma es: ' , resultado);
-	
-	
+	num1:=10;
+	num2:=5;
+	Writeln(num1 div num2); // No se puede :D
+	Writeln(num1 mod num2); // No se puede :D
 end.
 
