@@ -16,13 +16,13 @@
 
 <table>
  <tr>
-  <td> A </td> <td> Tabla </td>
+  <td> Problema </td> <td> Tabla </td>
   </tr>
  <tr>
  <td>
    
 ```Pascal
-program Ejemplo;
+program Problema;
 type
   cadena35 = string[35];
   empleado = record
