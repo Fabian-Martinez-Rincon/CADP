@@ -12,10 +12,47 @@
 #### 1) Suponga que un programa declara un tipo cadena que es un ```string[1]``` y una variable ```ST:cadena```. La variable ST puede ser utilizada como variable de decision en un case.
 - ***VERDADERO*** - funciona como un char
 
+```Pas 
+program Uno;
+type
+	cadena = string[1];
+var
+    ST:cadena;
+begin
+    ST := 'A';
+    case (ST) of 
+        'A' : writeln('Imprime A');  //Entra en 'A'
+        'B': writeln('Imprime B');
+        else writeln('No funciona');
+    end;
+end.
+
+
+```
 
 #### 2) Siendo ```meses``` un tipo de subrango de enteros de 1 a 12, un modulo funcion puede retornar un valor de tipo ```meses```. 
 - ***VERDADERO*** - un subrango de enteros es un tipo de dato simple
 
+```Pas
+program Dos;
+type
+	meses = 1..12;
+//_______________________________________________
+function Cambiar(p:meses):meses;
+begin
+	p:=10;
+	Cambiar:=p;
+end;
+//_______________________________________________
+var
+    prueba:meses;
+begin
+	prueba:=2;
+	WriteLn('Prueba: ',prueba); // 2
+	prueba:=Cambiar(prueba);
+	WriteLn('Prueba: ',prueba); // 10
+end.
+```
 
 #### 3) Una estructura de control FOR siempre se ejecuta al menos una vez. 
 - ***VERDADERO*** - la asignacion inicial del indice siempre ocupa una unidad de tiempo, por lo tanto, siempre se ejecuta una vez / porque se trata de una estructura repetitiva
@@ -25,10 +62,76 @@
 - ***VERDADERO*** - puntero = 4 bytes / vector de 4 char = 4 bytes
 
 
-#### 5) Un modulo cuyo objetivo es modificar el contenido de todos los elementos de una lista de enteros siempre debe recibir el puntero inicial de la lista como parametro por referencia. 
-- ***FALSO*** - Todos los nodos que contienen la informacion a modificar estan cargados en memoria dinamica; Sea pasado por referencia o por valor, se pueden cambiar todos los nodos usando una variable auxiliar local al programa. Es decir, al cambiar la informacion en la memoria dinamica, se cambia todo sobre las direcciones de memoria de la misma forma que lo hacen los parametros pasados por referencia. A RE CHEQUEAR LA JUSTIFICACION
-- O ***FALSO*** ya que por valor tambien se pueden cambiar, en cambio si queremos pasarlo por referencia, tenemos que guardar el puntero inicial en una variable aux
 
+
+
+#### 5) Un modulo cuyo objetivo es modificar el contenido de todos los elementos de una lista de enteros siempre debe recibir el puntero inicial de la lista como parametro por referencia. 
+- ***FALSO*** ya que por valor tambien se pueden modificar el contenido de todos los elementos, en cambio si queremos pasarlo por referencia, tenemos que guardar el puntero inicial en una variable aux
+
+```Pas
+program PUNTEROS;
+type
+
+  l = ^nodo;
+  nodo = record
+    num:integer;
+    sig:l;
+  end;
+//__________________________________
+procedure armarNodo(var lis:l;num:Integer);
+var
+    nue:l;
+begin
+    new(nue);
+    nue^.num:=num;
+    nue^.sig:=lis;
+    lis:=nue;
+end;
+//__________________________________
+Procedure cargarLista (var lis:l);
+var
+    n:integer;
+Begin
+    ReadLn(n);
+    while n <> 0 do
+    begin
+        armarNodo(lis,n);
+        ReadLn(n);
+    end;
+End;
+//__________________________________
+procedure Imprimir(lis:l);
+begin
+    while lis <> nil do
+    begin
+        WriteLn(lis^.num);
+        lis:=lis^.sig;
+    end;
+end;
+
+//__________________________________
+Procedure modificarLista (  lis:l);
+
+Begin
+    while lis <> Nil do
+    begin
+        lis^.num:=lis^.num+1;
+        lis:=lis^.sig;
+    end;
+End;
+//__________________________________
+
+Var
+   lis: l;
+begin
+   lis:=Nil;
+   cargarLista(lis);
+   WriteLn('_______________');
+   modificarLista(lis);
+   WriteLn('_______________');
+   Imprimir(lis);
+end.
+```
 
 #### 6) Un proceso que no utiliza paramentros no puede comunicarse con el programa principal. 
 - ***FALSO*** - A pesar de que estar desaconsejado por la catedra, se pueden usar variables globales
@@ -37,20 +140,35 @@
 #### 7) No estaba en el discord :c.
 - ***FALSO*** - Solo se puede usar un tipo de dato ordinal en el indice de un case
 ```Pas
+program Siete;
 var
-    num:real;
+    num:Real; //Solo entero
 begin
-    read(num);
-    case num of 
-        1..20 = writeln('menor de 20');
+    readln(num);
+    case (num) of 
+        1..20 : writeln('menor de 20');
         21..50: writeln('entre 21 y 50');
-        else: writeln('mayor de 100');
+        else writeln('mayor de 100');
     end;
 end.
+
 ```
 #### 8) Todas las operaciones permitidas para variables de tipo entero tambien son permitidas para variables de tipo real. 
 - ***FALSO*** - MOD y DIV son operaciones reservadas solo para variables de tipo entero
 
+```Pas
+program ocho;
+var
+    num1:Real;
+	num2:Real;
+begin
+	num1:=10;
+	num2:=5;
+	Writeln(num1 div num2); // No se puede :D
+	Writeln(num1 mod num2); // No se puede :D
+end.
+
+```
 
 #### 9) Siempre es posible reemplazar un FOR por un WHILE y viceversa. 
 - ***FALSO***  - FOR -> WHILE se puede, pero WHILE -> FOR no, dado que no se sabe cuantas veces se va a ejecutar el bloque de instrucciones de un WHILE

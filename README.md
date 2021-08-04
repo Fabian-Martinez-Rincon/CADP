@@ -13,20 +13,16 @@
 - [Ejemplos de memorias y tiempo](Ejemplos-Memorias_Tiempos.md)
 
 ### 1) Teniendo en cuenta la tabla, calcular la memoria estatica, dinamica y el tiempo de ejecución.
-| Tipo de dato | Memoria |
-| ------------- | ------------- |
-| Char  | 1 byte  |
-| Integer  | 6 byte  |
-| Real  | 8 byte  |
-| Boolean  | 1 byte  |
-| String  | Longitud + 1 byte  |
-| Puntero  | 4 byte  |
 
-
-
-
+<table>
+ <tr>
+  <td> Problema </td> <td> Tabla </td>
+  </tr>
+ <tr>
+ <td>
+   
 ```Pascal
-program Ejemplo;
+program Problema;
 type
   cadena35 = string[35];
   empleado = record
@@ -63,7 +59,25 @@ begin
   end;
 end.
   
-```
+```  
+</td>
+<td>
+ 
+| Tipo de Dato | Memoria |
+| ------------- | ------------- |
+| Char  | 1 byte  |
+| Integer  | 6 byte  |
+| Real  | 8 byte  |
+| Boolean  | 1 byte  |
+| String  | Longitud + 1 byte  |
+| Puntero  | 4 byte  |
+ 
+ 
+</td>
+
+</tr>
+</table>
+
 ## Resolución
 La tabla del inicio puede variar dependiendo la pc o los profesores que te toquen ya que en este caso es teorico.
 
@@ -189,11 +203,11 @@ Nos quedaria:
 
 
 
-### 3) Cual de las dos opciones es más eficiente.
+### 2) Cual de las dos opciones consume menos memoria total (Memoria estatica +  Memoria dinamica).
 
 <table>
  <tr>
-  <td> A </td> <td> B </td>
+  <td> A </td> <td> B </td><td> Tabla </td>
   </tr>
  <tr>
  <td>
@@ -225,7 +239,7 @@ end.
 <td>
    
 ```Pas
-   program opcion_B;
+program opcion_B;
 type
     vector = array [1..10] of integer;
 var
@@ -239,7 +253,119 @@ begin
     end;
 end.
 ```  
+</td>
+<td>
+ 
+| Dato | Memoria |
+| ------------- | ------------- |
+| Char  | 1 byte  |
+| Integer  | 6 byte  |
+| Real  | 8 byte  |
+| Boolean  | 1 byte  |
+| String  | Long + 1 byte  |
+| Puntero  | 4 byte  |
+ 
+ 
+</td>
+
+</tr>
+</table>
+
+A)
+
+<table>
+<tr>
+<td> Memorias </td> <td> Resultado </td>
+</tr>
+<tr>
+<td> Memoria Estatica:
+
+```Pas
+var
+    l,nue:lista; 4b + 4b = 8bytes
+    i:integer; 6bytes
+``` 
+
+</td>
+<td>
+
+Memoria Estatica = ```14 bytes```
+
+</td>
+ </tr>
+ <tr>
+ <td>
+  Memoria Dinamica:
+
+```Pas
+begin
+    l:=Nil; 
+    for i:=l to 6 do begin
+        new(nue); 4bytes + (6bytes) = 10 bytes
+        nue^.dato:=i; 
+        nue^.sig:=l; 
+        l:=nue; 
+    end;
+    6 * 10b
+end. 
+```  
+  </td>
+ 
+ <td>
+  
+Memoria Dinamica = ```(6*10)```
+
+Memoria Dinamica = ```60 bytes```
+
+Memoria Total = ```60b + 14b``` = ```74 bytes```
+  
+ </td>
+</tr>
+</table>
+
+B)
+
+<table>
+<tr>
+<td> Memorias </td> <td> Resultado </td>
+</tr>
+<tr>
+<td>
+Memoria Estatica:
+
+```Pas
+var
+    v:vector; 10*6 = 60 b
+    i,dimL:integer; 6 + 6 + 6 = 18 b
+```
+</td>
+<td>
+ 
+Memoria Estatica = ```78 bytes```
  
 </td>
 </tr>
+<tr>
+<td>
+Memoria Dinamica:
+
+```Pas
+begin
+    dimL:=0;
+    for i:=1 to 6 do begin
+        dimL:=dimL + 1;
+        v[i]:=i;
+    end;
+end.
+```
+</td>
+<td>
+Memoria Dinamica = No tiene :D
+</td>
+ </tr>
 </table>
+
+
+
+Justificación:
+- El ***A*** es el que ocupa menos memoria ya que en el B con tan solo la memoria estatica, este supera al A en memoria total
