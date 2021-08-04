@@ -193,7 +193,7 @@ Nos quedaria:
 
 <table>
  <tr>
-  <td> A </td> <td> B </td>
+  <td> A </td> <td> B </td><td> Tabla </td>
   </tr>
  <tr>
  <td>
@@ -239,8 +239,21 @@ begin
     end;
 end.
 ```  
+</td>
+<td>
+ 
+| Tipo de dato | Memoria |
+| ------------- | ------------- |
+| Char  | 1 byte  |
+| Integer  | 6 byte  |
+| Real  | 8 byte  |
+| Boolean  | 1 byte  |
+| String  | Longitud + 1 byte  |
+| Puntero  | 4 byte  |
+ 
  
 </td>
+
 </tr>
 </table>
 
