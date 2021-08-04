@@ -278,8 +278,7 @@ A)
 <td> Memorias </td> <td> Resultado </td>
 </tr>
 <tr>
-<td>
- Memoria Estatica:
+<td> Memoria Estatica:
 
 ```Pas
 var
@@ -293,13 +292,10 @@ var
 Memoria Estatica = ```14 bytes```
 
 </td>
- 
-</tr>
-</table>
-
-
-
-Memoria Dinamica:
+ </tr>
+ <tr>
+ <td>
+  Memoria Dinamica:
 
 ```Pas
 begin
@@ -313,11 +309,23 @@ begin
     6 * 10b
 end. 
 ```  
+  </td>
+ 
+ <td>
+  
 Memoria Dinamica = ```(6*10)```
 
 Memoria Dinamica = ```60 bytes```
 
 Memoria Total = ```60b + 14b``` = ```74 bytes```
+ </td>
+</tr>
+</table>
+
+
+
+
+
 
 B)
 
