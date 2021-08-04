@@ -318,17 +318,17 @@ Memoria Dinamica = ```(6*10)```
 Memoria Dinamica = ```60 bytes```
 
 Memoria Total = ```60b + 14b``` = ```74 bytes```
+  
  </td>
 </tr>
 </table>
-
-
-
-
-
-
 B)
-
+<table>
+<tr>
+<td> Memorias </td> <td> Resultado </td>
+</tr>
+<tr>
+<td>
 Memoria Estatica:
 
 ```Pas
@@ -336,8 +336,15 @@ var
     v:vector; 10*6 = 60 b
     i,dimL:integer; 6 + 6 + 6 = 18 b
 ```
+</td>
+<td>
+ 
 Memoria Estatica = ```78 bytes```
-
+ 
+</td>
+</tr>
+<tr>
+<td>
 Memoria Dinamica:
 
 ```Pas
@@ -349,7 +356,22 @@ begin
     end;
 end.
 ```
+</td>
+<td>
 Memoria Dinamica = No tiene :D
+</td>
+ </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
 
 Justificación:
 - El ***A*** es el que ocupa menos memoria ya que en el B con tan solo la memoria estatica, este supera al A en memoria total
