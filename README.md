@@ -248,7 +248,7 @@ end.
 | Integer  | 6 byte  |
 | Real  | 8 byte  |
 | Boolean  | 1 byte  |
-| String  | Longitud + 1 byte  |
+| String  | Long + 1 byte  |
 | Puntero  | 4 byte  |
  
  
