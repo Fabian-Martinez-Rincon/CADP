@@ -8,3 +8,5 @@
 Suponga que usted debe elegir una estructura para representar la siguiente situación:
 
 Se desea almacenar en una estructura la información de los alumnos de CADP. De cada alumno se conoce apellido, nombre y su promedio. Se sabe que a lo sumo habrá 800 alumnos.
+- Cada semana el profesor quiere subir al entorno ```IDEAS``` un listado ordenado por el promedio de los alumnos. En qué estructura de las vistas en el curso le convendria haber almacenado los alumnos? Justifique.
+- Suponga que ahora el profesor quiere agregar al final de la estructura nuevos alumnos y quiere implementar un módulo que sea eficiente en cuanto al tiempo de ejecución. Elegiría la misma estructura? Justifique.
