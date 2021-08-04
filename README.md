@@ -244,15 +244,6 @@ end.
 </tr>
 </table>
 
-| Tipo de dato | Memoria |
-| ------------- | ------------- |
-| Char  | 1 byte  |
-| Integer  | 6 byte  |
-| Real  | 8 byte  |
-| Boolean  | 1 byte  |
-| String  | Longitud + 1 byte  |
-| Puntero  | 4 byte  |
-
 Memoria Estatica:
 
 ```Pas
