@@ -33,6 +33,26 @@ end.
 #### 2) Siendo ```meses``` un tipo de subrango de enteros de 1 a 12, un modulo funcion puede retornar un valor de tipo ```meses```. 
 - ***VERDADERO*** - un subrango de enteros es un tipo de dato simple
 
+```Pas
+program Dos;
+type
+	meses = 1..12;
+//_______________________________________________
+function Cambiar(p:meses):meses;
+begin
+	p:=10;
+	Cambiar:=p;
+end;
+//_______________________________________________
+var
+    prueba:meses;
+begin
+	prueba:=2;
+	WriteLn('Prueba: ',prueba); // 2
+	prueba:=Cambiar(prueba);
+	WriteLn('Prueba: ',prueba); // 10
+end.
+```
 
 #### 3) Una estructura de control FOR siempre se ejecuta al menos una vez. 
 - ***VERDADERO*** - la asignacion inicial del indice siempre ocupa una unidad de tiempo, por lo tanto, siempre se ejecuta una vez / porque se trata de una estructura repetitiva
