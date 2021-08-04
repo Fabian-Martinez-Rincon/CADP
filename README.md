@@ -63,13 +63,13 @@ end.
 </td>
 <td>
  
-| Dato | Memoria |
+| Tipo de Dato | Memoria |
 | ------------- | ------------- |
 | Char  | 1 byte  |
 | Integer  | 6 byte  |
 | Real  | 8 byte  |
 | Boolean  | 1 byte  |
-| String  | Long + 1 byte  |
+| String  | Longitud + 1 byte  |
 | Puntero  | 4 byte  |
  
  
