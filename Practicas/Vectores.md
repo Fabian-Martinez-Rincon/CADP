@@ -8,8 +8,8 @@ Operaciones
 =================
 
 <!--ts-->
-   * [Asignación de contenido](#Asignación de contenido)
-   * [Lectura/Escritura](#Lectura/Escritura)
+   * [Asignación de contenido](#asignación_de_contenido)
+   * [Lectura/Escritura](#lectura_escritura)
       * [STDIN](#stdin)
       * [Local files](#local-files)
       * [Remote files](#remote-files)
@@ -19,8 +19,8 @@ Operaciones
       * [GitHub token](#github-token)
       * [TOC generation with Github Actions](#toc-generation-with-github-actions)
 
-Asignación de contenido
+Asignación_de_contenido
 =======================
 
-Lectura/Escritura
+Lectura_Escritura
 =================
