@@ -177,11 +177,14 @@ La operación de insertar un elemento en un vector consiste en incorporar el ele
   - Verificar espacio en el vector.
   - Abrir el vector (a partir de la dimL)
   - Aumentar la dimL
-- ***Manteniendo Un Orden*** Esta operación debe controlar que la cantidad de elementos que se cargan no supere la dimensión física.
+- ***Manteniendo Un Orden*** Esta operación requiere verificar el espacio disponible, buscar la posición correspondiente manteniendo el orden y luego insertar el elemento en el vector.
+  - Verificar espacio en el vector
+  - Determinar posición  donde se inserta.
+  - Insertar elemento en la posición determinada. 
 
 <table>
 <tr>
-<td> Carga Total </td> <td> Carga Parcial </td>
+<td> Posición Determinada </td> <td> Manteniendo un Orden </td>
 </tr>
 <tr>
 <td>
