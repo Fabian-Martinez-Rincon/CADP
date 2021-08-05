@@ -159,11 +159,11 @@ end.
 Agregar_al_final
 ================
 ```Pas
-Procedure Agregar(var v:vector;var dimL:integer;elemeto:integer);
+Procedure Agregar_Al_Final(var v:vector;var dimL:integer;elemeto:integer);
 begin
-   if (dimL < dimF) then {Verifico que tengo espacio suficiente}
+   if (dimL < dimF) then 
    begin
-      dimL:=dimL + 1; {Actualizo la cantidad de elementos}
+      dimL:=dimL + 1; 
       v[dimL]:=elemento;
    end;
 end.
