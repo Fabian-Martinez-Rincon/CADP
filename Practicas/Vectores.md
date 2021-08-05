@@ -21,10 +21,6 @@ Asignación_de_contenido
 =======================
 
 ```Pas
-const
-  dimF = 100;
-type
-  vector = array [1..dimF] of integer;
 var
   numero:integer;
   v:vector;
@@ -36,3 +32,12 @@ end.
 
 Lectura_Escritura
 =================
+
+```Pas
+var
+  v:vector;
+begin
+  readln(v[1);
+  writeln(v[1];
+end.
+```
