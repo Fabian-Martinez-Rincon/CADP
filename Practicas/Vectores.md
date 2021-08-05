@@ -170,8 +170,9 @@ end.
 ```
 Insertar_un_elemento
 ====================
-La operacion de ```Cargar Datos``` en un vector consiste en incorporar un elemento a continuacion del otro desde la posición inicial en forma consecutiva.
-- ***Carga Total*** Consiste en guardar cada elemento en una posición del vector.
+La operación de insertar un elemento en un vector consiste en incorporar el elemento en una posición determinada o de acuerdo a un orden impuesto por sus datos (ej: ordenada de mayor a menor).
+
+- ***Posición Determinada*** Consiste en guardar cada elemento en una posición del vector.
 - ***Carga Parcial*** Esta operación debe controlar que la cantidad de elementos que se cargan no supere la dimensión física.
 
 <table>
