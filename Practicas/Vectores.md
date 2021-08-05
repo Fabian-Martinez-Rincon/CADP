@@ -17,7 +17,7 @@ Indice
    * [Borrar Elementos](#borrar_elementos)
    * [Buscar un elemento](#buscar_elemento)
 
-Asignación de contenido
+Asignación_de_contenido
 =======================
 
 ```Pas
@@ -155,5 +155,6 @@ end.
 </tr>
  
 </table>
+
 Agregar_al_final
-=============
+================
