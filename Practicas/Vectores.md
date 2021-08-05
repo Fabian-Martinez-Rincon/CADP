@@ -190,15 +190,19 @@ La operación de insertar un elemento en un vector consiste en incorporar el ele
 <td>
  
 ```Pas
-procedure Carga_Total(var v:vector);
+procedure Posicion_Determinada 
+(var v:vector; var dimL:integer;elemento,pos:integer);
 var
-    i:integer;
+   i:integer;
 begin
-    for i:=1 to dimF do
+    if (dimL < dimF) and ((pos >= 1) and (pos <= dimL)) then
     begin
-       readln(v[i]);                    
+         for i:=dimL to downto pos to
+            v[i + 1] := v[i];
+         v[pos]:=elemento;
+         dimL:=dimL+1;
     end;
-end.
+end;
 ```
 </td>
 <td>
