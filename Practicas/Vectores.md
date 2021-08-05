@@ -13,7 +13,7 @@ Indice
    * [Recorridos](#recorridos)
    * [Carga de datos](#cargar_Datos)
    * [Agregar al Final](#agregar_al_final)
-   * [Insertar Elementos](#insertar_elementos)
+   * [Insertar Elementos](#insertar_un_elemento)
    * [Borrar Elementos](#borrar_elementos)
    * [Buscar un elemento](#buscar_elemento)
 
@@ -168,3 +168,5 @@ begin
    end;
 end.
 ```
+Insertar_un_elemento
+====================
