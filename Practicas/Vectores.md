@@ -170,3 +170,49 @@ end.
 ```
 Insertar_un_elemento
 ====================
+La operacion de ```Cargar Datos``` en un vector consiste en incorporar un elemento a continuacion del otro desde la posición inicial en forma consecutiva.
+- ***Carga Total*** Consiste en guardar cada elemento en una posición del vector.
+- ***Carga Parcial*** Esta operación debe controlar que la cantidad de elementos que se cargan no supere la dimensión física.
+
+<table>
+<tr>
+<td> Carga Total </td> <td> Carga Parcial </td>
+</tr>
+<tr>
+<td>
+ 
+```Pas
+procedure Carga_Total(var v:vector);
+var
+    i:integer;
+begin
+    for i:=1 to dimF do
+    begin
+       readln(v[i]);                    
+    end;
+end.
+```
+</td>
+<td>
+ 
+
+```Pas
+procedure Carga_Parcial(var v;vector;var dimL);
+var
+    numero:integer;
+begin
+    dimL:=0;
+    readln(numero);
+    while (numero <> 0) and (dimL < dimF) do
+    begin
+       dimL:=dimL+1;
+       v[dimL]:=nummero;
+       readln(numero);                 
+    end;
+end.
+```
+ 
+</td>
+</tr>
+ 
+</table>
