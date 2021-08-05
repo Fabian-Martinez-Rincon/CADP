@@ -210,8 +210,7 @@ end;
  
 
 ```Pas
-procedure InsertarElemOrd
-(var v:vector; var dimL:integer;elemento:integer);
+procedure InsertarElemOrd (var v:vector; var dimL:integer;elemento:integer);
 var
     pos:integer;
 begin
@@ -222,8 +221,41 @@ begin
     end;
 end;
 ```
- 
 </td>
 </tr>
+ 
+ <tr><td></td>
+ <td>
+  
+ ```Pas
+procedure BuscarPosicion (x:integer;v:vector;dimL:integer):integer;
+var
+    pos:=Integer;
+begin
+    pos:=1;
+    while (pos <= dimL) and (x > v[pos]) do
+        pos:=pos + 1;
+    BuscarPosicion:=pos;
+end;
+ ```
+ </td>
+ </tr>
+ 
+ <tr><td></td>
+ <td>
+  
+ ```Pas
+Procedure Insertar (var v:vector; var dimL:integer; pos: Indice; elem:integer);
+var 
+    i: indice;
+begin
+    for i:= dimL downto pos do 
+        v [i + 1] := v [i] ;
+    v [pos] := elem; 
+    dimL := dimL + 1;
+End;
+ ```
+ </td>
+ </tr>
  
 </table>
