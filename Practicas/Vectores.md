@@ -106,3 +106,69 @@ end.
 </tr>
  
 </table>
+
+Cargar_Datos
+=============
+La operacion de ***Recorridos*** en un vector consiste en recorrer el vector de manera total o parcial, para realizar algún proceso sobre sus elementos.
+- ***Recorrido Total*** Implica analizar ```todos``` los elementos del vector, lo que lleva a recorrer completamente la estructura.
+- ***Recorrido Parcial*** Implica analizar los elementos del vector, ```hasta``` encontar aquel que cumple con lo pedido. Puede ocurrir que se recorra todo el vector.
+
+<table>
+<tr>
+<td> Recorrido Total </td> <td> Recorrido Parcial </td><td> Recorrido Parcial 2 </td>
+</tr>
+<tr>
+<td>
+ 
+```Pas
+var
+    v:vector;
+    i:integer;
+begin
+    for i:=1 to dimF do
+       writeln(v[i]);
+end.
+```
+</td>
+<td>
+ 
+
+```Pas
+var //(Seguro Existe)
+    v:vector;
+    i:integer;
+begin
+    i:=1;
+    while (v[i] <> 0) do
+    begin
+       writeln(v[i]);
+       i:=i+1;
+    end;
+end.
+```
+ 
+</td>
+ <td>
+ 
+
+```Pas
+var //(Puede no Existir)
+    v:vector;
+    i:integer;
+begin
+    i:=1;
+    while (i <= dimF) and (v[i] <> 0) do
+    begin
+       i:=i+1;
+    end;
+    if (i <= dimF ) then
+       writeln ('Existe');
+    else
+       writeln ('No Existe');
+end.
+```
+ 
+</td>
+</tr>
+ 
+</table>
