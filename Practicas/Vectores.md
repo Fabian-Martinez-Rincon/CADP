@@ -161,9 +161,9 @@ Agregar_al_final
 ```Pas
 Procedure Agregar(var v:vector;var dimL:integer;elemeto:integer);
 begin
-   if (dimL < dimF) then
+   if (dimL < dimF) then {Verifico que tengo espacio suficiente}
    begin
-      dimL:=dimL + 1;
+      dimL:=dimL + 1; {Actualizo la cantidad de elementos}
       v[dimL]:=elemento;
    end;
 end.
