@@ -20,5 +20,19 @@ Operaciones
 Asignación_de_contenido
 =======================
 
+```Pas
+const
+  dimF = 100;
+type
+  vector = array [1..dimF] of integer;
+var
+  numero:integer;
+  v:vector;
+begin
+  numero:=10;
+  v[4]:=numero;
+end.
+```
+
 Lectura_Escritura
 =================
