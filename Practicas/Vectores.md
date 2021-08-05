@@ -17,7 +17,7 @@ Indice
    * [Borrar Elementos](#borrar_elementos)
    * [Buscar un elemento](#buscar_elemento)
 
-Asignación_de_contenido
+Asignación de contenido
 =======================
 
 ```Pas
