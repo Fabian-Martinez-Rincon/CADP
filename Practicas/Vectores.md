@@ -210,19 +210,17 @@ end;
  
 
 ```Pas
-procedure Carga_Parcial(var v;vector;var dimL);
+procedure InsertarElemOrd
+(var v:vector; var dimL:integer;elemento:integer);
 var
-    numero:integer;
+    pos:integer;
 begin
-    dimL:=0;
-    readln(numero);
-    while (numero <> 0) and (dimL < dimF) do
+    if (dimL < dimF) then
     begin
-       dimL:=dimL+1;
-       v[dimL]:=nummero;
-       readln(numero);                 
+        pos:=BuscarPosicion(elemento,v,dimL);
+        Insertar(v,dimL,pos,elemento);
     end;
-end.
+end;
 ```
  
 </td>
