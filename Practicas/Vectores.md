@@ -46,3 +46,60 @@ Recorridos
 La operacion de ***Recorridos*** en un vector consiste en recorrer el vector de manera total o parcial, para realizar algún proceso sobre sus elementos.
 - ***Recorrido Total*** Implica analizar ```todos``` los elementos del vector, lo que lleva a recorrer completamente la estructura.
 - ***Recorrido Parcial*** Implica analizar los elementos del vector, ```hasta``` encontar aquel que cumple con lo pedido. Puede ocurrir que se recorra todo el vector.
+
+<table>
+<tr>
+<td> Recorrido Total </td> <td> Recorrido Parcial </td>
+</tr>
+<tr>
+<td>
+ 
+```Pas
+var
+    v:vector;
+    i:integer;
+begin
+    for i:=1 to dimF do
+       writeln(v[i]);
+end.
+```
+</td>
+<td>
+ 
+
+```Pas
+var //(Seguro Existe)
+    v:vector;
+    i:integer;
+begin
+    i:=1;
+    while (v[i] <> 0) do
+    begin
+       writeln(v[i]);
+       i:=i+1;
+    end;
+end.
+```
+ 
+</td>
+ 
+</tr>
+<tr>
+<td>
+Memoria Dinamica:
+
+```Pas
+begin
+    dimL:=0;
+    for i:=1 to 6 do begin
+        dimL:=dimL + 1;
+        v[i]:=i;
+    end;
+end.
+```
+</td>
+<td>
+Memoria Dinamica = No tiene :D
+</td>
+ </tr>
+</table>
