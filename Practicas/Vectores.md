@@ -10,12 +10,12 @@ Operaciones
 <!--ts-->
    * [Asignación de contenido](#asignación_de_contenido)
    * [Lectura/Escritura](#lectura_escritura)
-   * [Lectura/Escritura](#recorridos)
-   * [Lectura/Escritura](#cargar_Datos)
-   * [Lectura/Escritura](#agregar_al_final)
-   * [Lectura/Escritura](#insertar_elementos)
-   * [Lectura/Escritura](#borrar_elementos)
-   * [Lectura/Escritura](#buscar_elemento)
+   * [Recorridos](#recorridos)
+   * [Carga de datos](#cargar_Datos)
+   * [Agregar al Final](#agregar_al_final)
+   * [Insertar Elementos](#insertar_elementos)
+   * [Borrar Elementos](#borrar_elementos)
+   * [Buscar un elemento](#buscar_elemento)
 
 Asignación_de_contenido
 =======================
