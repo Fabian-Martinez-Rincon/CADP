@@ -121,8 +121,8 @@ La operacion de ```Cargar Datos``` en un vector consiste en incorporar un elemen
 <td>
  
 ```Pas
+procedure Carga_Total(var v:vector);
 var
-    v:vector;
     i:integer;
 begin
     for i:=1 to dimF do
@@ -136,9 +136,9 @@ end.
  
 
 ```Pas
+procedure Carga_Parcial(var v;vector;var dimL);
 var
-    v:vector;
-    dimL,numero:integer;
+    numero:integer;
 begin
     dimL:=0;
     readln(numero);
