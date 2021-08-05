@@ -86,16 +86,19 @@ end.
  
 
 ```Pas
-var //(Seguro Existe)
+var //(Puede no Existir)
     v:vector;
     i:integer;
 begin
     i:=1;
-    while (v[i] <> 0) do
+    while (i <= dimF) and (v[i] <> 0) do
     begin
-       writeln(v[i]);
        i:=i+1;
     end;
+    if (i <= dimF ) then
+       writeln ('Existe');
+    else
+       writeln ('No Existe');
 end.
 ```
  
