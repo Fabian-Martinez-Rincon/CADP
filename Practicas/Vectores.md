@@ -109,13 +109,13 @@ end.
 
 Cargar_Datos
 =============
-La operacion de ***Recorridos*** en un vector consiste en recorrer el vector de manera total o parcial, para realizar algún proceso sobre sus elementos.
-- ***Recorrido Total*** Implica analizar ```todos``` los elementos del vector, lo que lleva a recorrer completamente la estructura.
-- ***Recorrido Parcial*** Implica analizar los elementos del vector, ```hasta``` encontar aquel que cumple con lo pedido. Puede ocurrir que se recorra todo el vector.
+La operacion de ```Cargar Datos``` en un vector consiste en incorporar un elemento a continuacion del otro desde la posición inicial en forma consecutiva.
+- ***Carga Total*** Consiste en guardar cada elemento en una posición del vector.
+- ***Carga Parcial*** Esta operación debe controlar que la cantidad de elementos que se cargan no supere la dimensión física.
 
 <table>
 <tr>
-<td> Recorrido Total </td> <td> Recorrido Parcial </td><td> Recorrido Parcial 2 </td>
+<td> Carga Total </td> <td> Carga Parcial </td>
 </tr>
 <tr>
 <td>
@@ -126,7 +126,9 @@ var
     i:integer;
 begin
     for i:=1 to dimF do
-       writeln(v[i]);
+    begin
+       readln(v[i]);                    
+    end;
 end.
 ```
 </td>
@@ -134,37 +136,18 @@ end.
  
 
 ```Pas
-var //(Seguro Existe)
+var
     v:vector;
-    i:integer;
+    dimL,numero:integer;
 begin
-    i:=1;
-    while (v[i] <> 0) do
+    dimL:=0;
+    readln(numero);
+    while (numero <> 0) and (dimL < dimF) do
     begin
-       writeln(v[i]);
-       i:=i+1;
+       dimL:=dimL+1;
+       v[dimL]:=nummero;
+       readln(numero);                 
     end;
-end.
-```
- 
-</td>
- <td>
- 
-
-```Pas
-var //(Puede no Existir)
-    v:vector;
-    i:integer;
-begin
-    i:=1;
-    while (i <= dimF) and (v[i] <> 0) do
-    begin
-       i:=i+1;
-    end;
-    if (i <= dimF ) then
-       writeln ('Existe');
-    else
-       writeln ('No Existe');
 end.
 ```
  
