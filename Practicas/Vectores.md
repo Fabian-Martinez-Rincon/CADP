@@ -49,7 +49,7 @@ La operacion de ***Recorridos*** en un vector consiste en recorrer el vector de 
 
 <table>
 <tr>
-<td> Recorrido Total </td> <td> Recorrido Parcial </td>
+<td> Recorrido Total </td> <td> Recorrido Parcial </td><td> Recorrido Parcial 2 </td>
 </tr>
 <tr>
 <td>
@@ -82,24 +82,24 @@ end.
 ```
  
 </td>
+ <td>
  
-</tr>
-<tr>
-<td>
-Memoria Dinamica:
 
 ```Pas
+var //(Seguro Existe)
+    v:vector;
+    i:integer;
 begin
-    dimL:=0;
-    for i:=1 to 6 do begin
-        dimL:=dimL + 1;
-        v[i]:=i;
+    i:=1;
+    while (v[i] <> 0) do
+    begin
+       writeln(v[i]);
+       i:=i+1;
     end;
 end.
 ```
+ 
 </td>
-<td>
-Memoria Dinamica = No tiene :D
-</td>
- </tr>
+</tr>
+ 
 </table>
