@@ -349,7 +349,20 @@ end;
    - ***Secuencial Optimizado*** 
      - Se aplica cuando los elementos tienen orden.
      - La busqueda comienza desde el pricipio y se avanza por la estructura de manera secuencial y asi hasta que encuentro el número buscado o hasta que encuentro uno mayor.
-   
+
+```Pas
+Function BuscoPosElemOrd (x:integer;v:Vector;dimL:integer):integer;
+var 
+    pos:integer;
+Begin
+    pos:=1;
+    while (pos <= dimL) and (x > v[pos]) do
+        pos:=pos+1;
+    if ( pos > dimL ) or (x < v [pos]) then
+        pos:=0;
+    BuscoPosElemOrd:= pos;
+End; 
+```
    - ***Busqueda Dicotomica***
      - Se aplica cuando los elementos tienen orden.
      - Se compara el valor buscado ```x``` con el ubicado en el medio del vector ```a```:
