@@ -370,11 +370,7 @@ End;
        - Si el elemento ubicado al medio del vector es igual a x, entonces la busqueda termina.
        - Si no es el valor buscado, debera quedarse con la mitad del vector que conviene, para seguir la busqueda. Este paso se repite tantas veces hasta que se acaba el vector o encuentro el valor.
      - Se calcula la posición del medio del vector original.
-
-<div align="center">
-<img src="https://user-images.githubusercontent.com/55964635/128447821-75f753e3-fc05-4cf7-bf3a-928d3d49fbf8.png"/>
- </div>
- 
+     - <div align="center"><img src="https://user-images.githubusercontent.com/55964635/128447821-75f753e3-fc05-4cf7-bf3a-928d3d49fbf8.png"/></div>
      - Se descarta la primera parte.
      - Se calcula la posición del medio del ```sub_arreglo``` de:
  
