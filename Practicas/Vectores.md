@@ -320,9 +320,16 @@ El proceso de ubicar información particular en una colección de datos es conoc
   - Es ineficiente a medida que el tamaño del arreglo crece.
   
 - ***En arreglos ordenados*** Almacenados ordenados por algun criterio
+
    - ***Secuencial Optimizado*** 
      - Se aplica cuando los elementos tienen orden.
      - La busqueda comienza desde el pricipio y se avanza por la estructura de manera secuencial y asi hasta que encuentro el número buscado o hasta que encuentro uno mayor.
+   
+   - ***Busqueda Dicotomica***
+     - Se aplica cuando los elementos tienen orden.
+     - Se compara el valor buscado ```x``` con el ubicado en el medio del vector ```a```:
+       - Si el elemento ubicado al medio del vector es igual a x, entonces la busqueda termina.
+       - Si no es el valor buscado, debera quedarse con la mitad del vector que conviene, para seguir la busqueda. Este paso se repite tantas veces hasta que se acaba el vector o encuentro el valor.
 
 Corte_de_Control
 ================
