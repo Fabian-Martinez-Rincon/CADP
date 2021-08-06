@@ -436,13 +436,25 @@ Corte_de_Control
 ================
 
 ```Pas
-leer(auto);
-while (auto.marca <> 'ZZZ') do 
+Procedure CorteDeControl(var l:info;var v:vCantidadDia;var cant, total:integer);
+var
+    p:rPrestamos;
+    info: rinfo;
 begin
-   marcaActual := auto.marca;
-   while ( (auto.marca <> 'ZZZ') AND (marcaActual = auto.marca) ) do 
-   begin
-      leer(auto);
-   end;
+    LeerPrestamo(p);
+    while (p.ISBN <> -1) do
+    begin
+        info.ISBN:=p-ISBN;
+        info.cantidad:=0;
+        while (p.ISBN = info.ISBN) do
+        begin
+            info.cantidad:=info.cantidad+1;
+            v[p.dia]:=v[p.dia]+1;
+            if (p.nro_p mod 2 = 1) and (p.nro_s mod 2 = 0) then
+                cant := cant + 1;
+            leerPrestamo(p);
+        end;
+        agregarAtras(l,info);
+    end;
 end;
 ```
