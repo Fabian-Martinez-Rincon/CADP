@@ -258,7 +258,6 @@ End;
 ```
 
 - ***Elemento determinada*** Hay que verificar que exista el elemento.
-  - Verificar la posición a insertar.
-  - Verificar espacio en el vector.
-  - Abrir el vector (a partir de la dimL)
-  - Aumentar la dimL
+  - Buscar la posición del elemento a borrar.
+  - Si el elemento esta entonces ----> Borrar el elemento.
+
