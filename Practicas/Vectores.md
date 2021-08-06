@@ -317,3 +317,8 @@ Begin
 End;
 
 ```
+Buscar_elemento
+================
+[(Indice)](#indice).
+
+
