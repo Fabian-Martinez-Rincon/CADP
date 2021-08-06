@@ -319,6 +319,7 @@ El proceso de ubicar información particular en una colección de datos es conoc
   - Es ineficiente a medida que el tamaño del arreglo crece.
   
 - ***En arreglos ordenados*** Almacenados ordenados por algun criterio
-  - ***Secuencial Optimizado*** 
-  - - Verificar espacio en el vector.
-  - - Determinar posición  donde se inserta.
+   - ***Secuencial Optimizado*** 
+     - Se aplica cuando los elementos tienen orden.
+     - La busqueda comienza desde el pricipio y se avanza por la estructura de manera secuencial y asi hasta que encuentro el número buscado o hasta que encuentro uno mayor.
+ 
