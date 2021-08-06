@@ -234,3 +234,31 @@ End;
  
 Borrar_Elementos
 ================
+La operación Borrar un elemento en un vector consiste en eliminar un elemento determinado o bien eliminar un elemento que ocupa una posición determinada.
+- ***En posición determinada*** Se debe verificar que la posición sea valida.
+  - Validar la posición a eliminar.
+  - Desplazar elementos (A partir de la siguiente posición).
+  - Abrir el vector (a partir de la dimL)
+  - Disminuir la dimL
+
+```Pas
+Procedure BorrarPos (var v: vector; var dimL: integer; pos: posicion);
+var 
+    i: integer; 
+Begin
+    exito := false;
+    if (pos >=1 and pos <= dimL) then 
+    begin
+        for i:= pos + 1 to dimL  do
+            v [ i - 1 ]  :=  v [ i ] ;
+        dimL := dimL - 1 ;         
+   end;
+End;
+
+```
+
+- ***Elemento determinada*** Hay que verificar que exista el elemento.
+  - Verificar la posición a insertar.
+  - Verificar espacio en el vector.
+  - Abrir el vector (a partir de la dimL)
+  - Aumentar la dimL
