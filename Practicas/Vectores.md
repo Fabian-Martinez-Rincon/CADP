@@ -313,11 +313,11 @@ End;
 Buscar_elemento
 ================
 El proceso de ubicar información particular en una colección de datos es conocido como método de busqueda.
-- ***Busqueda Lineal o Secuencial*** Almacenados sin ningun orden.
-  - Se aplica cuando los elementos no tienen orden.
-  - Requiere excesivo consumo de tiempo en la localización del elemento.
-  - Numero medio de compareciones (dimL + 1) / 2. 
-  - Es ineficiente a medida que el tamaño del arreglo crece.
+1) ***Busqueda Lineal o Secuencial*** Almacenados sin ningun orden.
+   - Se aplica cuando los elementos no tienen orden.
+   - Requiere excesivo consumo de tiempo en la localización del elemento.
+   - Numero medio de compareciones (dimL + 1) / 2. 
+   - Es ineficiente a medida que el tamaño del arreglo crece.
 
 - La búsqueda compienza desde el principio y se avanza por la estructura de manera secuencial, uno a uno.
 - La solución debería recorrer el vector y detenerse en caso de encontrar el elemento X.
@@ -344,7 +344,7 @@ end;
 
 ```
   
-- ***En arreglos ordenados*** Almacenados ordenados por algun criterio
+b) ***En arreglos ordenados*** Almacenados ordenados por algun criterio
 
    - ***Secuencial Optimizado*** 
      - Se aplica cuando los elementos tienen orden.
