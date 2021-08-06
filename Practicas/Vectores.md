@@ -8,7 +8,7 @@ Indice
 =================
 
 <!--ts-->
-   * [Asignación de contenido](#asignación_de_contenido(ind))
+   * [Asignación de contenido](#asignación_de_contenido(ind).)
    * [Lectura/Escritura](#lectura_escritura)
    * [Recorridos](#recorridos)
    * [Carga de datos](#cargar_Datos)
