@@ -211,7 +211,7 @@ begin
     end;
 end;
 //__________________________________________________________________________________
-procedure BuscarPosicion (x:integer;v:vector;dimL:integer):integer;
+Function BuscarPosicion (x:integer;v:vector;dimL:integer):integer;
 var
     pos:=Integer;
 begin
