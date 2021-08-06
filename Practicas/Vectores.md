@@ -313,11 +313,12 @@ End;
 Buscar_elemento
 ================
 El proceso de ubicar información particular en una colección de datos es conocido como método de busqueda.
-1) ***Busqueda Lineal o Secuencial*** Almacenados sin ningun orden.
-   - Se aplica cuando los elementos no tienen orden.
-   - Requiere excesivo consumo de tiempo en la localización del elemento.
-   - Numero medio de compareciones (dimL + 1) / 2. 
-   - Es ineficiente a medida que el tamaño del arreglo crece.
+
+a) ***Busqueda Lineal o Secuencial*** Almacenados sin ningun orden.
+- [x] Se aplica cuando los elementos no tienen orden.
+- [x] Requiere excesivo consumo de tiempo en la localización del elemento.
+- [x] Numero medio de compareciones (dimL + 1) / 2. 
+- [x] Es ineficiente a medida que el tamaño del arreglo crece.
 
 - La búsqueda compienza desde el principio y se avanza por la estructura de manera secuencial, uno a uno.
 - La solución debería recorrer el vector y detenerse en caso de encontrar el elemento X.
@@ -344,11 +345,11 @@ end;
 
 ```
   
-b) ***En arreglos ordenados*** Almacenados ordenados por algun criterio
+b) ***En arreglos ordenados*** Almacenados ordenados por algun criterio.
 
-   - ***Secuencial Optimizado*** 
-     - Se aplica cuando los elementos tienen orden.
-     - La busqueda comienza desde el pricipio y se avanza por la estructura de manera secuencial y asi hasta que encuentro el número buscado o hasta que encuentro uno mayor.
+b.1) ***Secuencial Optimizado*** 
+- Se aplica cuando los elementos tienen orden.
+- La busqueda comienza desde el pricipio y se avanza por la estructura de manera secuencial y asi hasta que encuentro el número buscado o hasta que encuentro uno mayor.
 
 ```Pas
 Function BuscoPosElemOrd (x:integer;v:Vector;dimL:integer):integer;
@@ -363,20 +364,20 @@ Begin
     BuscoPosElemOrd:= pos;
 End; 
 ```
-   - ***Busqueda Dicotomica***
-     - Se aplica cuando los elementos tienen orden.
-     - Se compara el valor buscado ```x``` con el ubicado en el medio del vector ```a```:
+b.2) ***Busqueda Dicotomica***
+- Se aplica cuando los elementos tienen orden.
+- Se compara el valor buscado ```x``` con el ubicado en el medio del vector ```a```:
      
-       - Si el elemento ubicado al medio del vector es igual a x, entonces la busqueda termina.
-       - Si no es el valor buscado, debera quedarse con la mitad del vector que conviene, para seguir la busqueda. Este paso se repite tantas veces hasta que se acaba el vector o encuentro el valor.
-     - Se calcula la posición del medio del vector original.
-     - <div align="center"><img src="https://user-images.githubusercontent.com/55964635/128447821-75f753e3-fc05-4cf7-bf3a-928d3d49fbf8.png"/></div>
-     - Se descarta la primera parte.
-     - Se calcula la posición del medio del ```sub_arreglo``` de:
-     - <div align="center"><img src="https://user-images.githubusercontent.com/55964635/128448864-ed8a7608-59c4-497b-a930-6f227174b867.png"/></div>
-     - Se descarta la ```Segunda``` parte del ```subarrango``` (de 7 a 9).
-     - Se calcula la posición del medio del ```subarrango``` delimitado por:
-     - <div align="center"><img src="https://user-images.githubusercontent.com/55964635/128449301-ffe700e2-abf9-4662-8c15-acd3828bb817.png"/></div>
+- Si el elemento ubicado al medio del vector es igual a x, entonces la busqueda termina.
+- Si no es el valor buscado, debera quedarse con la mitad del vector que conviene, para seguir la busqueda. Este paso se repite tantas veces hasta que se acaba el vector o encuentro el valor.
+- Se calcula la posición del medio del vector original.
+<div align="center"><img src="https://user-images.githubusercontent.com/55964635/128447821-75f753e3-fc05-4cf7-bf3a-928d3d49fbf8.png"/></div>
+- Se descarta la primera parte.
+- Se calcula la posición del medio del ```sub_arreglo``` de:
+<div align="center"><img src="https://user-images.githubusercontent.com/55964635/128448864-ed8a7608-59c4-497b-a930-6f227174b867.png"/></div>
+- Se descarta la ```Segunda``` parte del ```subarrango``` (de 7 a 9).
+- Se calcula la posición del medio del ```subarrango``` delimitado por:
+<div align="center"><img src="https://user-images.githubusercontent.com/55964635/128449301-ffe700e2-abf9-4662-8c15-acd3828bb817.png"/></div>
 
 ```Pas
 Procedure  BusquedaBin (var v: Vector; var j:integer; dimL,x: integer);
