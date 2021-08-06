@@ -177,7 +177,9 @@ Insertar_un_elemento
 
 La operación de insertar un elemento en un vector consiste en incorporar el elemento en una posición determinada o de acuerdo a un orden impuesto por sus datos (ej: ordenada de mayor a menor).
 
-- ***Posición Determinada*** Consiste en guardar cada elemento en una posición del vector.
+Posición Determinada
+--------------------
+Consiste en guardar cada elemento en una posición del vector.
   - Verificar la posición a insertar.
   - Verificar espacio en el vector.
   - Abrir el vector (a partir de la dimL)
@@ -199,7 +201,9 @@ begin
     end;
 end;
 ```
-- ***Manteniendo Un Orden*** Esta operación requiere verificar el espacio disponible, buscar la posición correspondiente manteniendo el orden y luego insertar el elemento en el vector.
+Manteniendo Un Orden
+-------------------- 
+Esta operación requiere verificar el espacio disponible, buscar la posición correspondiente manteniendo el orden y luego insertar el elemento en el vector.
   - Verificar espacio en el vector
   - Determinar posición  donde se inserta.
   - Insertar elemento en la posición determinada. 
