@@ -232,8 +232,8 @@ begin
 End;
  ```
  
-Borrar_Elementos
-================
+Borrar_Elementos * [Recorridos](#recorridos)
+=============================================
 La operación Borrar un elemento en un vector consiste en eliminar un elemento determinado o bien eliminar un elemento que ocupa una posición determinada.
 - ***En posición determinada*** Se debe verificar que la posición sea valida.
   - Validar la posición a eliminar.
