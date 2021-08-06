@@ -332,6 +332,28 @@ El proceso de ubicar información particular en una colección de datos es conoc
        - Si el elemento ubicado al medio del vector es igual a x, entonces la busqueda termina.
        - Si no es el valor buscado, debera quedarse con la mitad del vector que conviene, para seguir la busqueda. Este paso se repite tantas veces hasta que se acaba el vector o encuentro el valor.
 
+```Pas
+Function BuscarPosElem (x:integer;v:vector;dimL:integer):integer;
+var 
+    pos:integer; 
+    exito: boolean;
+Begin
+    pos:=1;
+    exito:= false;
+    while (pos <= dimL) and (not exito) do
+    begin
+        if (x = v[pos]) then
+            exito:= true
+        else
+            pos:=pos+1;
+    end;
+    if (exito = false) then 
+        pos:=0;
+    BuscarPosElem:= pos;
+end; 
+
+```
+
 Corte_de_Control
 ================
 
