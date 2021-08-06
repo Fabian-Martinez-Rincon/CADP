@@ -14,6 +14,7 @@ Indice
    * [Carga de datos](#cargar_Datos)
    * [Agregar al Final](#agregar_al_final)
    * [Insertar Elementos](#insertar_un_elemento)
+   * * [En una Posición Determinada](#posición_determinada)
    * [Borrar Elementos](#borrar_elementos)
    * [Buscar un elemento](#buscar_elemento)
    * [Corte de control](#Corte_de_Control)
@@ -177,7 +178,7 @@ Insertar_un_elemento
 
 La operación de insertar un elemento en un vector consiste en incorporar el elemento en una posición determinada o de acuerdo a un orden impuesto por sus datos (ej: ordenada de mayor a menor).
 
-Posición Determinada
+Posición_Determinada
 --------------------
 Consiste en guardar cada elemento en una posición del vector.
   - Verificar la posición a insertar.
@@ -201,7 +202,7 @@ begin
     end;
 end;
 ```
-Manteniendo Un Orden
+Manteniendo_Un_Orden
 -------------------- 
 Esta operación requiere verificar el espacio disponible, buscar la posición correspondiente manteniendo el orden y luego insertar el elemento en el vector.
   - Verificar espacio en el vector
