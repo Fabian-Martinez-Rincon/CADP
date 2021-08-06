@@ -369,10 +369,9 @@ End;
 ```
 b.2) ***Busqueda Dicotomica***
 - Se aplica cuando los elementos tienen orden.
-- Se compara el valor buscado ```x``` con el ubicado en el medio del vector ```a```:
-     
-- Si el elemento ubicado al medio del vector es igual a x, entonces la busqueda termina.
-- Si no es el valor buscado, debera quedarse con la mitad del vector que conviene, para seguir la busqueda. Este paso se repite tantas veces hasta que se acaba el vector o encuentro el valor.
+- Se compara el valor buscado ```x``` con el ubicado en el medio del vector ```a```:    
+  - Si el elemento ubicado al medio del vector es igual a x, entonces la busqueda termina.
+  - Si no es el valor buscado, debera quedarse con la mitad del vector que conviene, para seguir la busqueda. Este paso se repite tantas veces hasta que se acaba el vector o encuentro el valor.
 - Se calcula la posición del medio del vector original.
 <div align="center"><img src="https://user-images.githubusercontent.com/55964635/128447821-75f753e3-fc05-4cf7-bf3a-928d3d49fbf8.png"/></div>
 
