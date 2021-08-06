@@ -17,6 +17,8 @@ Indice
      * [En una Posición Determinada](#posición_determinada)
      * [Manteniendo un orden](#Manteniendo_Un_Orden)
    * [Borrar Elementos](#borrar_elementos)
+     *  [En una Posición Determinada](#en_posición_determinada)
+     *  [Un Elemento Determinado](#Elemento_Determinado)
    * [Buscar un elemento](#buscar_elemento)
    * [Corte de control](#Corte_de_Control)
  
@@ -247,7 +249,10 @@ Borrar_Elementos
 ================
 
 La operación Borrar un elemento en un vector consiste en eliminar un elemento determinado o bien eliminar un elemento que ocupa una posición determinada.
-- ***En posición determinada*** Se debe verificar que la posición sea valida.
+
+En_Posición_Determinada 
+-----------------------
+Se debe verificar que la posición sea valida.
   - Validar la posición a eliminar.
   - Desplazar elementos (A partir de la siguiente posición).
   - Abrir el vector (a partir de la dimL)
@@ -269,7 +274,9 @@ End;
 
 ```
 
-- ***Elemento determinada*** Hay que verificar que exista el elemento.
+Elemento_Determinado
+--------------------
+Hay que verificar que exista el elemento.
   - Buscar la posición del elemento a borrar.
   - Si el elemento esta entonces ----> Borrar el elemento.
 
