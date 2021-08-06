@@ -323,3 +323,14 @@ El proceso de ubicar información particular en una colección de datos es conoc
      - Se aplica cuando los elementos tienen orden.
      - La busqueda comienza desde el pricipio y se avanza por la estructura de manera secuencial y asi hasta que encuentro el número buscado o hasta que encuentro uno mayor.
  
+```Pas
+leer(auto);
+while (auto.marca <> 'ZZZ') do 
+begin
+   marcaActual := auto.marca
+   while ( (auto.marca <> 'ZZZ') AND (marcaActual = auto.marca) ) do 
+   begin
+      leer(auto);
+   end;
+end;
+```
