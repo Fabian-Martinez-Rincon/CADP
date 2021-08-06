@@ -178,21 +178,10 @@ La operación de insertar un elemento en un vector consiste en incorporar el ele
   - Abrir el vector (a partir de la dimL)
   - Aumentar la dimL
 
-- ***Manteniendo Un Orden*** Esta operación requiere verificar el espacio disponible, buscar la posición correspondiente manteniendo el orden y luego insertar el elemento en el vector.
-  - Verificar espacio en el vector
-  - Determinar posición  donde se inserta.
-  - Insertar elemento en la posición determinada. 
 
-<table>
-<tr>
-<td> Posición Determinada </td> <td> Manteniendo un Orden </td>
-</tr>
-<tr>
-<td>
- 
+
 ```Pas
-procedure Posicion_Determinada 
-(var v:vector; var dimL:integer;elemento,pos:integer);
+procedure Posicion_Determinada (var v:vector; var dimL:integer;elemento,pos:integer);
 var
    i:integer;
 begin
@@ -205,12 +194,13 @@ begin
     end;
 end;
 ```
-</td>
-<td>
- 
-
+- ***Manteniendo Un Orden*** Esta operación requiere verificar el espacio disponible, buscar la posición correspondiente manteniendo el orden y luego insertar el elemento en el vector.
+  - Verificar espacio en el vector
+  - Determinar posición  donde se inserta.
+  - Insertar elemento en la posición determinada. 
 ```Pas
-procedure InsertarElemOrd (var v:vector; var dimL:integer;elemento:integer);
+//Insertar un elemento en un vector ordenado de menor a mayor
+procedure Manteniendo_un_Orden (var v:vector; var dimL:integer;elemento:integer);
 var
     pos:integer;
 begin
@@ -220,31 +210,17 @@ begin
         Insertar(v,dimL,pos,elemento);
     end;
 end;
-```
-</td>
-</tr>
- 
- <tr><td></td>
- <td>
-  
- ```Pas
+//__________________________________________________________________________________
 procedure BuscarPosicion (x:integer;v:vector;dimL:integer):integer;
 var
     pos:=Integer;
 begin
-    pos:=1;
+    pos:=1; 
     while (pos <= dimL) and (x > v[pos]) do
         pos:=pos + 1;
     BuscarPosicion:=pos;
 end;
- ```
- </td>
- </tr>
- 
- <tr><td></td>
- <td>
-  
- ```Pas
+//__________________________________________________________________________________
 Procedure Insertar (var v:vector; var dimL:integer; pos: Indice; elem:integer);
 var 
     i: indice;
@@ -255,7 +231,3 @@ begin
     dimL := dimL + 1;
 End;
  ```
- </td>
- </tr>
- 
-</table>
