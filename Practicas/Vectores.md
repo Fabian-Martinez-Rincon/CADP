@@ -19,6 +19,7 @@ Indice
 
 Asignación_de_contenido
 =======================
+[(Indice)](#indice).
 
 ```Pas
 var
@@ -32,6 +33,7 @@ end.
 
 Lectura_Escritura
 =================
+[(Indice)](#indice).
 
 ```Pas
 var
@@ -43,6 +45,8 @@ end.
 ```
 Recorridos
 ==========
+[(Indice)](#indice).
+
 La operacion de ***Recorridos*** en un vector consiste en recorrer el vector de manera total o parcial, para realizar algún proceso sobre sus elementos.
 - ***Recorrido Total*** Implica analizar ```todos``` los elementos del vector, lo que lleva a recorrer completamente la estructura.
 - ***Recorrido Parcial*** Implica analizar los elementos del vector, ```hasta``` encontar aquel que cumple con lo pedido. Puede ocurrir que se recorra todo el vector.
@@ -109,6 +113,8 @@ end.
 
 Cargar_Datos
 =============
+[(Indice)](#indice).
+
 La operacion de ```Cargar Datos``` en un vector consiste en incorporar un elemento a continuacion del otro desde la posición inicial en forma consecutiva.
 - ***Carga Total*** Consiste en guardar cada elemento en una posición del vector.
 - ***Carga Parcial*** Esta operación debe controlar que la cantidad de elementos que se cargan no supere la dimensión física.
@@ -158,6 +164,8 @@ end.
 
 Agregar_al_final
 ================
+[(Indice)](#indice).
+
 ```Pas
 Procedure Agregar_Al_Final(var v:vector;var dimL:integer;elemeto:integer);
 begin
@@ -170,6 +178,8 @@ end.
 ```
 Insertar_un_elemento
 ====================
+[(Indice)](#indice).
+
 La operación de insertar un elemento en un vector consiste en incorporar el elemento en una posición determinada o de acuerdo a un orden impuesto por sus datos (ej: ordenada de mayor a menor).
 
 - ***Posición Determinada*** Consiste en guardar cada elemento en una posición del vector.
@@ -232,9 +242,10 @@ begin
 End;
  ```
  
-Borrar_Elementos  [(Indice)](#indice).
+Borrar_Elementos  
 ================
 
+[(Indice)](#indice).
 
 La operación Borrar un elemento en un vector consiste en eliminar un elemento determinado o bien eliminar un elemento que ocupa una posición determinada.
 - ***En posición determinada*** Se debe verificar que la posición sea valida.
