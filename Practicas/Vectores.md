@@ -261,3 +261,46 @@ End;
   - Buscar la posición del elemento a borrar.
   - Si el elemento esta entonces ----> Borrar el elemento.
 
+```Pas
+Procedure BorrarElem (var v: vector;  var dimL: integer; elem: integer;  var exito: boolean);
+var 
+    pos: indice;
+begin
+    exito:= false;
+    pos:= BuscarPosElem (elem, v, dimL);
+    if (pos <> 0) then 
+    begin
+        BorrarPos (v, dimL, pos);
+        exito:= true;
+   end;
+end;
+//__________________________________________________________________________________
+Function BuscarPosElem (x:integer; v:vector; dimL: integer): integer;
+var 
+    pos:integer; 
+    exito: boolean;
+Begin
+    pos:=1; 
+    exito:= false;
+    while (pos <= dimL) and (not exito) do 
+    begin
+        if (x = v[pos]) then
+            exito:= true
+        else
+            pos:=pos+1;
+    end;
+    if (exito = false) then 
+        pos:=0;
+    BuscarPosElem:= pos;
+end; 
+//__________________________________________________________________________________
+Procedure BorrarPos (var v:vector; var dimL:integer; pos:integer);
+var 
+    i: integer; 
+Begin
+    for i:= pos + 1  to   dimL  do
+        v [ i - 1 ]  :=  v [ i] ;
+    dimL := dimL - 1 ;         
+End;
+
+```
