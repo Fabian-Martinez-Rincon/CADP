@@ -16,7 +16,7 @@ Indice
    * [Insertar Elementos](#insertar_un_elemento)
    * [Borrar Elementos](#borrar_elementos)
    * [Buscar un elemento](#buscar_elemento)
-
+   * [Corte de control](#Corte_de_Control)
 Asignación_de_contenido
 =======================
 
@@ -322,12 +322,15 @@ El proceso de ubicar información particular en una colección de datos es conoc
    - ***Secuencial Optimizado*** 
      - Se aplica cuando los elementos tienen orden.
      - La busqueda comienza desde el pricipio y se avanza por la estructura de manera secuencial y asi hasta que encuentro el número buscado o hasta que encuentro uno mayor.
- 
+
+Corte_de_Control
+================
+
 ```Pas
 leer(auto);
 while (auto.marca <> 'ZZZ') do 
 begin
-   marcaActual := auto.marca
+   marcaActual := auto.marca;
    while ( (auto.marca <> 'ZZZ') AND (marcaActual = auto.marca) ) do 
    begin
       leer(auto);
