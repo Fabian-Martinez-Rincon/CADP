@@ -8,7 +8,7 @@ Indice
 =================
 
 <!--ts-->
-   * [Asignación de contenido](#asignación_de_contenido)
+   * [Asignación de contenido](#asignación_de_contenido(ind))
    * [Lectura/Escritura](#lectura_escritura)
    * [Recorridos](#recorridos)
    * [Carga de datos](#cargar_Datos)
@@ -17,9 +17,9 @@ Indice
    * [Borrar Elementos](#borrar_elementos)
    * [Buscar un elemento](#buscar_elemento)
 
-Asignación_de_contenido
+Asignación_de_contenido[(Ind)](#indice).
 =======================
-[(Indice)](#indice).
+
 
 ```Pas
 var
