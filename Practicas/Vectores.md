@@ -373,10 +373,11 @@ End;
      - <div align="center"><img src="https://user-images.githubusercontent.com/55964635/128447821-75f753e3-fc05-4cf7-bf3a-928d3d49fbf8.png"/></div>
      - Se descarta la primera parte.
      - Se calcula la posición del medio del ```sub_arreglo``` de:
- 
-<div align="center">
-<img src="https://user-images.githubusercontent.com/55964635/128447271-19acb692-4bfc-4371-80ad-55e5e3757427.png"/>
- </div>
+     - <div align="center"><img src="https://user-images.githubusercontent.com/55964635/128448864-ed8a7608-59c4-497b-a930-6f227174b867.png"/></div>
+     - Se descarta la ```Segunda``` parte del ```subarrango``` (de 7 a 9).
+     - Se calcula la posición del medio del ```subarrango``` delimitado por:
+     - <div align="center"><img src="https://user-images.githubusercontent.com/55964635/128449301-ffe700e2-abf9-4662-8c15-acd3828bb817.png"/></div>
+
 
 
 Corte_de_Control
