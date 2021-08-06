@@ -27,8 +27,11 @@ Desordenada
 1. A la función booleana se le va a pasar por parámetros ```L``` de tipo lista y el elemento a buscar.
 2. Para buscar un elemento vamos a necesitar una variable de tipo booleana para determinar si se pudo encontrar o no ese elemento.
 3. Primero vamos a inicializar la variable booleana en falso y luego la lista se va a recorrer desde el nodo inicial.
-4. Mientras ```L``` no llegue al final de la lista y el elemento no se encuentre, se avanzaría una posición en el nodo de la lista, en el caso contrario cambiamos el valor de la variable booleana a ```TRUE`````` para confirmar que se encontro el elemento.
+4. Mientras ```L``` no llegue al final de la lista y el elemento no se encuentre, se avanzaría una posición en el nodo de la lista, en el caso contrario cambiamos el valor de la variable booleana a ```TRUE``` para confirmar que se encontro el elemento.
 5. En el caso de que se haya avanzado en la lista hasta el final y no se haya encontrado el elemento, la función retorna false.
+
+Ordenada
+--------
 
 Crear_una_Lista_Vacia
 =====================
