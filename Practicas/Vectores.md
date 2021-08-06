@@ -378,7 +378,29 @@ End;
      - Se calcula la posición del medio del ```subarrango``` delimitado por:
      - <div align="center"><img src="https://user-images.githubusercontent.com/55964635/128449301-ffe700e2-abf9-4662-8c15-acd3828bb817.png"/></div>
 
-
+```Pas
+Procedure  BusquedaBin (var v: Vector; var j:integer; dimL,x: integer);
+Var
+    primero, ult, medio: integer;
+Begin
+    j :=0 ;
+    primero:= 1;
+    ult:= dimL;
+    medio := (primero + ult ) div 2 ;
+    While ( primero < = ult ) and ( x <> v [medio]) do 
+    begin
+        If ( x < v [ medio ] ) then 
+            ult:= medio -1 ;
+        else
+            primero:= medio+1 ;
+        medio := ( primero + ult ) div 2 ;
+    end;
+    If (primero < = ult) then
+        j := medio
+    else
+        j := 0;
+End;  
+```
 
 Corte_de_Control
 ================
