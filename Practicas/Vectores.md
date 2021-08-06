@@ -436,6 +436,31 @@ Corte_de_Control
 ================
 
 ```Pas
+Procedure CorteDeControl(var v:vector;var dimL:integer);
+var
+    numero:integer;
+    num_aux:Integer;
+    cantidad:integer;
+begin
+    ReadLn(numero);
+    dimL:=0;
+    while ((numero <> -1) and (dimL < dimF)) do
+    begin
+        cantidad:=0;
+        num_aux:=numero;
+        while (numero = num_aux) do
+        begin
+            cantidad:=cantidad+1;
+            dimL:=dimL+1;
+            ReadLn(numero);
+            v[dimL]:=numero;
+        end;
+        WriteLn('La cantidad de',numero,' es ', cantidad);
+    end;
+end;
+```
+
+```Pas
 Procedure CorteDeControl(var l:info;var v:vCantidadDia;var cant, total:integer);
 var
     p:rPrestamos;
