@@ -20,6 +20,10 @@ Indice
      *  [En una Posición Determinada](#en_posición_determinada)
      *  [Un Elemento Determinado](#Elemento_Determinado)
    * [Buscar un elemento](#buscar_elemento)
+     * [Busqueda Lineal o Secuencial](#busqueda_lineal_o_secuencial)
+     * [Busqueda en arreglos ordenados](#en_arreglos_ordenados)
+       * [Secuencial Optimizado](#secuencial_optimizado)
+       * [Busqueda Dicotomica](#busqueda_dicotomica) 
    * [Corte de control](#Corte_de_Control)
  
 Asignación_de_contenido
@@ -327,7 +331,10 @@ Buscar_elemento
 ================
 El proceso de ubicar información particular en una colección de datos es conocido como método de busqueda.
 
-a) ***Busqueda Lineal o Secuencial*** Almacenados sin ningun orden.
+Busqueda_Lineal_o_Secuencial 
+----------------------------
+
+Almacenados sin ningun orden.
 - [x] Se aplica cuando los elementos no tienen orden.
 - [x] Requiere excesivo consumo de tiempo en la localización del elemento.
 - [x] Numero medio de compareciones (dimL + 1) / 2. 
@@ -358,12 +365,16 @@ end;
 
 ```
   
-b) ***En arreglos ordenados*** Almacenados ordenados por algun criterio.
+En_arreglos_ordenados
+---------------------
+Almacenados ordenados por algun criterio.
 
 <div align="center"><img src="https://user-images.githubusercontent.com/55964635/128451139-d88007bb-191e-4b07-a7ea-dc116b2fd83c.png"/></div>
 
 
-b.1) ***Secuencial Optimizado*** 
+Secuencial_Optimizado
+---------------------
+
 - Se aplica cuando los elementos tienen orden.
 - La busqueda comienza desde el pricipio y se avanza por la estructura de manera secuencial y asi hasta que encuentro el número buscado o hasta que encuentro uno mayor.
 
@@ -380,7 +391,8 @@ Begin
     BuscoPosElemOrd:= pos;
 End; 
 ```
-b.2) ***Busqueda Dicotomica***
+Busqueda_Dicotomica
+-------------------
 - Se aplica cuando los elementos tienen orden.
 - Se compara el valor buscado ```x``` con el ubicado en el medio del vector ```a```:    
   - Si el elemento ubicado al medio del vector es igual a x, entonces la busqueda termina.
