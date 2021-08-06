@@ -8,7 +8,7 @@ Indice
 =================
 
 <!--ts-->
-   * [Asignación de contenido](#asignación_de_contenido(ind))
+   * [Asignación de contenido](#asignación_de_contenido)
    * [Lectura/Escritura](#lectura_escritura)
    * [Recorridos](#recorridos)
    * [Carga de datos](#cargar_Datos)
@@ -17,9 +17,8 @@ Indice
    * [Borrar Elementos](#borrar_elementos)
    * [Buscar un elemento](#buscar_elemento)
 
-Asignación_de_contenido[(Ind)](#indice)
-=======================================
-
+Asignación_de_contenido
+=======================
 
 ```Pas
 var
@@ -33,7 +32,6 @@ end.
 
 Lectura_Escritura
 =================
-[(Indice)](#indice).
 
 ```Pas
 var
@@ -45,7 +43,6 @@ end.
 ```
 Recorridos
 ==========
-[(Indice)](#indice).
 
 La operacion de ***Recorridos*** en un vector consiste en recorrer el vector de manera total o parcial, para realizar algún proceso sobre sus elementos.
 - ***Recorrido Total*** Implica analizar ```todos``` los elementos del vector, lo que lleva a recorrer completamente la estructura.
@@ -113,7 +110,6 @@ end.
 
 Cargar_Datos
 =============
-[(Indice)](#indice).
 
 La operacion de ```Cargar Datos``` en un vector consiste en incorporar un elemento a continuacion del otro desde la posición inicial en forma consecutiva.
 - ***Carga Total*** Consiste en guardar cada elemento en una posición del vector.
@@ -164,7 +160,6 @@ end.
 
 Agregar_al_final
 ================
-[(Indice)](#indice).
 
 ```Pas
 Procedure Agregar_Al_Final(var v:vector;var dimL:integer;elemeto:integer);
@@ -178,7 +173,6 @@ end.
 ```
 Insertar_un_elemento
 ====================
-[(Indice)](#indice).
 
 La operación de insertar un elemento en un vector consiste en incorporar el elemento en una posición determinada o de acuerdo a un orden impuesto por sus datos (ej: ordenada de mayor a menor).
 
@@ -244,8 +238,6 @@ End;
  
 Borrar_Elementos  
 ================
-
-[(Indice)](#indice).
 
 La operación Borrar un elemento en un vector consiste en eliminar un elemento determinado o bien eliminar un elemento que ocupa una posición determinada.
 - ***En posición determinada*** Se debe verificar que la posición sea valida.
@@ -319,6 +311,6 @@ End;
 ```
 Buscar_elemento
 ================
-[(Indice)](#indice).
+
 
 
