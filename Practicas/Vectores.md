@@ -15,6 +15,7 @@ Indice
    * [Agregar al Final](#agregar_al_final)
    * [Insertar Elementos](#insertar_un_elemento)
    * * [En una Posición Determinada](#posición_determinada)
+   * * [Manteniendo un orden](#Manteniendo_Un_Orden)
    * [Borrar Elementos](#borrar_elementos)
    * [Buscar un elemento](#buscar_elemento)
    * [Corte de control](#Corte_de_Control)
