@@ -347,6 +347,9 @@ end;
   
 b) ***En arreglos ordenados*** Almacenados ordenados por algun criterio.
 
+<div align="center"><img src="https://user-images.githubusercontent.com/55964635/128451139-d88007bb-191e-4b07-a7ea-dc116b2fd83c.png"/></div>
+
+
 b.1) ***Secuencial Optimizado*** 
 - Se aplica cuando los elementos tienen orden.
 - La busqueda comienza desde el pricipio y se avanza por la estructura de manera secuencial y asi hasta que encuentro el número buscado o hasta que encuentro uno mayor.
@@ -372,9 +375,11 @@ b.2) ***Busqueda Dicotomica***
 - Si no es el valor buscado, debera quedarse con la mitad del vector que conviene, para seguir la busqueda. Este paso se repite tantas veces hasta que se acaba el vector o encuentro el valor.
 - Se calcula la posición del medio del vector original.
 <div align="center"><img src="https://user-images.githubusercontent.com/55964635/128447821-75f753e3-fc05-4cf7-bf3a-928d3d49fbf8.png"/></div>
+
 - Se descarta la primera parte.
 - Se calcula la posición del medio del ```sub_arreglo``` de:
 <div align="center"><img src="https://user-images.githubusercontent.com/55964635/128448864-ed8a7608-59c4-497b-a930-6f227174b867.png"/></div>
+
 - Se descarta la ```Segunda``` parte del ```subarrango``` (de 7 a 9).
 - Se calcula la posición del medio del ```subarrango``` delimitado por:
 <div align="center"><img src="https://user-images.githubusercontent.com/55964635/128449301-ffe700e2-abf9-4662-8c15-acd3828bb817.png"/></div>
