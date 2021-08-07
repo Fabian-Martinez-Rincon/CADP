@@ -179,7 +179,7 @@ end.
 
 
 #### 11) En un procedimiento una estructura de datos vector pasada como parametro siempre ocupa mas memoria que una estructura de tipo lista pasada como parametro 
-- ***FALSO*** - si se pasa por referencia es lo mismo
+- ***FALSO*** - En caso de que el arreglo se pase por valor, se copiaria todo el arreglo, en este caso si ocuparia mas memoria que una lista con igual elementos. Pero si el vector es pasado por referencia, es pasado solo la dirección que en este caso serian 4bytes y ocuparia lo mismo que un puntero.
 
 
 #### 12) Un modulo funcion puede retornar un tipo de dato puntero. 
