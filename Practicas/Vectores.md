@@ -268,7 +268,6 @@ Procedure BorrarPos (var v: vector; var dimL: integer; pos: posicion);
 var 
     i: integer; 
 Begin
-    exito := false;
     if (pos >=1 and pos <= dimL) then 
     begin
         for i:= pos + 1 to dimL  do
