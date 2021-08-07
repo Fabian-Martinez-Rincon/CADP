@@ -159,7 +159,7 @@ end.
 ```Pas
 program ocho;
 var
-    num1:Real;
+    	num1:Real;
 	num2:Real;
 begin
 	num1:=10;
