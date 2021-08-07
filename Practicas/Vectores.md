@@ -384,7 +384,7 @@ Begin
     pos:=1;
     while (pos <= dimL) and (x > v[pos]) do
         pos:=pos+1;
-    if ( pos > dimL ) or (x < v [pos]) then //Si me pase de la posicion del vector reincicio 
+    if ( pos > dimL ) or (x < v [pos]) then //Si me pase de la DimL del vector reincicio la posición
         pos:=0;                               //y si el elemento es mas chico que el menor numero del vector, tambien reinicio.
     BuscoPosElemOrd:= pos;
 End; 
