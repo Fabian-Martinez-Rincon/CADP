@@ -34,7 +34,7 @@ Buscar_un_Elemento_en_una_Lista
 ===============================
 
 ```Pas
-function buscar (l:lista; x:string):boolean;
+function buscar (l:lista; x:integer):boolean;
 var 
     encontre: boolean;
 begin
