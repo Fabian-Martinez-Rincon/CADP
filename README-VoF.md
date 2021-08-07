@@ -137,7 +137,7 @@ end.
 - ***FALSO*** - A pesar de que estar desaconsejado por la catedra, se pueden usar variables globales
 
 
-#### 7) No estaba en el discord :c.
+#### 7) Se puede usar un real en el siguiente codigo.
 - ***FALSO*** - Solo se puede usar un tipo de dato ordinal en el indice de un case
 ```Pas
 program Siete;
