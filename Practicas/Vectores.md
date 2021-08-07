@@ -285,16 +285,14 @@ Hay que verificar que exista el elemento.
   - Si el elemento esta entonces ----> Borrar el elemento.
 
 ```Pas
-Procedure BorrarElem (var v: vector;  var dimL: integer; elem: integer;  var exito: boolean);
+Procedure BorrarElem (var v: vector;  var dimL: integer; elem: integer);
 var 
     pos: indice;
 begin
-    exito:= false;
     pos:= BuscarPosElem (elem, v, dimL);
     if (pos <> 0) then 
     begin
         BorrarPos (v, dimL, pos);
-        exito:= true;
    end;
 end;
 //__________________________________________________________________________________
