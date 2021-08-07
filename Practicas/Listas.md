@@ -106,13 +106,13 @@ end.
 
 Agregar_un_Elemento_al_Principio_de_la_Lista
 ============================================
-1. EL modulo ```Agregar_Adelante``` va a recibir como parametros el puntero inicial de la lista y los datos que va a aguardar la lista.
-2. En el módulo ```Agregar_Adelante``` se crea una variable de tipo lista.
-3. Se pide espacio en memoria dinamica ```NEW```.
-4. En el campo dato de dicha variable se le asigna el dato pasado por parámetro.
-5. Y en el campo siguiente la dirección de la lista pasada por parámetro.
-6. Dicho nodo ```L``` de tipo lista, se le asignara lo cargado en la variable local al módulo. El nodo que se crea ira por delande del último.
-7. Retorna al programa principal o moduló que lo invoco.
+- EL modulo ```Agregar_Adelante``` va a recibir como parametros el puntero inicial de la lista y los datos que va a aguardar la lista.
+- En el módulo ```Agregar_Adelante``` se crea una variable de tipo lista.
+- Se pide espacio en memoria dinamica ```NEW```.
+- En el campo dato de dicha variable se le asigna el dato pasado por parámetro.
+- Y en el campo siguiente la dirección de la lista pasada por parámetro.
+- Dicho nodo ```L``` de tipo lista, se le asignara lo cargado en la variable local al módulo. El nodo que se crea ira por delande del último.
+- Retorna al programa principal o moduló que lo invoco.
 
 Agregar_un_Elemento_al_Final_de_la_Lista
 ========================================
