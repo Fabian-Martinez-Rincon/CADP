@@ -169,6 +169,7 @@ end.
 
 Agregar_al_final
 ================
+Para agregar al final del vector solo tenemos que verificar que tengamos espacio en el vector, aumentamos en uno la dimension logica y lo agregamos.
 
 ```Pas
 Procedure Agregar_Al_Final(var v:vector;var dimL:integer;elemeto:integer);
