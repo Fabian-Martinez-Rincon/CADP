@@ -185,6 +185,30 @@ Eliminar_un_Elemento_de_la_Lista
 4. Una vez que 'se sale del while' , es necesario saber por que lo hizo (solo en el caso donde no se sepa si el elemento esta en la lista. Si se sabe, no es necesario preguntar porque ya siempre sale porque encontro el elemento). En el caso que lo haya hecho porque se encontro el elemento se vuelve a preguntar si el nodo se trata del primero o de los siguientes para luego hacer el nuevo enlace
 5. Se hace ```Dispose``` del elemento actual
 
+```Pas
+Procedure BorrarElemento (var pri:lista; nom:cadena50; var exito: boolean);
+var ant, act: lista;
+begin 
+    exito := false;
+    act := pri;
+    {Recorro mientras no se termine la lista y no encuentre el elemento}
+    while  (act <> NIL)  and (act^.datos.nom <> nom) do 
+    begin
+        ant := act;
+        act := act^.sig
+    end;   
+    if (act <> NIL) then 
+    begin
+        exito := true; 
+        if (act = pri) then  
+            pri := act^.sig;
+        else  
+            ant^.sig:= act^.sig;
+        dispose (act);
+    end;
+end;
+```
+
 Insertar_un_Nuevo_Elemento_en_una_Lista_Ordenada
 ================================================
 
