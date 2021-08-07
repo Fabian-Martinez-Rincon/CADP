@@ -212,6 +212,19 @@ end.
 - ***FALSO*** - Para buscar un elemento en un vector ordenado se debe utilizar una busqueda lineal optimizada o una dicotomica. Una busqueda lineal optimizada no usaria <>, una busqueda dicotomica no recorre el vector, y la unica busqueda que utiliza <> es la lineal. la lineal no se usa en vectores ordenados.
 - ***FALSO*** Tenes dos condiciones no una, ya que se puede ejecutar infinitamente, la primera es que mientras el numero sea MayorIgual se ejecuta y la otra condicion es mientras no se pase de la dimensión Logica
 
+```Pas
+Function BuscoPosElemOrd (x:integer;v:Vector;dimL:integer):integer;
+var 
+    pos:integer;
+Begin
+    pos:=1;
+    while (pos <= dimL) and (x < v[pos]) do
+        pos:=pos+1;
+    if ( pos > dimL ) or (x < v [pos]) then //Si me pase de la DimL del vector reincicio la posición
+        pos:=0;                               //y si el elemento es mas chico que el menor numero del vector, tambien reinicio.
+    BuscoPosElemOrd:= pos;
+End; 
+```
 
 #### 14) Un programa que utiliza solo variables globales no requiere modularizacion.
 - ***FALSO*** - La catedra recomienda el uso de modulos porque facilita la reutilizacion de codigo, aumenta la legibilidad, favorece el mantenimiento y facilita el crecimiento de los sistemas
