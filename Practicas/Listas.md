@@ -42,12 +42,12 @@ Desordenada
 
 Ordenada
 --------
-1. A la función booleana se le va a pasar por parámetro ```L``` de tipo lista y el elemento a buscar.
-2. Para buscar un elemento vamos a necesitar una variable de tipo booleana para determinar si se pudo o no encontrar ese elemento.
-3. Primero vamos a inicializar la variable booleana en falso luego la lista se va a recorrer desde el nodo inicial.
-4. Mientras ```L``` no llegue al final de la lista y el elemento actual de la lista sea menor/mayor (segun el caso) al que estamos buscando se avanzaría una posición en la lista.
-5. Una vez que una de las dos condiciones no se cumpla, se evalua si no se llegó al final de la lista y se encontró el elemento que se estaba buscando, se modifica el booleano a true.
-6. En el caso de que se haya avanzado en la lista hasta el final y no se haya encontrado el elemento, la funcion retornara false.
+- A la función booleana se le va a pasar por parámetro ```L``` de tipo lista y el elemento a buscar.
+- Para buscar un elemento vamos a necesitar una variable de tipo booleana para determinar si se pudo o no encontrar ese elemento.
+- Primero vamos a inicializar la variable booleana en falso luego la lista se va a recorrer desde el nodo inicial.
+- Mientras ```L``` no llegue al final de la lista y el elemento actual de la lista sea menor/mayor (segun el caso) al que estamos buscando se avanzaría una posición en la lista.
+- Una vez que una de las dos condiciones no se cumpla, se evalua si no se llegó al final de la lista y se encontró el elemento que se estaba buscando, se modifica el booleano a true.
+- En el caso de que se haya avanzado en la lista hasta el final y no se haya encontrado el elemento, la funcion retornara false.
 
 <table>
 <tr>
