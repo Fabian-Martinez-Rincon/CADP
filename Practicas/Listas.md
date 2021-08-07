@@ -221,7 +221,7 @@ begin
     act := pri;
     ant := pri;
     {Recorro mientras no se termine la lista y no encuentro la posición correcta}
-    while (act<>NIL) and (act^.datos.nombre < per.nombre) do 
+    while (act<>NIL) and (act^.datos.nombre < per.nombre) do //De menor a mayor
     begin
         ant := act;
         act := act^.sig ;
