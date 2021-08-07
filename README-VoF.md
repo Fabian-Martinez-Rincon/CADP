@@ -185,6 +185,28 @@ end.
 #### 12) Un modulo funcion puede retornar un tipo de dato puntero. 
 - ***VERDADERO*** Ya que un puntero es un tipo de dato simple
 
+```Pas
+program doce;
+type
+    puntero = ^string;
+//________________________________________
+function Cambiar(nombre:string):puntero;
+begin
+    nombre:='Prueba 2';
+    new(Cambiar);
+    Cambiar^:=nombre;
+end;
+//________________________________________
+var
+    nombre:puntero;
+begin
+    nombre:=nil;
+    new(nombre);
+    nombre^:='Prueba 1';
+    writeln(nombre^); //Prueba 1
+    writeln(Cambiar(nombre^)^); //Prueba 2
+end.
+```
 
 #### 13) Un modulo cuyo objetivo es buscar un elemento en un arreglo de números enteros ordenados de mayor a menor debe recorrer la estructura mientras el elemento a procesar sea distinto al buscado. 
 - ***FALSO*** - Para buscar un elemento en un vector ordenado se debe utilizar una busqueda lineal optimizada o una dicotomica. Una busqueda lineal optimizada no usaria <>, una busqueda dicotomica no recorre el vector, y la unica busqueda que utiliza <> es la lineal. la lineal no se usa en vectores ordenados.
