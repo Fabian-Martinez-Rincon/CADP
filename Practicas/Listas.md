@@ -113,6 +113,17 @@ Agregar_un_Elemento_al_Principio_de_la_Lista
 - Y en el campo siguiente la dirección de la lista pasada por parámetro.
 - Dicho nodo ```L``` de tipo lista, se le asignara lo cargado en la variable local al módulo. El nodo que se crea ira por delande del último.
 - Retorna al programa principal o moduló que lo invoco.
+```Pas
+Procedure AgregarAdelante (var L:lista; per:persona);
+Var 
+    nue:Lista;
+Begin  
+    New(nue);  
+    nue^.datos:=per;  
+    nue^.sig:=L;  
+    L:=nue;
+End;
+```
 
 Agregar_un_Elemento_al_Final_de_la_Lista
 ========================================
