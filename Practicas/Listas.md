@@ -127,6 +127,25 @@ End;
 
 Agregar_un_Elemento_al_Final_de_la_Lista
 ========================================
+```Pas
+procedure AgregarAlFinal1 (var pri: lista; per: persona); 
+var  
+    act, nue : lista;
+begin 
+    new (nue);
+    nue^.datos:= per;
+    nue^.sig := NIL;
+    if pri <> Nil then 
+    begin
+        act := pri ;
+        while  (act^.sig <> NIL ) do 
+            act := act^.sig ;
+        act^.sig := nue ;
+    end
+    else
+        pri:= nue;
+end;
+```
 
 Eliminar_un_Elemento_de_la_Lista
 ================================
