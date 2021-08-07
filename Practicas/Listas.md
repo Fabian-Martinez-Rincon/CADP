@@ -49,7 +49,14 @@ Ordenada
 5. Una vez que una de las dos condiciones no se cumpla, se evalua si no se llegó al final de la lista y se encontró el elemento que se estaba buscando, se modifica el booleano a true.
 6. En el caso de que se haya avanzado en la lista hasta el final y no se haya encontrado el elemento, la funcion retornara false.
 
-```Pas
+<table>
+<tr>
+<td> Desordenada </td> <td> Ordenada </td>
+</tr>
+<tr>
+<td>
+
+ ```Pas
 function buscar (l:lista; x:integer):boolean;
 var 
     encontre: boolean;
@@ -65,8 +72,8 @@ begin
     buscar:=encontre;
 end;
 ```
-
-
+</td>
+<td>
 
 ```Pas
 function buscar (l:lista; x:integer):boolean;
@@ -84,10 +91,18 @@ begin
     buscar:=encontre;
 end;
 ```
+ 
+</td>
+</tr>
+ </table>
 
 Crear_una_Lista_Vacia
 =====================
-l:=nil;
+```Pas
+begin
+    l:=nil;
+end.
+```
 
 Agregar_un_Elemento_al_Principio_de_la_Lista
 ============================================
