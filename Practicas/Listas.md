@@ -127,8 +127,16 @@ End;
 
 Agregar_un_Elemento_al_Final_de_la_Lista
 ========================================
-```Pas
-procedure AgregarAlFinal1 (var pri: lista; per: persona); 
+
+<table>
+<tr>
+<td> Ordenando la lista </td> <td> Con un puntero al ultimo </td>
+</tr>
+<tr>
+<td>
+
+ ```Pas
+procedure AgregarAlFinal1(var pri:lista;per:persona); 
 var  
     act, nue : lista;
 begin 
@@ -146,7 +154,29 @@ begin
         pri:= nue;
 end;
 ```
+</td>
+<td>
 
+```Pas
+procedure AgregarAlFinal2(var pri,ult:lista;per:persona); 
+var  
+    nue : lista;
+begin 
+    new (nue);
+    nue^.datos:= per;
+    nue^.sig := NIL;
+    if pri <> Nil then 
+        ult^.sig := nue;
+    else 
+        pri := nue;
+    ult := nue;
+end;
+```
+ 
+</td>
+</tr>
+ </table>
+ 
 Eliminar_un_Elemento_de_la_Lista
 ================================
 1. En el módulo se usan dos variables auxiliares que ayudaran a recorrer la lista: ```Actual``` y ```Anterior```
