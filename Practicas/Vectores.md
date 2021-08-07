@@ -408,22 +408,22 @@ Busqueda_Dicotomica
 
 ```Pas
 Procedure  BusquedaBin (var v: Vector; var j:integer; dimL,x: integer);
-Var
+Var //En caso de que este ordenada de menor a mayor.
     primero, ult, medio: integer;
 Begin
     j :=0 ;
     primero:= 1;
     ult:= dimL;
-    medio := (primero + ult ) div 2 ;
+    medio := (primero + ult ) div 2 ; //Calculo la posición del medio
     While ( primero < = ult ) and ( x <> v [medio]) do 
-    begin
-        If ( x < v [ medio ] ) then 
-            ult:= medio -1 ;
+    begin//Mientras no llegue al final y el elemento sea distinto al elemento que esta en la posicion del medio.
+        If ( x < v [ medio ] ) then //Si es mas chico 
+            ult:= medio -1 ; //Descarto la segunda mitad del arreglo y comienzo a restar a partir de la primera mitad
         else
-            primero:= medio+1 ;
-        medio := ( primero + ult ) div 2 ;
+            primero:= medio+1 ; //Si es mas grande, continuo a partir de la segunda mitad del arreglo
+        medio := ( primero + ult ) div 2 ; //Actualizo el elemento del medio para continuar mi recorrido.
     end;
-    If (primero < = ult) then
+    If (primero < = ult) then //Si se encontro vale el valor medio
         j := medio
     else
         j := 0;
