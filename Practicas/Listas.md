@@ -18,8 +18,18 @@ Indice
 
 Recorrer_Una_Lista
 ==================
-1. Mientras la lista sea distina de nil va a pasar al siguiente nodo, es decir, a L se le va a asignar la dirección del siguiente nodo (en memoria dinamica)
+ - Mientras la lista sea distina de nil va a pasar al siguiente nodo, es decir, a L se le va a asignar la dirección del siguiente nodo (en memoria dinamica)
 
+```Pas
+procedure Recorrido(l:lista);
+begin
+    while (l <> nil) do
+    begin
+        writeln(l^.dato);
+        l:=l^.sig;
+    end;
+end;
+```
 Buscar_un_Elemento_en_una_Lista
 ===============================
 Desordenada
