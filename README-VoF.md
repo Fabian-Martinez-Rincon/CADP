@@ -227,7 +227,7 @@ End;
 ```
 
 #### 14) Un programa que utiliza solo variables globales no requiere modularizacion.
-- ***FALSO*** - La catedra recomienda el uso de modulos porque facilita la reutilizacion de codigo, aumenta la legibilidad, favorece el mantenimiento y facilita el crecimiento de los sistemas
+- ***VERDADERO*** - Un programa para que funcione no es necesario la modulación pero La catedra recomienda el uso de modulos porque facilita la reutilizacion de codigo, aumenta la legibilidad, favorece el mantenimiento y facilita el crecimiento de los sistemas.
 
 
 #### 15) Una diferencia entre la operacion insertar un elemento en la posicion en un vector e insertar un elemento en una posicion en una lista es que no hay que validar la posicion correspondiente.
