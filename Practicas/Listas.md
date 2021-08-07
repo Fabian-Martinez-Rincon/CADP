@@ -32,6 +32,23 @@ end;
 ```
 Buscar_un_Elemento_en_una_Lista
 ===============================
+
+```Pas
+function buscar (l:lista; x:string):boolean;
+var 
+    encontre: boolean;
+begin
+    encontre:=false;
+    while (l <> nil) and (not encontre) do
+    begin
+        if (x = l^.dato) then
+            encontre:=true;
+        else
+            encontre:=false;
+    end;
+    buscar:=encontre;
+end;
+```
 Desordenada
 -----------
 1. A la función booleana se le va a pasar por parámetros ```L``` de tipo lista y el elemento a buscar.
