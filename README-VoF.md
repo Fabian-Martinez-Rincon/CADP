@@ -31,7 +31,7 @@ end.
 ```
 
 #### 2) Siendo ```meses``` un tipo de subrango de enteros de 1 a 12, un modulo funcion puede retornar un valor de tipo ```meses```. 
-- ***VERDADERO*** - un subrango de enteros es un tipo de dato simple
+- ***VERDADERO*** - un subrango de enteros(char tambien) es un tipo de dato simple
 
 ```Pas
 program Dos;
