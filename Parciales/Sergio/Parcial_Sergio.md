@@ -1,12 +1,67 @@
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/FabianMartinez1234567/CADP)
-[![GitHub stars](https://img.shields.io/github/stars/FabianMartinez1234567/CADP)](https://github.com/FabianMartinez1234567/CADP/stargazers/)
-[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/FabianMartinez1234567/CADP)](https://github.com/FabianMartinez1234567/CADP)
-<h1 align="center"> 💻Parcial </h1>
+```Pas
+program cosa;
+type
+    vector = array [1..10] of integer;
+//_____________________________________________________________
+procedure cargarVector(var v:vector;var dimL:integer);
+var
+    i:integer;
+begin
+    for i:=1 to 10 do
+        readln(v[i]);
+    dimL:=10;
+end;
+//_____________________________________________________________
+Procedure BorrarPos (var v:vector; var dimL:integer; pos:integer);
+var 
+    i: integer; 
+Begin
+    for i:= pos + 1  to   dimL  do
+        v [ i - 1 ]  :=  v [ i] ;
+    dimL := dimL - 1 ;         
+End;
+//_____________________________________________________________
+procedure eliminarOcurrencias(var v:vector;var dimL:Integer;elemento:integer);
+var
+    i:Integer;
+    numero:integer;
+begin
+    i:=1;
+    numero:=0;
+    while i<=dimL do
+    begin
+        if (v[i]=elemento) then
+        begin
+            numero:=v[i];
+            while (numero = v[i]) and (i<=dimL) do
+            begin
+                BorrarPos (v,dimL,i);    
+            end;
+            i:=i+1;
+        end
+        else
+            i:=i+1;
+    end;
+end;    
+//_____________________________________________________________
+procedure imprimirVector(v:vector;dimL:integer);
+var
+    i:integer;
+begin
+    for i:=1 to dimL do
+        writeln(v[i]);
 
-### Pregunta 2.
-
-Suponga que usted debe elegir una estructura para representar la siguiente situación:
-
-Se desea almacenar en una estructura la información de los alumnos de CADP. De cada alumno se conoce apellido, nombre y su promedio. Se sabe que a lo sumo habrá 800 alumnos.
-- Cada semana el profesor quiere subir al entorno ```IDEAS``` un listado ordenado por el promedio de los alumnos. En qué estructura de las vistas en el curso le convendria haber almacenado los alumnos? Justifique.
-- Suponga que ahora el profesor quiere agregar al final de la estructura nuevos alumnos y quiere implementar un módulo que sea eficiente en cuanto al tiempo de ejecución. Elegiría la misma estructura? Justifique.
+end;
+//_____________________________________________________________
+var
+    v:vector;
+    dimL:integer;
+    elemento:integer;
+begin
+    elemento:=3;
+    cargarVector(v,dimL);
+    WriteLn('___________');
+    eliminarOcurrencias(v,dimL,elemento);
+    imprimirVector(v,dimL);
+end.
+```
