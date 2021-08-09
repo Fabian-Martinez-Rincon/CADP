@@ -11,7 +11,7 @@
 
 - [Preguntas de verdadero o falso](README-VoF.md)
 - [Ejemplos de memorias y tiempo](Ejemplos-Memorias_Tiempos.md)
-- [Parcial_Sergio](/Parciales/Sergio/Parcial_Sergio.md)
+- [Eliminar Ocurrencias vector ordenado](/Parciales/Sergio/Parcial_Sergio.md)
 - [Vectores](/Practicas/Vectores.md)
 - [Listas](/Practicas/Listas.md)
 - [Vectores vs Listas](/Practicas/VectoresvsListas.md)
