@@ -340,12 +340,12 @@ Memoria Estatica:
 ```Pas
 var
     v:vector; 10*6 = 60 b
-    i,dimL:integer; 6 + 6 + 6 = 18 b
+    i,dimL:integer; 6 + 6  = 12 b
 ```
 </td>
 <td>
  
-Memoria Estatica = ```78 bytes```
+Memoria Estatica = ```72 bytes```
  
 </td>
 </tr>
