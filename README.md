@@ -24,7 +24,8 @@
   </tr>
  <tr>
  <td>
-   
+<div>
+ 
 ```Pascal
 program Problema;
 type
@@ -64,6 +65,7 @@ begin
 end.
   
 ```  
+ <div>
 </td>
 <td>
  
