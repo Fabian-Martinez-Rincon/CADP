@@ -34,9 +34,9 @@ type
     dirCorreo: cadena35;
     edad: integer;
     sueldo:real;
-  end:
+  end;
   
-  punt = empleado^;
+  punt = ^empleado;
   vector = array [1..500] of punt;
   
   lista = ^nodo;
