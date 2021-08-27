@@ -71,3 +71,29 @@ Una inmobiliaria de la ciudad de La Plata necesita un programa para administrar 
 3. ¿Toda la solución correcta es eficiente? Justifique.
 4. ¿Las estructuras de datos elegidas determinan que una solución se eficiente? Justifique.
 5. Analice la eficiencia en tiempo de ejecución de sus soluciones del ejercicio 2c.
+
+## 📚Final 4.
+
+### 1) Práctica.
+1. Implemente un módulo que recibe una lista de números enteros ordenada de menor a mayor (Pueden aparecer repetidos) y devuelva otra lista en la cual aparezca cada número de la lista de entrada junto con la cantidad de repeticiones del mismo.
+2. Implemente el programa que contenga dicho módulo con su invocación.
+
+### 2) Modularización.
+1. Defina el concepto de modularización. Describa sus principales ventajas.
+2. Detalle al menos tres diferencias entre los módulos: Procedure y function.
+3. ¿Siempre se puede transformar un módulo function en un módulo tipo procedure? Justifique detalladamente y ejemplifique su respuesta.
+
+### 3) Eficiencia.
+1. Defina el concepto de eficiencia.
+2. Describa detalladamente como medir la eficiencia.
+3. ¿Un programa correcto asegura la eficiencia? Justifique su respuesta.
+4. ¿Un programa bien documentado asegura eficiencia? Justifique su respuesta.
+5. ¿Un programa modularizado asegura eficiencia? Justifique su respuesta.
+
+### 4) Estructuras de Datos.
+1. Defina el concepto de estructura de datos y explique las distintas clasificaciones.
+2. Defina y diferencie las estructuras de datos: Registro, vector y lista enlazada.
+3. Implemente la operación agregar en el vector y la operación agregar atrás de una lista enlazada.
+4. Realice un análisis del tiempo de ejecucion de las operaciones implementadas en el c)
+
+## 📚Final 5.
