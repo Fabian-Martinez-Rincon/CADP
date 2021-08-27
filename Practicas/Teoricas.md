@@ -143,3 +143,10 @@ begin
         end;
 end;  
 ```
+4. Defina el concepto de eficiencia de un programa. Describa detalladamente cómo se mide.
+5. Implemente una solución más eficiente desde el punto de vista del tiempo de ejecucion para el módulo del ejer.3). Justifique su solución.
+6. Justifique por qué es conveniente utilizar un parámetro por referencia en lugar de una variable global.
+7. Explique detalladamente las diferencias entre aplicar la operación ***DISPOSE*** a un puntero y asignarle el valor ****NIL***.
+8. Explique qué entiende por reusabilidad en el contexto de la modularización.
+
+## 📚Final 7.
