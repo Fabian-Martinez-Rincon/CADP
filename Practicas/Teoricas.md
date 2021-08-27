@@ -7,5 +7,9 @@
 
 ## 📚Explique.
 
-#### 1) Suponga que un programa declara un tipo cadena que es un ```string[1]``` y una variable ```ST:cadena```. La variable ST puede ser utilizada como variable de decision en un case.
+### 1) Eficiencia:
+#### a) Defina concepto de eficiencia
+#### b) Explique como se procede si lo que se desea es calcular la memoria empleada en una solución. ¿Y si se desea calcular el tiempo de ejecución?.
+#### c)
+
 - ***VERDADERO*** - funciona como un char
