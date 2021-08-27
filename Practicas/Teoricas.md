@@ -48,3 +48,26 @@ modularizadas?.
 
 ### 4) Eficiencia
 1. Defina el concepto de eficiencia.
+
+## 📚Final 3.
+### 1) Práctica.
+Una inmobiliaria de la ciudad de La Plata necesita un programa para administrar información sobre los inmuebles que tuvo alquilados en el 2016. Para ello se dispone de la información  sobre inmuebles. (1: monoambiente, 2: departamente, 3: casa, 4: local), DNI del dueño, DNI del inquilino y precio del alquiler. La lectura finaliza cuando se lee el inmueble con codigo 999. La informacion está almacenada ***de manera ordenada por DNI del nueño***.
+1. Para cada dueño la cantidad de inmuebles que tuvo alquilados con precio de alquiler superior a 5000.
+2. El precio de alquiler promedio de aquellos inmuebles tipo departamento.
+
+### 2) Estructuras de Datos.
+1. Definición de estructuras de datos. Esplique los distintos criterios de clasificación.
+2. Realice un cuadro con los criterios de clasificación ubicando a las estructuras de datos vistas en el curso.
+3. Implemente la operación agregar un elemento en un arreglo y en una lista.
+
+### 3) Modularización y parámetros.
+1. Defina el concepto de módulo. Qué módulos reconoce el lenguaje Pascal y cuándo usaria cada uno.
+2. ¿Todo procedimiento se puede escribir como una function? Muestre con un ejemplo.
+3. Defina alcance de una variable. Un parámentro, ¿qué alcance tiene?
+
+### 4) Eficiencia.
+1. Defina el concepto de eficiencia.
+2. Describa detalladamente que se tiene en cuenta para analizar la eficiencia de un algoritmo.
+3. ¿Toda la solución correcta es eficiente? Justifique.
+4. ¿Las estructuras de datos elegidas determinan que una solución se eficiente? Justifique.
+5. Analice la eficiencia en tiempo de ejecución de sus soluciones del ejercicio 2c.
