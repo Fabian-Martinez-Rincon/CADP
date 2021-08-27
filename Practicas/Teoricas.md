@@ -115,3 +115,31 @@ end;
 #### 3) Explique brevemente cual es la importancia de que el lenguaje permita tipos de datos definidos por el usuario.
 #### 4) ¿Qué diferencia existe entre un lenguaje "fuertemente" tipado con uno "dinamicamente" tipado?
 #### 5) Explique brevemente el riesgo de utilizar variables globales para la comunicación entre módulos.
+#### 6) Dado dos variables A y B de tipo registro. Indique si las operaciones A:=B, A=B, READ(A), WRITE(B) son correctas. Justifique.
+#### 7) Indique las características de una estructura arreglo y la diferencia entrre dimensión física y lógica.
+#### 8) ¿Cuál es el objetivo de aplicar la algorítmica de corter de control sobre una estructura de datos?-
+#### 9) ¿Toda solución correcta es eficiente? Justifique.
+#### 10) Realice un cálculo del tiempo de ejecución de la solución planteada en el punto 1.b)
+
+## 📚Final 6.
+
+Se debe Generar una lista de ventas de productos de un comercio. De cada venta se lee el código de venta, código de producto (100..200) y cantidad vendida. La lectura finaliza cuando se lee código de venta -1 y la lista debe generarse ordenada por código de producto. Además, se dispone de una tabla con el precio de cada código de producto. Una vez generada la lista, se debe informar para cada producto el monto total recaudado. Implementar un programa que resuelva lo pedido.
+
+1. Explique las principales diferencias entre una estructura arreglo y una de tipo lista.
+2. Explique la diferencia entre dimensión física y lógica. Justifique su uso.
+3. Explique detalladamente qué hace el siguente programa.
+```Pas
+procedure tres(var v:vector; var dimL:integer; dato:integer; var b:Boolean);
+var i,j:integer;
+begin
+    i:=1;
+    while (i<=dimL) and (v[i]<dato) do
+        i:=i+1;
+    if (i>dimL) then b:=False;
+    else
+        while (i<dimL) and (v[i]=dato) do begin
+            for j:=i+1 to dimL do v[j-1]:= v[j];
+            dimL:=dimL+1;
+        end;
+end;  
+```
