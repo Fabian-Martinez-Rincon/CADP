@@ -32,7 +32,7 @@ mas veces.
 modularizadas?.
 
 ## Final 2.
-### 1) Practica: Realice un módulo que lee números enteros entre 0 y 100 y devuelva un vector que contenga la cantidad de ocurrencias de los valores leídos. La lectura finaliza cuando se lee el valor 0.
+#### 1) Practica: Realice un módulo que lee números enteros entre 0 y 100 y devuelva un vector que contenga la cantidad de ocurrencias de los valores leídos. La lectura finaliza cuando se lee el valor 0.
 - Ejemplo: Si se leen valores: 1,20,55,7,1,7,0 entonces el vector resultante deberá contener la información necesaria para saber que:
 - Valor 1 cantidead de ocurrencias 2
 - Valor 20 cantidad de ocurrencias 1
