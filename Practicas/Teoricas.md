@@ -5,8 +5,7 @@
  </div>
 <br>
 
-## 📚Explique.
-## Final 1.
+## 📚Final 1.
 ### 1) Practica:
 Un comercio dispone de las ventas realizadas para sus productos. De cada venta se conoce Numero 
 de Producto(1..300), Cantidad Vendida y Nombre de Producto. Ademas el comercio cuenta con una 
@@ -31,7 +30,7 @@ mas veces.
 3. ¿Por qué cree que es util para el programador contar con los parametros para escribir soluciones 
 modularizadas?.
 
-## Final 2.
+## 📚Final 2.
 #### 1) Practica: Realice un módulo que lee números enteros entre 0 y 100 y devuelva un vector que contenga la cantidad de ocurrencias de los valores leídos. La lectura finaliza cuando se lee el valor 0.
 - Ejemplo: Si se leen valores: 1,20,55,7,1,7,0 entonces el vector resultante deberá contener la información necesaria para saber que:
 - Valor 1 cantidead de ocurrencias 2
