@@ -240,3 +240,9 @@ End;
 
 #### 17) El acceso a un dato de una estructura de datos lineal solo es posible a traves de un recorrido secuencial. 
 - ***FALSO*** - un vector, que es una estructura lineal, puede ser accedido de forma directa
+
+#### 18) La técnica de corrección debugging se aplica en el momento del diseño de una solución.
+
+#### 19) Una función puede devolver un tipo de dato registro, real, booleano, integer, entre otros.
+
+#### 20) Un procedimiento puede contener un tipo de dato declarado internamente.
