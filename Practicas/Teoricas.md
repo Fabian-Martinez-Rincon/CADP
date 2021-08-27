@@ -97,3 +97,18 @@ Una inmobiliaria de la ciudad de La Plata necesita un programa para administrar 
 4. Realice un análisis del tiempo de ejecucion de las operaciones implementadas en el c)
 
 ## 📚Final 5.
+### 1) Práctica: Implementar un programa que:
+1. Genere una lista de nombres de personas. Los nombres se leen de teclado hasta que se ingresa el nombre "ZZZ"
+2. Leer un nombre de teclado y elimine eficientemente todas las ocurrencias de ese nombre que aparecen en la lista generada en a).
+
+#### 2) Señale y justifique los errores del procedimiento "INSERTAR" cuyo objetivo es insertar un elemento, en una posición determinada de un vector.
+```Pas
+procedure INSERTAR (var V:vector; dimL:integer; dato:integer; pos:integer);
+begin
+    if ((dimL+1) <= dimF) then begin
+        for i:= dimL to pos do v[i+1];
+        v[i]:=dato;
+        dimL:=dimL+1;
+    end;
+end;  
+```
