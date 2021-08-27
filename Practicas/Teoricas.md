@@ -38,3 +38,14 @@ modularizadas?.
 - Valor 20 cantidad de ocurrencias 1
 - Valore 55 cantidad de ocurrencias 1 
 - Valor 7 cantidad de ocurrencias 2
+
+### 2) Modularización.
+1. Defuba ek cibceoti de Modularización y sus principales ventajas.
+2. Explique las diferencias entre variable global, variable locas, parámetro por valor y parámetro por referencias.
+
+### 3) Estructuras de Datos.
+1. Defina y caracterice el tipo de dato Lista Enlazada. Especifique una representación posible en Pascal.
+2. Describa detalladamente el problema de eliminar todas las ocurrencias de un valor en la estructura mencionada, teniendo en cuenta que la misma puede estar ordenada o no.
+
+### 4) Eficiencia
+1. Defina el concepto de eficiencia.
