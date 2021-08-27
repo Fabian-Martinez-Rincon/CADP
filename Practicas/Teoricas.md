@@ -112,3 +112,6 @@ begin
     end;
 end;  
 ```
+#### 3) Explique brevemente cual es la importancia de que el lenguaje permita tipos de datos definidos por el usuario.
+#### 4) ¿Qué diferencia existe entre un lenguaje "fuertemente" tipado con uno "dinamicamente" tipado?
+#### 5) Explique brevemente el riesgo de utilizar variables globales para la comunicación entre módulos.
