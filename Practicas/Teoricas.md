@@ -150,3 +150,20 @@ end;
 8. Explique qué entiende por reusabilidad en el contexto de la modularización.
 
 ## 📚Final 7.
+
+### 1) Practica:
+Un comercio dispone de las ventas realizadas para sus productos. De cada venta se conoce: Numero de producto(1..300), Cantidad Vendida y nombre de producto. Además el comercio cuenta con una tabla con el precio por unidad de cada uno de los 300 productos. Se pide calcular el nombre con el cual el comercio obtuvo la menor ganancia.
+Notas: Las ventas están ordenadas por número de producto. Un producto pudo ser vendido 0, 1 o más veces.
+
+### 2) Eficiencia.
+1. Defina el concepto de eficiencia.
+2. Explique cómo se procede si lo que se desea es calcular la memoria empleada en una solución. ¿Y si se desea calcular el tiempo de ejecución?.
+3. Respecto a la solución planteada en el punto 1, y desde el punto de vista de la eficiencia en tiempo ¿Es conveniente que las ventas estén ordenadas por nro. de producto?-Justifique.
+### 3) Estructura de Datos.
+1. Defina el concepto.
+2. Plantee y explique las distintas operaciones de las Estructuras de Datos.
+3. Plantee detalladamente la operación de insercion de un elemento en la estructura de datos lista enlazada y vector. Analice distintas propuestas.
+### 4) Parámetros
+1. Defina el concepto de parámetro en el contexto de la modularización.
+2. Que tipos de parámetros conoce. Describa en que se clasifica cada tipo.
+3. ¿Por qué cree que es util para el programador contar con los parámetros para escribir soluciones modularizadas?
