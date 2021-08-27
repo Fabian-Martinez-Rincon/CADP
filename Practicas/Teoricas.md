@@ -16,19 +16,25 @@ Notas: las ventas estan ordenadas por numero de producto. Un producto pudo ser v
 mas veces.
 
 ### 2) Eficiencia:
-#### a) Defina concepto de eficiencia
-#### b) Explique como se procede si lo que se desea es calcular la memoria empleada en una solución. ¿Y si se desea calcular el tiempo de ejecución?.
-#### c) Respecto a la solución planteada en el punto 1, y desde el punto de vista de la eficiencia en tiempo ¿Es conveniente que las ventas esten ordenadas por nro de producto?- Justifique detalladamente.
+1. Defina concepto de eficiencia.
+2. Explique como se procede si lo que se desea es calcular la memoria empleada en una solución. ¿Y si se desea calcular el tiempo de ejecución?.
+3. Respecto a la solución planteada en el punto 1, y desde el punto de vista de la eficiencia en tiempo ¿Es conveniente que las ventas esten ordenadas por nro de producto?- Justifique detalladamente.
 
 ### 3) Estructura de Datos:
-#### a) Defina concepto.
-#### b) Plantee y explique las distintas clasificaciones de las Estructura de Datos.
-#### c) Plantee detalladamente la operacion de Insersion de un elemento en la estructura de datos lista enlazada y vector. Analice distintas propuestas.
+1. Defina concepto.
+2. Plantee y explique las distintas clasificaciones de las Estructura de Datos.
+3. Plantee detalladamente la operacion de Insersion de un elemento en la estructura de datos lista enlazada y vector. Analice distintas propuestas.
 
 ### 4) Parametros:
-#### a) Defina el concepto de parametro en el contexto de la modurarización.
-#### b) Que tipos de parametros conoce. Describa en que se clasifica cada tipo.
-#### c) ¿Por qué cree que es util para el programador contar con los parametros para escribir soluciones 
+1. Defina el concepto de parametro en el contexto de la modurarización.
+2. Que tipos de parametros conoce. Describa en que se clasifica cada tipo.
+3. ¿Por qué cree que es util para el programador contar con los parametros para escribir soluciones 
 modularizadas?.
 
-- ***VERDADERO*** - funciona como un char
+## Final 2.
+### 1) Practica: Realice un módulo que lee números enteros entre 0 y 100 y devuelva un vector que contenga la cantidad de ocurrencias de los valores leídos. La lectura finaliza cuando se lee el valor 0.
+- Ejemplo: Si se leen valores: 1,20,55,7,1,7,0 entonces el vector resultante deberá contener la información necesaria para saber que:
+- Valor 1 cantidead de ocurrencias 2
+- Valor 20 cantidad de ocurrencias 1
+- Valore 55 cantidad de ocurrencias 1 
+- Valor 7 cantidad de ocurrencias 2
