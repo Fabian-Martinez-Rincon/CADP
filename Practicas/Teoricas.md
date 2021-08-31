@@ -110,9 +110,10 @@ Se define ***T(n) al tiempo de ejecución*** de un programa con una entrada de t
 4. Suponer que una operación elemental es una asignación, una comparación o una operación aritmetica simple.
 
 #### Reglas Generales.
-1. Sentencias Consecutivas: Maximo de todas las instrucciones:    max(inst1, inst2)
-2. for / for anidados: Se debe calcular la cantidad de operaciones elementales que se ejecutan dentro del For y multiplicarla por la cantidad de veces que se ejecuta la instrucción FOR.
-3. While / Repeat..Until: Se debe calcular la cantidad de operaciones elementales que se ejecutan dentro del WHILE y multiplicarla por la cantidad de veces que se ejecuta el WHILE. Como no se conoce esa cantidad se considera el **Peor Caso**
+1. **Sentencias Consecutivas**: Maximo de todas las instrucciones:    **max(inst1, inst2)**
+2. **for / for anidados**: Se debe calcular la cantidad de operaciones elementales que se ejecutan dentro del For y multiplicarla por la cantidad de veces que se ejecuta la instrucción FOR.
+3. **While / Repeat..Until**: Se debe calcular la cantidad de operaciones elementales que se ejecutan dentro del WHILE y multiplicarla por la cantidad de veces que se ejecuta el WHILE. Como no se conoce esa cantidad se considera el **Peor Caso**
+4. **if / else**: En el caso de una sentencia IF en su forma completa (then/else), debe calcularse la cantidad de operaciones que se realizan en cada parte y se debe elegir aquella que consuma más tiempo    **Max (if, else)**
 
 ### 3) Estructura de Datos:
 1. Defina concepto.
