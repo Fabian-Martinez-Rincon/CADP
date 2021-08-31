@@ -80,6 +80,8 @@ end.
 2. Explique como se procede si lo que se desea es calcular la memoria empleada en una solución. ¿Y si se desea calcular el tiempo de ejecución?.
 3. Respecto a la solución planteada en el punto 1, y desde el punto de vista de la eficiencia en tiempo ¿Es conveniente que las ventas esten ordenadas por nro de producto?- Justifique detalladamente.
 
+- 1)La eficiencia es una estructura de algoritmos, que esta asociada a la utilización optima de los recursos de nuestro sistema que es en donde se va a ejecutar nuestro algoritmo
+- 2)
 ### 3) Estructura de Datos:
 1. Defina concepto.
 2. Plantee y explique las distintas clasificaciones de las Estructura de Datos.
