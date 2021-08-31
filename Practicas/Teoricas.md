@@ -121,7 +121,20 @@ Se define ***T(n) al tiempo de ejecución*** de un programa con una entrada de t
 1. Defina concepto.
 2. Plantee y explique las distintas clasificaciones de las Estructura de Datos.
 3. Plantee detalladamente la operacion de Insersion de un elemento en la estructura de datos lista enlazada y vector. Analice distintas propuestas.
-
+- 1) Son un conjunto de distintas variables (pueden ser de distinto tipo), relacionadas entre si.
+- 2) Clasificacion:
+- **Elementos: ** De que tipo son sus elementos.
+  - Homogénea: Elementos del mismo tipo.
+  - Heterogénea: Elementos de distinto tipo.
+- **Tamaño: ** Puede variar su tamaño a lo largo del programa.
+  - Estática: El tamaño no varía.
+  - Dinámica: El tamaño varía.
+- **Acceso: ** Como se puede acceder a sus elementos.
+  - Secuencial: Para acceder a un elemento particular se debe respetar un orden predeterminado.
+  - Directo: Se puede acceder a un elemento particular, directamente, sin necesidad de pasar por los anteriores a él.
+- **Linealidad: ** Como están almacenados los elementos que la componen.
+  - Lineal: Guardan una relación de adyacencia (uno al lado de otro) ordenada donde a cada elemento le sigue uno y precede uno solamente.
+  - No Lineal: Para un elemento dado pueden existir 0, 1 ó más elementos que le suceden y 0, 1 ó más elementos que le preceden. 
 ### 4) Parametros:
 1. Defina el concepto de parametro en el contexto de la modurarización.
 2. Que tipos de parametros conoce. Describa en que se clasifica cada tipo.
