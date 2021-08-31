@@ -150,7 +150,7 @@ modularizadas?.
 - Valor 7 cantidad de ocurrencias 2
 
 ### 2) Modularización.
-1. Defuba ek cibceoti de Modularización y sus principales ventajas.
+1. Defina el concepto de Modularización y sus principales ventajas.
 2. Explique las diferencias entre variable global, variable locas, parámetro por valor y parámetro por referencias.
 
 ### 3) Estructuras de Datos.
