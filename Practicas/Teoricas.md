@@ -82,6 +82,16 @@ end.
 
 - 1) La eficiencia es una estructura de algoritmos, que esta asociada a la utilización optima de los recursos de nuestro sistema que es en donde se va a ejecutar nuestro algoritmo
 - 2) Si yo quiero calcular la memoria empleada en una solución. Lo dividiria en dos partes. Una parte para la memoria fisica y la otra para la memoria dinamica. Para calcular la memoria fisica lo primero que hacemos es mirar todas las variables declaradas en el programa principal. Para calcular el espacio de memoria que consume cada variable, se nos brindara una tabla para poder chequearlo, si es una variable de tipo registro. La variable ocupa la suma de sus variables internas y si es un vector, tendremos que multiplicar su tipo de dato por el rango maximo de datos que puede ocupar. Para la dimension Dinamica, lo primero que tenemos que hacer es asegurarnos de que nuestro programa cuente con algun "new" en caso de que no se encuentre, la memoria total seria solamente la memoria fisica o 0bytes en caso de no tener memoria estatica. En cambio si se encuentra algun "new" lo que tenemos que hacer es encontrar en que parte del programa se encuentra. Si se encuentra en asignaciones fuera de cualquier bucle, lo que tenemos que hacer es calcular el valor que tiene la variables al sacarle el caret. Pero si se encuentra dentro de un bucle, tenemos que multiplicar nuestro valor en cuanto se ejecuta el "new" y multiplicarlo por las veces que se ejecuta (Si es un while tenes que multiplicarlo por n veces ya que se toma el peor caso).
+
+- 3) Para calcular el tiempo de ejecucion, tenemos varios factores. 
+- Existen algoritmos que el tiempo de ejecición depende de la cantidad de datos de entrada o de su tamaño.
+- Existen otros algoritmos donde el tiempo de ejecución es una función de la entrada "especifica"(Se elige el peor caso).
+
+#### 1. Análisis Empírico: Se escribe el codigo, se ejecuta en una máquina virtual y se mide el tiempo.
+- Ventaja:
+  - El tiempo es preciso.
+  - Fácil de realizar.
+
 ### 3) Estructura de Datos:
 1. Defina concepto.
 2. Plantee y explique las distintas clasificaciones de las Estructura de Datos.
