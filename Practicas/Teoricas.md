@@ -91,6 +91,28 @@ end.
 - Ventaja:
   - El tiempo es preciso.
   - Fácil de realizar.
+- Desventaja
+  - Tengo que escribir el programa primero.
+  - Obtiene valores exactos para una máquina y unos datos determinados (Dependiente de la máquina donde se ejecuta)-
+  - Requiere ejecutarlo varias veces.
+#### 2. Análisis Teórico: Se hace un análisis sobre algunas de las instrucciones que hace el programa y se estima un tiempo que el algoritmo necesita para su ejecución, ***No se necesita ejecutar***.
+- Ventajas
+  - Obtiene valores aproximados.
+  - Es aplicable en la etapa de diseño de los algoritmos (Se puede aplicar sin necesidad de implementar el algoritmo).
+  - El análisis es independiente de la máquina donde se ejecute.
+Se define ***T(n) al tiempo de ejecución*** de un programa con una entrada de tamaño n. La idea es expresar la función del tiempo de alguna manera, buscando entender su comportamiento con grandes volúmenes de datos:
+- ***T(n) = .....***
+- ***El tiempo es la suma de cada una de las instrucciones ***.
+- A partir del tiempo se calcula el ***el orden del algoritmo*** (es elegir el máximo entre las instrucciones del programa) * es elegir como esta n (si es constante, logaritmica, orden1, etc)*
+1. Considerar el número de operaciones elementales que emplea el algoritmo.
+2. Considerar que una operación elemental utiliza un tiempo constante para su ejecución, independientemente del tipo de dato con el que trabaje.
+3. Suponer que cada operación elemental se ejecutará en una unidad de tiempo(dejando de lado la magnitud).
+4. Suponer que una operación elemental es una asignación, una comparación o una operación aritmetica simple.
+
+#### Reglas Generales.
+1. Sentencias Consecutivas: Maximo de todas las instrucciones:    max(inst1, inst2)
+2. for / for anidados: Se debe calcular la cantidad de operaciones elementales que se ejecutan dentro del For y multiplicarla por la cantidad de veces que se ejecuta la instrucción FOR.
+3. While / Repeat..Until: Se debe calcular la cantidad de operaciones elementales que se ejecutan dentro del WHILE y multiplicarla por la cantidad de veces que se ejecuta el WHILE. Como no se conoce esa cantidad se considera el **Peor Caso**
 
 ### 3) Estructura de Datos:
 1. Defina concepto.
