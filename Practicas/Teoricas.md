@@ -13,7 +13,68 @@ tabla con el precio por unidad de cada uno de los 300 productos. Se pide calcula
 cual el comercio obtuvo la menor ganancia. 
 Notas: las ventas estan ordenadas por numero de producto. Un producto pudo ser vendido 0, 1 o 
 mas veces.
+```Pas
+program cosa;
+type
+    cadena20=string[20];
+    rango = 1..300;
+    venta = record
+        nro_prod:rango;
+        cant_vendida:integer;
+        nombre:cadena20;
+    end;
+    Tabla = array [rango] of integer;
+//____________________
+procedure CargarTabla(var t:Tabla);
+var
+    i:integer;
+begin
+    for i:=1 to 300 do
+    begin
+        t[i]:=i;
 
+    end;
+end;
+//____________________
+procedure LeerVenta(var v:venta);
+begin
+    writeln('Nro de producto ');
+    readln(v.nro_prod);
+    writeln('Cantidad vendida: ');
+    readln(v.cant_vendida);
+    writeln('Nombre: ');
+    readln(v.nombre);
+end;
+//____________________
+procedure MenorGanancia(t:tabla;var nombre_menor:cadena20);
+var
+    actual:rango;
+    i:integer;
+    v:venta; 
+    menor_Ganancia:integer;
+begin
+    menor_Ganancia:=9999;
+    for i:=1 to 300 do
+    begin
+        LeerVenta(v);
+        actual:=v.nro_prod;
+        while (actual = v.nro_prod) do
+        begin
+        if ((t[v.nro_prod]*v.cant_vendida)<menor_Ganancia) then
+            menor_Ganancia:=t[v.nro_prod]*v.cant_vendida;
+        LeerVenta(v);
+        end;
+    end;
+end;
+//____________________
+var
+    t:tabla;
+    nombre_menor:cadena20;
+begin
+    CargarTabla(t);//Se dispone
+    MenorGanancia(t,nombre_menor);
+end.
+```
 ### 2) Eficiencia:
 1. Defina concepto de eficiencia.
 2. Explique como se procede si lo que se desea es calcular la memoria empleada en una solución. ¿Y si se desea calcular el tiempo de ejecución?.
