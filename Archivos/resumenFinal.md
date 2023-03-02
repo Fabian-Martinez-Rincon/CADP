@@ -146,8 +146,114 @@ crearlos y manipularlos.
     </table>
 - **`Definido por el programador:`** Permiten definir nuevos tipos de datos a partir de los tipos simples.
 - **`Definido por el lenguaje:`** Son provistos por el lenguaje y tanto la representación como sus operaciones y valores son reservadas al mismo
+- **SIMPLE:**  Aquellos que toman un único valor, en un momento determinado, de todos los permitidos para ese tipo
+- **COMPUESTO:** Pueden tomar varios valores a la vez que guardan alguna relación lógica entre ellos, bajo un único nombre
+
+### Numerico
+
+Representa el conjunto de números que se pueden necesitar. Estos números pueden ser
+enteros o reales.
+
+- **`Entero`**
+    - Tipo de dato simple y ordinal
+    - Al tener una representación interna tienen un número máximo y otro mínimo
+    - Operaciones
+        - +, -, * , /, <, >, =, <=, =>, MOD(resto entero), DIV(cociente entero)
+- **`Real`**
+    - Tipo de dato simple (representa números con coma)
+    - Al tener una representación interna, tienen un número mínimo y uno máximo
+    - Operaciones
+        - +, -, *, /, <, >, =, <=, =>
+
+El orden de precedencia para la resolución es:
+- **`1)`** operadores *, /
+- **`2)`** operadores +, -
+- **`3)`** operadores div y mod
+
+En caso que el orden de precedencia natural deba ser alterado, es posible la utilización de paréntesis dentro de la expresión.
+
+### Lógico
+
+Representa datos que pueden tomar dos valores Verdadero (true) o falso (false)
+
+- Es un tipo de dato simple y ordinal
+- Operaciones
+    - OR, AND, NOT
+- Orden de Precedencia
+    - **`1)`** NOT
+    - **`2)`** AND
+    - **`3)`** OR
+
+### Carácter
+
+Representa un conjunto finito y ordenado de caracteres que la computadora reconoce. Un dato de tipo carácter contiene sólo un carácter
+
+- Tipo de dato simple y ordinal
+- ‘a’, ‘b’, ‘@’
+- Operaciones
+    - =, <, >, <=, =>, <>
+
+### Variable
+
+Es una zona de memoria que tiene un contenido.La dirección inicial de esta zona se asocia con el nombre de la variable.
+
+**Puede cambiar su valor durante el programa.**
+
+### Constante
+
+Es una zona de memoria que tiene un contenido.La dirección inicial de esta zona se asocia con el nombre de la variable.
+
+**NO puede cambiar su valor durante el programa.**
+
+`const Identificador = valor;`
 
 
+- Los diferentes tipos de datos deben especificarse y a esta especificación dentro de un programa se la conoce como `declaración`.
+- Algunos lenguajes exigen que se especifique a qué tipo pertenece cada una de las variables. Verifican que el tipo de los datos asignados a esa variable se correspondan con su definición. Esta clase de lenguajes se denomina `fuertemente tipados` (strongly typed).
+- Otra clase de lenguajes, que verifica el tipo de las variables según su nombre, se denomina `auto tipados` (self typed).
+- Existe una tercera clase de lenguajes que permiten que una variable tome valores de distinto tipo durante la ejecución de un programa. Esta se denomina `dinámicamente tipados` (dinamically typed).
+- `Pre Condicion`
+    - Lo que nosotros queremos que el programa haga
+    - Es la información que se conoce como verdadera antes de iniciar el programa (ó módulo).
+- `Post Condicion`
+    - Como quedarian cada una de las variables después de ejecutarse el programa
+    - Es la información que debería ser verdadera al concluir el programa (o módulo), si se cumplen adecuadamente los pasos especificados
+- `Read (Lectura)` Se usa para tomar datos desde un dispositivo de entrada (por defecto desde teclado) y asignarlos a las variables correspondientes.
+- `Write (Escritura)` Se usa para mostrar el contenido de una variable, por defecto en pantalla.
+
+<h2 align="center"> 💻ESTRUCTURAS DE CONTROL </h2>
+
+<table>
+  <tr><td colspan="2">Secuencia</td></tr>
+  <tr>
+    <td colspan="2"> 
+      Representada por una sucesión de operaciones (por ej. asignaciones), en la que el
+      orden de ejecución coincide con el orden físico de aparición de las instrucciones.
+    </td>
+  </tr>
+  <tr><td colspan="2">Decisión</td></tr>
+  <tr>
+    <td>
+        En un algoritmo representativo de un
+        problema real es necesario tomar
+        decisiones en función de los datos del
+        problema.
+    </td>
+      <td>
+
+![image](https://user-images.githubusercontent.com/55964635/222421756-e50b5d86-71e2-4e76-92b3-0039541de0fb.png)
+    </td>
+  </tr>
+  <tr><td colspan="2">Iteración</td></tr>
+  <tr>
+    <td colspan="2"> 
+
+- Cuando quiero repetir una cantidad de veces que desconozco (xq depende de una
+condición), una o un conjunto de acciones
+- Pueden ser **`Pre-Condicionales`** o **`Post-Condicionales`**
+    </td>
+  </tr>
+</table>
 
 
 
