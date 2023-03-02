@@ -119,11 +119,12 @@ crearlos y manipularlos.
 
 - Tienen un rango de valores posibles
 - Tienen un conjunto de operaciones permitidas
-- Tienen una representación interna:
+- Tienen una representación interna (tipo de dato):
+    <table>
+    <tr><td>Simple</td><td>Compuesto</td></tr>
+    <tr>
+    <td>
 
-**`Tipo de dato`**
-
-- Simple
     - Definido por el Lenguaje:
         - Numérico
         - Caracter
@@ -131,9 +132,22 @@ crearlos y manipularlos.
     - Definido por el programador:
         - Subrango
         - Puntero
-- Compuesto
-    - Definido por el lenguaje
-    - Definido por el programador
+    </td>
+    <td>
+
+    - Definido por el lenguaje:
+        - String
+    - Definido por el programador:
+        - Registro
+        - Arreglos
+        - Listas
+    </td>
+    </tr>
+    </table>
+- **`Definido por el programador:`** Permiten definir nuevos tipos de datos a partir de los tipos simples.
+- **`Definido por el lenguaje:`** Son provistos por el lenguaje y tanto la representación como sus operaciones y valores son reservadas al mismo
+
+
 
 
 
