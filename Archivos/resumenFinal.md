@@ -240,8 +240,7 @@ Es una zona de memoria que tiene un contenido.La dirección inicial de esta zona
         problema.
     </td>
       <td>
-
-![image](https://user-images.githubusercontent.com/55964635/222421756-e50b5d86-71e2-4e76-92b3-0039541de0fb.png)
+        <img width="2000px" src="https://user-images.githubusercontent.com/55964635/222421756-e50b5d86-71e2-4e76-92b3-0039541de0fb.png"/>
     </td>
   </tr>
   <tr><td colspan="2">Iteración</td></tr>
@@ -251,6 +250,31 @@ Es una zona de memoria que tiene un contenido.La dirección inicial de esta zona
 - Cuando quiero repetir una cantidad de veces que desconozco (xq depende de una
 condición), una o un conjunto de acciones
 - Pueden ser **`Pre-Condicionales`** o **`Post-Condicionales`**
+    </td>
+  </tr>
+    <tr><td colspan="2">Pre-Condicionales(While)</td></tr>
+  <tr>
+    <td>
+
+Evalúan la condición y si es verdadera se ejecuta el bloque de acciones. **Dicho bloque se pueda ejecutar 0, 1 ó más veces**. 
+      Se ejecuta mientras sea verdadera. 
+      (El valor inicial de la condición debe ser conocido o evaluable antes de la 
+      evaluación de la condición)
+    </td>
+      <td>
+
+![image](https://user-images.githubusercontent.com/55964635/222421756-e50b5d86-71e2-4e76-92b3-0039541de0fb.png)
+    </td>
+  </tr>
+    <tr><td colspan="2">Post-Condicionales(Repeat-Until)</td></tr>
+  <tr>
+    <td>
+
+  Ejecutan las acciones luego evalúan la condición y ejecutan las acciones mientras la condición es falsa. **Puede ejecutarse 1 o más veces.**
+    </td>
+      <td>
+
+![image](https://user-images.githubusercontent.com/55964635/222421756-e50b5d86-71e2-4e76-92b3-0039541de0fb.png)
     </td>
   </tr>
 </table>
