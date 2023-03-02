@@ -263,7 +263,7 @@ Evalúan la condición y si es verdadera se ejecuta el bloque de acciones. **Dic
     </td>
       <td>
 
-![image](https://user-images.githubusercontent.com/55964635/222421756-e50b5d86-71e2-4e76-92b3-0039541de0fb.png)
+![image](https://user-images.githubusercontent.com/55964635/222425025-738c1370-e762-47ea-93b7-da425bce7351.png)
     </td>
   </tr>
     <tr><td colspan="2">Post-Condicionales(Repeat-Until)</td></tr>
@@ -274,7 +274,31 @@ Evalúan la condición y si es verdadera se ejecuta el bloque de acciones. **Dic
     </td>
       <td>
 
-![image](https://user-images.githubusercontent.com/55964635/222421756-e50b5d86-71e2-4e76-92b3-0039541de0fb.png)
+![image](https://user-images.githubusercontent.com/55964635/222425196-c944962f-60c8-4e32-a786-8bae17fc5cd5.png)
+    </td>
+  </tr>
+  </tr>
+    <tr><td colspan="2">Repetición</td></tr>
+  <tr>
+    <td>
+
+Es una extensión natural de la
+secuencia. Consiste en repetir N
+veces un bloque de acciones. Este
+número de veces que se deben
+ejecutar las acciones es fijo y
+conocido de antemano.
+
+Índice:
+
+- tipo ordinal
+- No puede modificarse dentro del lazo.(se incrementa y decrementa automáticamente)
+- Cuando el for termina la variable índice no tiene valor definido.
+
+    </td>
+      <td>
+
+![image](https://user-images.githubusercontent.com/55964635/222426441-8bcfd9e2-1960-4fbe-9732-f13e3a1bea92.png)
     </td>
   </tr>
 </table>
