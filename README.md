@@ -1,16 +1,13 @@
-
-
-
-<h1 align="center"> 
+<div align="center"> 
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/FabianMartinez1234567/CADP)
 [![GitHub stars](https://img.shields.io/github/stars/FabianMartinez1234567/CADP)](https://github.com/FabianMartinez1234567/CADP/stargazers/)
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/FabianMartinez1234567/CADP)](https://github.com/FabianMartinez1234567/CADP)
 
-💻CADP 
 
+<div align="center"><img src='https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=1200&pause=1000&color=F7F123&width=435&lines=CADP'>
 
-</h1>
+</div></div>
 <a title="" href="https://cafecito.app/ei-materias"><img src="/Archivos/Cafecito.png" alt="" /></a>
 
 
