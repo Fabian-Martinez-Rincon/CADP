@@ -8,8 +8,12 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=1700&pause=800&color=F7F123&center=true&width=435&lines=🤖 CADP"/>
 
+---
+
 <a title="" href="https://www.youtube.com/watch?v=QCzOEhAWu6Q"><img src="/Archivos/image.png" width="550px"  /></a>
  </div>
+
+---
 
 > [!NOTE]  
 > Si encuentran algun link roto o tienen alguna duda, no duden en decirme por mail fabianmartinezrincon.123@gmail.com
