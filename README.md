@@ -5,14 +5,14 @@
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/FabianMartinez1234567/CADP)](https://github.com/FabianMartinez1234567/CADP)
 
 
+
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=1700&pause=800&color=F7F123&center=true&width=435&lines=🤖 CADP"/>
+
+<a title="" href="https://www.youtube.com/watch?v=QCzOEhAWu6Q"><img src="/Archivos/image.png" width="550px"  /></a>
  </div>
 
-
-
-<a title="" href="https://cafecito.app/ei-materias"><img src="/Archivos/Cafecito.png" alt="" /></a>
-
-
+> [!NOTE]  
+> Si encuentran algun link roto o tienen alguna duda, no duden en decirme por mail fabianmartinezrincon.123@gmail.com
 
 
 ***Aca esta la carpeta de cadp, con todos los ejercicios de todas las practicas***
