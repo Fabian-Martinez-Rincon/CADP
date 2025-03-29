@@ -10,12 +10,13 @@
 
 ---
 
-<a title="" href="https://www.youtube.com/watch?v=QCzOEhAWu6Q"><img src="/Archivos/image.png" width="550px"  /></a>
+<a title="" href="https://youtu.be/a6bO0YMHZRQ?si=0Liz87HecbhPzSH-"><img src="/Archivos/image.png" width="550px"  /></a>
  </div>
+
 
 ---
 
-> [!NOTE]  
+> [!IMPORTANT]  
 > Si encuentran algun link roto o tienen alguna duda, no duden en decirme por mail fabianmartinezrincon.123@gmail.com
 
 
