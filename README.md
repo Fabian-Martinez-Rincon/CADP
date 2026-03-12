@@ -8,9 +8,7 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=1700&pause=800&color=F7F123&center=true&width=435&lines=🤖 CADP"/>
 
----
 
-<a title="" href="https://youtu.be/QCzOEhAWu6Q?si=v0HCDe6sRPOIG6T7"><img src="/Archivos/image.png" width="550px"  /></a>
  </div>
 
 
