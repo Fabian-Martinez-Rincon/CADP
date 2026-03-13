@@ -4,7 +4,7 @@ var
 begin
   writeln('Ingrese el primer numero:');
   readln(num1);
-  writeln('Ingrese el segundo numero:');
+    writeln('Ingrese el segundo numero:');
   readln(num2);
 
   promedio := (num1 + num2) / 2;
