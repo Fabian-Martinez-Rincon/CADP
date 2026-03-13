@@ -12,9 +12,7 @@
 
 ## 1. Implemente una solución para cada uno de los siguientes enunciados simples:
 
-### a.
-
-Calcular e imprimir el **promedio de 2 números enteros** que se leen del teclado.
+### a. Calcular e imprimir el **promedio de 2 números enteros** que se leen del teclado.
 
 <details><summary>Resultado</summary>
 
@@ -34,11 +32,31 @@ end.
 ```
 </details>
 
-### b.
-Leer **base** y **altura** de un rectángulo e imprimir el **área** y **perímetro** del mismo.
+### b. Leer **base** y **altura** de un rectángulo e imprimir el **área** y **perímetro** del mismo.
 
 - Área = `base * altura`
 - Perímetro = `2 * base + 2 * altura`
+
+<details><summary>Resultado</summary>
+
+```Pascal
+program ej1b_mayor;
+var
+  base, altura, area, perimetro: real;
+begin
+  writeln('Ingrese la base del rectangulo:');
+  readln(base);
+  writeln('Ingrese la altura del rectangulo:');
+  readln(altura);
+
+  area := base * altura;
+  perimetro := 2 * (base + altura);
+
+  writeln('El area del rectangulo es: ', area:0:2);
+  writeln('El perimetro del rectangulo es: ', perimetro:0:2);
+end.
+```
+</details>
 
 ### c.
 Declarar una **constante** con un valor entre **10 y 20**, y leer un número de teclado.  

@@ -1,14 +1,15 @@
 program ej1b_mayor;
 var
-  num1, num2: real;
+  base, altura, area, perimetro: real;
 begin
-  writeln('Ingrese el primer numero:');
-  readln(num1);
-  writeln('Ingrese el segundo numero:');
-  readln(num2);
+  writeln('Ingrese la base del rectangulo:');
+  readln(base);
+  writeln('Ingrese la altura del rectangulo:');
+  readln(altura);
 
-  if num1 > num2 then
-    writeln('El mayor es: ', num1:0:2)
-  else
-    writeln('El mayor es: ', num2:0:2);
+  area := base * altura;
+  perimetro := 2 * (base + altura);
+
+  writeln('El area del rectangulo es: ', area:0:2);
+  writeln('El perimetro del rectangulo es: ', perimetro:0:2);
 end.
