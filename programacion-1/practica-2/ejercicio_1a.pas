@@ -1,3 +1,5 @@
+{Leer 2 números por teclado e imprimir el mayor. }
+
 program ejercicio_1a;
 var
   numero_1, numero_2: integer;
